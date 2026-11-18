@@ -4,7 +4,7 @@ Edit freely: these are plain tables. Patterns are regexes matched on the OCR'd l
 counts if it starts at a word boundary (and, for `after_verb` patterns, right after a verb,
 adjective or auxiliary), which avoids most false hits like the でる inside 出る.
 """
-import re
+from backend.domain.grammar import GrammarMatcher, GrammarPattern
 
 POS_EN = {
     "名詞": "noun", "代名詞": "pronoun", "動詞": "verb", "形容詞": "i-adjective",
@@ -155,27 +155,10 @@ PATTERNS = [
     (r"ことにな", "〜ことになる", "'it has been decided that / it turns out'", False),
     (r"ことにし", "〜ことにする", "'decide to'", False),
 ]
-PATTERNS = [(re.compile(p), name, expl, after_verb) for p, name, expl, after_verb in PATTERNS]
-
-VERBLIKE = {"動詞", "形容詞", "助動詞"}
+PATTERNS = [GrammarPattern(*p) for p in PATTERNS]
+_matcher = GrammarMatcher(PATTERNS)
 
 
 def find_patterns(text, tokens):
     """tokens: list of (surface, pos1). Returns [{name, match, explanation}]."""
-    starts, prev_pos = {}, None
-    pos = 0
-    for surface, pos1 in tokens:
-        starts[pos] = prev_pos
-        pos += len(surface)
-        prev_pos = pos1
-    found, seen = [], set()
-    for rx, name, expl, after_verb in PATTERNS:
-        for m in rx.finditer(text):
-            if m.start() not in starts:
-                continue
-            if after_verb and starts[m.start()] not in VERBLIKE:
-                continue
-            if name not in seen:
-                seen.add(name)
-                found.append({"name": name, "match": m.group(0), "explanation": expl, "at": m.start()})
-    return sorted(found, key=lambda f: f["at"])
+    return _matcher.find(text, tokens)

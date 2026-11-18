@@ -2,7 +2,6 @@
 
 Everything runs locally, no paid services.
 """
-import re
 
 import cv2
 import numpy as np
@@ -11,11 +10,8 @@ from PIL import Image
 _ocr = None
 _tokenizer = None
 
-KANJI_RE = re.compile(r"[㐀-䶿一-鿿豈-﫿々〆ヵヶ]")
-
-
-def kata_to_hira(text):
-    return "".join(chr(ord(c) - 0x60) if "ァ" <= c <= "ヶ" else c for c in text)
+from backend.domain.furigana import split_ruby  # noqa: E402,F401
+from backend.domain.japanese import KANJI_RE, kata_to_hira  # noqa: E402
 
 
 def get_ocr():
@@ -43,22 +39,6 @@ def preprocess(img):
         gray = cv2.resize(gray, (int(w * scale), int(h * scale)), interpolation=cv2.INTER_CUBIC)
     gray = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8)).apply(gray)
     return Image.fromarray(gray)
-
-
-def split_ruby(surface, reading):
-    """Align a word with its reading so furigana only sits over the kanji.
-
-    '食べる' + 'たべる' -> [('食', 'た'), ('べる', '')]
-    """
-    if not reading or not KANJI_RE.search(surface):
-        return [(surface, "")]
-    # Group the surface into kanji runs and kana runs.
-    parts = re.findall(r"(?:[㐀-䶿一-鿿豈-﫿々〆ヵヶ]+)|(?:[^㐀-䶿一-鿿豈-﫿々〆ヵヶ]+)", surface)
-    pattern = "".join("(.+?)" if KANJI_RE.match(p) else "(" + re.escape(kata_to_hira(p)) + ")" for p in parts)
-    m = re.fullmatch(pattern, reading)
-    if not m:
-        return [(surface, reading)]
-    return [(p, g if KANJI_RE.match(p) else "") for p, g in zip(parts, m.groups())]
 
 
 CONTENT_POS = {"名詞", "代名詞", "動詞", "形容詞", "形状詞", "副詞", "連体詞", "接続詞", "感動詞",
