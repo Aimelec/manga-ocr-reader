@@ -7,6 +7,7 @@ import com.mangareader.local.data.camera.ImageTools
 import com.mangareader.local.data.local.FavouritesFile
 import com.mangareader.local.data.local.StatsFile
 import com.mangareader.local.data.remote.parseReadResult
+import com.mangareader.local.data.remote.serverErrorMessage
 import com.mangareader.local.logic.StoredStats
 import com.mangareader.local.logic.savedWordOf
 import com.mangareader.local.model.KanjiInfo
@@ -102,5 +103,26 @@ class ImageToolsTest {
     private fun assertRect(expected: Rect, actual: Rect) {
         listOf(expected.left to actual.left, expected.top to actual.top, expected.right to actual.right,
             expected.bottom to actual.bottom).forEach { (e, a) -> assertEquals(e, a, 1e-6f) }
+    }
+}
+
+class ServerErrorsTest {
+
+    @Test
+    fun `the server's detail is shown`() {
+        assertEquals("The AI model is not available: Model not found",
+            serverErrorMessage(503, """{"detail": "The AI model is not available: Model not found"}"""))
+    }
+
+    @Test
+    fun `a wrong pairing code explains where to find it`() {
+        assertTrue(serverErrorMessage(401, """{"detail": "Wrong or missing pairing code"}""").contains("server window"))
+    }
+
+    @Test
+    fun `no readable detail falls back to the status code`() {
+        assertEquals("The PC answered with error 500", serverErrorMessage(500, "Internal Server Error"))
+        assertEquals("The PC answered with error 422", serverErrorMessage(422, """{"detail": [{"msg": "x"}]}"""))
+        assertEquals("The PC answered with error 502", serverErrorMessage(502, null))
     }
 }

@@ -139,11 +139,18 @@ class ReaderViewModelTest {
 
     @Test
     fun `server check reports whether the PC answers`() {
+        server.pairingCode = "ABCD2345"
         vm.checkServer()
         assertTrue(vm.status.startsWith("Connected"))
         server.reachable = false
         vm.checkServer()
         assertTrue(vm.status.startsWith("Can't reach the PC (192.168.1.100:8765)"))
+    }
+
+    @Test
+    fun `server check asks for the pairing code until one is set`() {
+        vm.checkServer()
+        assertTrue(vm.status.startsWith("Connected. Type the pairing code"))
     }
 
     @Test

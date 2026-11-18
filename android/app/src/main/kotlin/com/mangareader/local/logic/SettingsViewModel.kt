@@ -1,14 +1,16 @@
 package com.mangareader.local.logic
 
-/** The "PC address" dialog: where the server is, and re-trusting its certificate. */
+/** The connection dialog: where the server is, its pairing code, and re-trusting its certificate. */
 class SettingsViewModel(private val server: ReadingServer, private val onChanged: () -> Unit) {
 
     val address get() = server.address
+    val pairingCode get() = server.pairingCode
 
-    /** Accepts "ip:port", with or without https:// and a trailing slash. Blank keeps the old address. */
-    fun save(address: String) {
+    /** Address as "ip:port" (https:// and a trailing slash are fine; blank keeps the old one). */
+    fun save(address: String, pairingCode: String) {
         val clean = cleanAddress(address)
         if (clean.isNotEmpty()) server.address = clean
+        server.pairingCode = cleanCode(pairingCode)
         onChanged()
     }
 
@@ -20,5 +22,6 @@ class SettingsViewModel(private val server: ReadingServer, private val onChanged
 
     companion object {
         fun cleanAddress(text: String) = text.trim().removePrefix("https://").removePrefix("http://").trimEnd('/')
+        fun cleanCode(text: String) = text.filterNot { it.isWhitespace() || it == '-' }.uppercase()
     }
 }

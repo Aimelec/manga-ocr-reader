@@ -15,6 +15,8 @@ import kotlinx.coroutines.flow.Flow
 interface ReadingServer {
     /** "ip:port" of the PC. */
     var address: String
+    /** Code shown in the server window at startup; sent with every request. */
+    var pairingCode: String
 
     suspend fun ping(): Boolean
     suspend fun read(jpeg: ByteArray): ReadResult

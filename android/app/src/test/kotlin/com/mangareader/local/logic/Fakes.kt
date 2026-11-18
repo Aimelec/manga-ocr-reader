@@ -15,6 +15,7 @@ class FakeServer(
     var explainError: Exception? = null,
 ) : ReadingServer {
     override var address = "192.168.1.100:8765"
+    override var pairingCode = ""
     val reads = mutableListOf<ByteArray>()
     val explains = mutableListOf<Pair<String, List<String>>>()
     var certificateForgotten = false

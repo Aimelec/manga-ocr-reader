@@ -34,6 +34,10 @@ class ServerClient(context: Context) : ReadingServer {
         get() = prefs.getString("server", DEFAULT_SERVER) ?: DEFAULT_SERVER
         set(value) = prefs.edit().putString("server", value).apply()
 
+    override var pairingCode: String
+        get() = prefs.getString("pairing", "") ?: ""
+        set(value) = prefs.edit().putString("pairing", value).apply()
+
     override fun forgetCertificate() = prefs.edit().remove(pinKey()).apply()
 
     private fun pinKey() = "pin:$address"
@@ -64,7 +68,16 @@ class ServerClient(context: Context) : ReadingServer {
         (URL("https://$address$path").openConnection() as HttpsURLConnection).apply {
             sslSocketFactory = sslFactory
             hostnameVerifier = HostnameVerifier { _, _ -> true }   // the certificate itself is pinned
+            setRequestProperty(PAIRING_HEADER, pairingCode)
         }
+
+    /** Throws with the server's explanation when the answer is not 200. */
+    private fun HttpsURLConnection.requireOk() {
+        val code = responseCode
+        if (code == 200) return
+        val body = runCatching { errorStream?.bufferedReader(Charsets.UTF_8)?.use { it.readText() } }.getOrNull()
+        throw IOException(serverErrorMessage(code, body))
+    }
 
     override suspend fun ping(): Boolean = withContext(Dispatchers.IO) {
         runCatching {
@@ -78,7 +91,7 @@ class ServerClient(context: Context) : ReadingServer {
 
     override suspend fun read(jpeg: ByteArray): ReadResult = withContext(Dispatchers.IO) {
         val boundary = "----mangareader${System.nanoTime()}"
-        val conn = open("/read").apply {
+        val conn = open("$API/read").apply {
             requestMethod = "POST"
             doOutput = true
             connectTimeout = 5000
@@ -91,14 +104,13 @@ class ServerClient(context: Context) : ReadingServer {
             out.write(jpeg)
             out.write("\r\n--$boundary--\r\n".toByteArray())
         }
-        val code = conn.responseCode
-        if (code != 200) throw IOException("The PC answered with error $code")
+        conn.requireOk()
         val text = conn.inputStream.bufferedReader(Charsets.UTF_8).use { it.readText() }
         parseReadResult(JSONObject(text))
     }
 
     override fun explain(line: String, context: List<String>): Flow<String> = flow {
-        val conn = open("/explain").apply {
+        val conn = open("$API/explain").apply {
             requestMethod = "POST"
             doOutput = true
             connectTimeout = 5000
@@ -107,7 +119,7 @@ class ServerClient(context: Context) : ReadingServer {
         }
         val body = JSONObject().put("line", line).put("context", JSONArray(context)).toString()
         conn.outputStream.use { it.write(body.toByteArray(Charsets.UTF_8)) }
-        if (conn.responseCode != 200) throw IOException("The PC answered with error ${conn.responseCode}")
+        conn.requireOk()
         conn.inputStream.reader(Charsets.UTF_8).use { reader ->
             val buf = CharArray(256)
             while (true) {
@@ -119,6 +131,9 @@ class ServerClient(context: Context) : ReadingServer {
     }.flowOn(Dispatchers.IO)
 
     companion object {
+        /** Versioned API of the server (contract/openapi.json). */
+        const val API = "/api/v1"
+        const val PAIRING_HEADER = "X-Pairing-Code"
         // Example only: set the real address in the app settings (the server prints it at startup).
         const val DEFAULT_SERVER = "192.168.1.100:8765"
     }

@@ -11,8 +11,8 @@ android {
         applicationId = "com.mangareader.local"
         minSdk = 26
         targetSdk = 36
-        versionCode = 2
-        versionName = "0.2"
+        versionCode = 3
+        versionName = "0.3"
     }
 
     // Kotlin + Compose app lives in src/main/kotlin, JVM unit tests in src/test/kotlin.

@@ -101,8 +101,11 @@ class ReaderViewModel(
     fun checkServer() {
         scope.launch {
             status = "Connecting to ${server.address}…"
-            status = if (server.ping()) "Connected. Drag on the camera to set the box, tap to focus"
-            else "Can't reach the PC (${server.address}). Is start_server.bat running? Address: 📖 → ⚙"
+            status = when {
+                !server.ping() -> "Can't reach the PC (${server.address}). Is start_server.bat running? Address: 📖 → ⚙"
+                server.pairingCode.isEmpty() -> "Connected. Type the pairing code from the server window: 📖 → ⚙"
+                else -> "Connected. Drag on the camera to set the box, tap to focus"
+            }
         }
     }
 

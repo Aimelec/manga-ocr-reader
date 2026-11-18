@@ -141,15 +141,16 @@ class SettingsViewModelTest {
     private val settings = SettingsViewModel(server) { changes++ }
 
     @Test
-    fun `address is cleaned before saving`() {
-        settings.save("  https://192.168.1.7:8765/ ")
+    fun `address and code are cleaned before saving`() {
+        settings.save("  https://192.168.1.7:8765/ ", " abcd-2345 ")
         assertEquals("192.168.1.7:8765", server.address)
+        assertEquals("ABCD2345", server.pairingCode)
         assertEquals(1, changes)
     }
 
     @Test
     fun `blank address keeps the old one`() {
-        settings.save("   ")
+        settings.save("   ", "ABCD2345")
         assertEquals("192.168.1.100:8765", server.address)
     }
 
