@@ -3,11 +3,12 @@ import sys
 
 from PIL import Image, ImageOps
 
-from reader_core import read_image
+from backend.container import Container
 
 sys.stdout.reconfigure(encoding="utf-8")
+reader = Container().bubble_reader
 for path in sys.argv[1:]:
-    result = read_image(ImageOps.exif_transpose(Image.open(path)))
+    result = reader.read(ImageOps.exif_transpose(Image.open(path)))
     print(f"== {path}")
     print("text:    ", result["text"])
     print("hiragana:", result["hiragana"])

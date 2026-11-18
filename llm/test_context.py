@@ -20,9 +20,10 @@ ROOT = HERE.parent
 sys.path.insert(0, str(ROOT))
 
 from backend.domain.prompts import SYSTEM, user_message  # noqa: E402
-from reader_core import analyze  # noqa: E402
+from backend.container import Container  # noqa: E402
 
 PORT = 8091
+ANALYZER = Container().analyzer
 cfg = json.loads((HERE / "config.json").read_text(encoding="utf-8"))
 
 SYSTEM_WITH_ANALYSIS = SYSTEM + """
@@ -40,7 +41,7 @@ EXTRA_LINES = [
 
 def analysis_block(line, meanings):
     rows = []
-    for t in analyze(line)["tokens"]:
+    for t in ANALYZER.analyze(line)["tokens"]:
         if t["pos"] in ("補助記号", "記号", "空白"):
             continue
         row = f"- {t['surface']}"

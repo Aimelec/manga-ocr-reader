@@ -8,11 +8,17 @@ from pathlib import Path
 
 import pytest
 
+from backend.container import Container
 from tests.golden.record import EXPECTED, ROOT, load_inputs
 
 INPUTS = load_inputs()
 
 pytestmark = pytest.mark.golden
+
+
+@pytest.fixture(scope="module")
+def container():
+    return Container()
 
 
 def expected(name):
@@ -25,17 +31,15 @@ def normalize(data):
 
 
 @pytest.mark.parametrize("item", INPUTS["texts"], ids=[t["id"] for t in INPUTS["texts"]])
-def test_text_analysis_matches_golden(item):
-    from reader_core import analyze
-    assert normalize(analyze(item["text"])) == expected(f"text-{item['id']}")
+def test_text_analysis_matches_golden(item, container):
+    assert normalize(container.analyzer.analyze(item["text"])) == expected(f"text-{item['id']}")
 
 
 @pytest.mark.slow
 @pytest.mark.parametrize("item", INPUTS["images"], ids=[i["id"] for i in INPUTS["images"]])
-def test_image_read_matches_golden(item):
+def test_image_read_matches_golden(item, container):
     from PIL import Image, ImageOps
 
-    from reader_core import read_image
     path = Path(ROOT / item["path"])
     img = ImageOps.exif_transpose(Image.open(path))
-    assert normalize(read_image(img)) == expected(f"image-{item['id']}")
+    assert normalize(container.bubble_reader.read(img)) == expected(f"image-{item['id']}")
