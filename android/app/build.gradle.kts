@@ -15,8 +15,10 @@ android {
         versionName = "0.2"
     }
 
-    // Kotlin + Compose app lives in src/main/kotlin.
+    // Kotlin + Compose app lives in src/main/kotlin, JVM unit tests in src/test/kotlin.
     sourceSets.getByName("main").java.setSrcDirs(listOf("src/main/kotlin"))
+    // The server's API contract (contract/*.json) is a test resource: the parser is checked against it.
+    sourceSets.getByName("test").resources.directories.add("../../contract")
 
     buildFeatures {
         compose = true
@@ -43,4 +45,8 @@ dependencies {
     implementation("androidx.camera:camera-camera2:$camerax")
     implementation("androidx.camera:camera-lifecycle:$camerax")
     implementation("androidx.camera:camera-view:$camerax")
+
+    testImplementation("junit:junit:4.13.2")
+    // android.jar only has stubs of org.json; unit tests on the JVM need the real implementation
+    testImplementation("org.json:json:20240303")
 }
