@@ -65,6 +65,21 @@ class TestLlamaServerIdle:
             now[0] += 10_000
             assert not s.is_idle()
 
+    def test_counter_is_exact_under_concurrent_requests(self):
+        import threading
+        s = self.make([0.0])
+
+        def many():
+            for _ in range(2000):
+                with s.session():
+                    pass
+        threads = [threading.Thread(target=many) for _ in range(8)]
+        for t in threads:
+            t.start()
+        for t in threads:
+            t.join()
+        assert s.active == 0
+
     def test_session_yields_the_url(self):
         s = self.make([0.0])
         with s.session() as url:

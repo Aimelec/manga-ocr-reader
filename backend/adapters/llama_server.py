@@ -24,7 +24,8 @@ class LlamaServer:
         self.watch_interval = watch_interval
         self.proc = None
         self.job = None
-        self.lock = threading.Lock()
+        self.lock = threading.Lock()          # start / stop
+        self._count_lock = threading.Lock()   # active-request counter (requests run on several threads)
         self.last_used = 0.0
         self.active = 0
         self._watcher = None
@@ -41,12 +42,14 @@ class LlamaServer:
     @contextmanager
     def session(self):
         self.ensure_running()
-        self.active += 1
+        with self._count_lock:
+            self.active += 1
         try:
             yield self.url
         finally:
-            self.active -= 1
-            self.last_used = self.clock()
+            with self._count_lock:
+                self.active -= 1
+                self.last_used = self.clock()
 
     def _healthy(self):
         try:
@@ -94,8 +97,9 @@ class LlamaServer:
             self.proc = None
 
     def is_idle(self):
-        return (self.proc is not None and self.active == 0
-                and self.clock() - self.last_used > self.idle_seconds)
+        with self._count_lock:
+            return (self.proc is not None and self.active == 0
+                    and self.clock() - self.last_used > self.idle_seconds)
 
     def _idle_watch(self):
         while True:
