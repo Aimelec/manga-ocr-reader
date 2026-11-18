@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 640" width="1240" height="640" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#1f2328">
+  <title>Architecture: an Android app (ui, logic, data layers) talks over HTTPS with a pairing code to a FastAPI server on the PC (api, services, domain, adapters and repositories: manga-ocr, Sudachi, JMdict, llama.cpp with Gemma)</title>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5b7bb5"/>
+    </marker>
+  </defs>
+  <rect width="1240" height="640" rx="16" fill="#ffffff"/>
+
+  <!-- ================= phone ================= -->
+  <text x="40" y="44" font-size="18" font-weight="700">Android app</text>
+  <text x="40" y="66" font-size="13" fill="#57606a">Kotlin · Jetpack Compose · CameraX</text>
+  <rect x="30" y="82" width="370" height="520" rx="22" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+
+  <rect x="52" y="104" width="326" height="118" rx="12" fill="#ddf4ff" stroke="#54aeff" stroke-width="1.5"/>
+  <text x="68" y="130" font-weight="700">ui</text><text x="92" y="130" font-size="13" fill="#57606a">only what you see</text>
+  <text x="68" y="156" font-size="13">ReaderScreen · Results (furigana, cards)</text>
+  <text x="68" y="178" font-size="13">DictionaryScreen · SettingsDialog</text>
+  <text x="68" y="202" font-size="12" fill="#57606a">draws state, reports taps</text>
+
+  <rect x="52" y="246" width="326" height="138" rx="12" fill="#fff8c5" stroke="#d4a72c" stroke-width="1.5"/>
+  <text x="68" y="272" font-weight="700">logic</text><text x="112" y="272" font-size="13" fill="#57606a">the app's brain, unit-tested</text>
+  <text x="68" y="298" font-size="13">ReaderViewModel · AutoReadDetector</text>
+  <text x="68" y="320" font-size="13">Favourites · WordStatistics · WordRules</text>
+  <text x="68" y="342" font-size="13">ExplanationParser · SettingsViewModel</text>
+  <text x="68" y="366" font-size="12" fill="#57606a">owns the interfaces (Ports.kt)</text>
+
+  <rect x="52" y="408" width="326" height="132" rx="12" fill="#dafbe1" stroke="#4ac26b" stroke-width="1.5"/>
+  <text x="68" y="434" font-weight="700">data</text><text x="106" y="434" font-size="13" fill="#57606a">talks to the outside</text>
+  <text x="68" y="460" font-size="13">ServerClient (HTTPS, pinned certificate)</text>
+  <text x="68" y="482" font-size="13">CameraController · ImageTools (crop)</text>
+  <text x="68" y="504" font-size="13">FavouritesFile · StatsFile (on the phone)</text>
+  <text x="68" y="526" font-size="12" fill="#57606a">implements the logic's interfaces</text>
+
+  <g fill="none" stroke="#5b7bb5" stroke-width="2">
+    <path d="M215,222 V242" marker-end="url(#a)"/>
+    <path d="M215,384 V404" marker-end="url(#a)"/>
+  </g>
+  <text x="52" y="580" font-size="12" fill="#57606a">ui → logic → data, never the other way.</text>
+
+  <!-- ================= network ================= -->
+  <g fill="none" stroke="#5b7bb5" stroke-width="2.5">
+    <path d="M400,480 H520" marker-end="url(#a)"/>
+    <path d="M520,512 H400" marker-end="url(#a)"/>
+  </g>
+  <text x="460" y="398" text-anchor="middle" font-size="13" font-weight="600">same Wi-Fi</text>
+  <text x="460" y="418" text-anchor="middle" font-size="12" fill="#57606a">HTTPS +</text>
+  <text x="460" y="434" text-anchor="middle" font-size="12" fill="#57606a">pairing code</text>
+  <text x="460" y="472" text-anchor="middle" font-size="12">bubble crop</text>
+  <text x="460" y="532" text-anchor="middle" font-size="12">JSON / text</text>
+
+  <!-- ================= server ================= -->
+  <text x="530" y="44" font-size="18" font-weight="700">Server on the PC</text>
+  <text x="530" y="66" font-size="13" fill="#57606a">Python · FastAPI · everything local</text>
+  <rect x="520" y="82" width="690" height="520" rx="22" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+
+  <rect x="542" y="104" width="646" height="70" rx="12" fill="#ddf4ff" stroke="#54aeff" stroke-width="1.5"/>
+  <text x="558" y="130" font-weight="700">api</text><text x="590" y="130" font-size="13" fill="#57606a">thin controllers · Pydantic schemas = the contract (OpenAPI)</text>
+  <text x="558" y="156" font-size="13">POST /api/v1/read · POST /api/v1/explain (streamed) · pairing code · upload limits</text>
+
+  <rect x="542" y="194" width="646" height="96" rx="12" fill="#fff8c5" stroke="#d4a72c" stroke-width="1.5"/>
+  <text x="558" y="220" font-weight="700">services</text><text x="626" y="220" font-size="13" fill="#57606a">use cases</text>
+  <text x="558" y="246" font-size="13">BubbleReader: photo → text → analysis</text>
+  <text x="558" y="268" font-size="13">TextAnalyzer + WordExplainer: words, meanings, grammar</text>
+  <text x="930" y="246" font-size="13">LineExplainer: prompt + context</text>
+  <text x="930" y="268" font-size="13">WordLookup: ranked, cached</text>
+
+  <rect x="542" y="310" width="646" height="70" rx="12" fill="#fbefff" stroke="#c297ff" stroke-width="1.5"/>
+  <text x="558" y="336" font-weight="700">domain</text><text x="614" y="336" font-size="13" fill="#57606a">pure logic, no I/O</text>
+  <text x="558" y="362" font-size="13">furigana alignment · entry ranking rules · grammar matcher · prompts · interfaces</text>
+
+  <rect x="542" y="400" width="646" height="180" rx="12" fill="#dafbe1" stroke="#4ac26b" stroke-width="1.5"/>
+  <text x="558" y="426" font-weight="700">adapters &amp; repositories</text><text x="736" y="426" font-size="13" fill="#57606a">swappable behind interfaces</text>
+
+  <g font-size="13">
+    <rect x="560" y="442" width="150" height="58" rx="8" fill="#ffffff" stroke="#4ac26b"/>
+    <text x="635" y="466" text-anchor="middle" font-weight="600">manga-ocr</text>
+    <text x="635" y="486" text-anchor="middle" font-size="12" fill="#57606a">+ OpenCV clean-up</text>
+
+    <rect x="722" y="442" width="150" height="58" rx="8" fill="#ffffff" stroke="#4ac26b"/>
+    <text x="797" y="466" text-anchor="middle" font-weight="600">SudachiPy</text>
+    <text x="797" y="486" text-anchor="middle" font-size="12" fill="#57606a">words + readings</text>
+
+    <rect x="884" y="442" width="150" height="58" rx="8" fill="#ffffff" stroke="#4ac26b"/>
+    <text x="959" y="466" text-anchor="middle" font-weight="600">JMdict (SQLite)</text>
+    <text x="959" y="486" text-anchor="middle" font-size="12" fill="#57606a">KANJIDIC · JMnedict</text>
+
+    <rect x="1046" y="442" width="126" height="58" rx="8" fill="#ffffff" stroke="#4ac26b"/>
+    <text x="1109" y="466" text-anchor="middle" font-weight="600">grammar</text>
+    <text x="1109" y="486" text-anchor="middle" font-size="12" fill="#57606a">tables (data)</text>
+
+    <rect x="560" y="512" width="612" height="54" rx="8" fill="#ffffff" stroke="#4ac26b"/>
+    <text x="866" y="535" text-anchor="middle" font-weight="600">llama.cpp (Vulkan GPU) · Gemma 4 12B</text>
+    <text x="866" y="554" text-anchor="middle" font-size="12" fill="#57606a">OpenAI-compatible client · loads on demand, unloads after 5 min idle</text>
+  </g>
+
+  <g fill="none" stroke="#5b7bb5" stroke-width="2">
+    <path d="M865,174 V190" marker-end="url(#a)"/>
+    <path d="M865,290 V306" marker-end="url(#a)"/>
+    <path d="M865,380 V396" marker-end="url(#a)"/>
+  </g>
+</svg>
