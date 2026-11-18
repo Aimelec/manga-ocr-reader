@@ -48,6 +48,11 @@ class Container:
         from backend.services.analysis import BubbleReader
         return BubbleReader(self.ocr, self.analyzer)
 
+    @cached_property
+    def pairing_code(self):
+        from backend.adapters.pairing import load_or_create_code
+        return load_or_create_code(self.settings.pairing_file)
+
     def warm_up(self):
         """Load the heavy models now instead of on the first request."""
         self.ocr.warm_up()

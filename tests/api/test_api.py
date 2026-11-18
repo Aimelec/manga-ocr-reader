@@ -6,8 +6,11 @@ import pytest
 from fastapi.testclient import TestClient
 from PIL import Image
 
+from backend.api.deps import PAIRING_HEADER
 from backend.main import API_PREFIX as V1
 from backend.main import create_app
+
+CODE = "ABCD2345"
 
 
 class FakeReader:
@@ -41,8 +44,8 @@ def make_client(tmp_path):
         apk = tmp_path / "MangaReader.apk"
         apk.write_bytes(b"APK")
         container = SimpleNamespace(bubble_reader=FakeReader(), line_explainer=explainer or FakeExplainer(),
-                                    settings=SimpleNamespace(apk=apk))
-        return TestClient(create_app(container)), container
+                                    settings=SimpleNamespace(apk=apk), pairing_code=CODE)
+        return TestClient(create_app(container), headers={PAIRING_HEADER: CODE}), container
     return make
 
 
@@ -146,3 +149,24 @@ def test_explain_validates_the_request(make_client, body):
     client, c = make_client()
     assert client.post(f"{V1}/explain", json=body).status_code == 422
     assert c.line_explainer.calls == []
+
+
+@pytest.mark.parametrize("headers", [{}, {PAIRING_HEADER: "WRONG123"}])
+def test_versioned_api_requires_the_pairing_code(make_client, headers):
+    client, c = make_client()
+    client.headers.pop(PAIRING_HEADER)
+    r = client.post(f"{V1}/explain", json={"line": "本だ"}, headers=headers)
+    assert r.status_code == 401 and c.line_explainer.calls == []
+    assert client.post(f"{V1}/read", files={"image": ("b.png", png(), "image/png")}, headers=headers).status_code == 401
+
+
+def test_pairing_code_is_case_insensitive(make_client):
+    client, _ = make_client()
+    r = client.post(f"{V1}/explain", json={"line": "本だ"}, headers={PAIRING_HEADER: CODE.lower()})
+    assert r.status_code == 200
+
+
+def test_health_and_apk_need_no_code(make_client):
+    client, _ = make_client()
+    client.headers.pop(PAIRING_HEADER)
+    assert client.get("/").status_code == 200 and client.get("/app.apk").status_code == 200

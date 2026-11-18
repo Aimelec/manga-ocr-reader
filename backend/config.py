@@ -25,6 +25,7 @@ class Settings:
     dict_db: Path = ROOT / "dict" / "jamdict.db"
     apk: Path = ROOT / "MangaReader.apk"
     cert_dir: Path = ROOT / "cert"
+    pairing_file: Path = ROOT / "cert" / "pairing_code.txt"
     llama_server: Path = ROOT / "tools" / "llama.cpp" / "llama-server.exe"
     llm_log: Path = ROOT / "llm" / "llama-server.log"
     llm: LlmSettings = field(default_factory=LlmSettings)
@@ -44,6 +45,7 @@ def load_settings(root=ROOT):
         dict_db=root / "dict" / "jamdict.db",
         apk=root / "MangaReader.apk",
         cert_dir=root / "cert",
+        pairing_file=root / "cert" / "pairing_code.txt",
         llama_server=root / "tools" / "llama.cpp" / "llama-server.exe",
         llm_log=root / "llm" / "llama-server.log",
         llm=LlmSettings(**{k: v for k, v in llm.items() if k in known}),

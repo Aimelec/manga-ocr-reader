@@ -4,9 +4,10 @@
 /app.apk: the app. HTTPS with a home-made certificate; the app trusts it on first use.
 """
 import uvicorn
-from fastapi import FastAPI
+from fastapi import Depends, FastAPI
 
 from backend.api import apk, explain, health, read
+from backend.api.deps import require_pairing_code
 from backend.container import Container
 
 API_VERSION = "1"
@@ -21,8 +22,8 @@ def create_app(container=None):
     for module in (health, apk):
         app.include_router(module.router)
     for module in VERSIONED:
-        app.include_router(module.router, prefix=API_PREFIX)
-    # Unversioned paths for app builds older than the /api/v1 switch.
+        app.include_router(module.router, prefix=API_PREFIX, dependencies=[Depends(require_pairing_code)])
+    # Unversioned paths for app builds older than the /api/v1 switch (they do not send the pairing code).
     for module in VERSIONED:
         app.include_router(module.router, deprecated=True, include_in_schema=False)
     return app
@@ -39,7 +40,8 @@ def main():
     key, cert = ensure_cert(s.cert_dir, ip)
     print(f"\nReady. On your phone (same Wi-Fi) open:  https://{ip}:{s.port}")
     print("First time: Chrome warns the connection is not private -> Advanced -> Proceed.")
-    print(f"Android app download:  https://{ip}:{s.port}/app.apk\n")
+    print(f"Android app download:  https://{ip}:{s.port}/app.apk")
+    print(f"Pairing code for the app:  {container.pairing_code}\n")
     uvicorn.run(create_app(container), host="0.0.0.0", port=s.port, log_level="warning",
                 ssl_keyfile=key, ssl_certfile=cert)
 

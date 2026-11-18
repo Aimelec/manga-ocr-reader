@@ -7,6 +7,7 @@ from PIL import Image
 from backend.adapters.llama_server import LlamaServer
 from backend.adapters.ocr import MangaOcrEngine, clean_photo
 from backend.adapters.openai_chat import parse_sse
+from backend.adapters.pairing import ALPHABET, ENV_VAR, load_or_create_code, new_code
 from backend.adapters.tls import ensure_cert
 
 
@@ -106,3 +107,19 @@ class TestEnsureCert:
         assert len(calls) == 1
         ensure_cert(tmp_path, "192.168.1.9", openssl="openssl", run=fake_openssl)
         assert len(calls) == 2
+
+
+class TestPairingCode:
+    def test_new_code_uses_unambiguous_characters(self):
+        code = new_code()
+        assert len(code) == 8 and set(code) <= set(ALPHABET) and not set(code) & set("0O1IL")
+
+    def test_created_once_then_reused(self, tmp_path):
+        f = tmp_path / "cert" / "pairing_code.txt"
+        first = load_or_create_code(f, env={})
+        assert f.read_text(encoding="utf-8").strip() == first
+        assert load_or_create_code(f, env={}) == first
+
+    def test_environment_overrides_the_file(self, tmp_path):
+        assert load_or_create_code(tmp_path / "x.txt", env={ENV_VAR: " my-code "}) == "MY-CODE"
+        assert not (tmp_path / "x.txt").exists()
