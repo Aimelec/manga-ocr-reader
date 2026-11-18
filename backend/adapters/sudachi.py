@@ -18,7 +18,7 @@ class SudachiTokenizer:
     def warm_up(self):
         if self._tok is None:
             from sudachipy import dictionary
-            self._tok = dictionary.Dictionary(dict=self.dictionary).create()
+            self._tok = dictionary.Dictionary(dict=self.dictionary).tokenizer()
         return self
 
     def tokenize(self, text):
