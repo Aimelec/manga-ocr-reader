@@ -1,5 +1,6 @@
 package com.mangareader.local
 
+import com.mangareader.local.model.*
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.BitmapRegionDecoder

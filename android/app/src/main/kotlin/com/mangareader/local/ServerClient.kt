@@ -1,5 +1,6 @@
 package com.mangareader.local
 
+import com.mangareader.local.model.*
 import android.content.Context
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow

@@ -1,5 +1,6 @@
 package com.mangareader.local
 
+import com.mangareader.local.model.*
 import android.Manifest
 import android.content.pm.PackageManager
 import android.graphics.Color

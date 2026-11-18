@@ -1,5 +1,6 @@
 package com.mangareader.local
 
+import com.mangareader.local.model.*
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState

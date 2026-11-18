@@ -1,9 +1,9 @@
-package com.mangareader.local
+package com.mangareader.local.model
 
 import org.json.JSONArray
 import org.json.JSONObject
 
-/** What the PC server's /read endpoint returns (see reader_core.py). */
+/** What the PC server's /read endpoint returns (see contract/openapi.json). */
 data class ReadResult(
     val text: String,
     val hiragana: String,

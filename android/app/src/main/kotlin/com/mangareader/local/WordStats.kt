@@ -1,5 +1,6 @@
 package com.mangareader.local
 
+import com.mangareader.local.model.*
 import android.content.Context
 import androidx.compose.runtime.mutableStateMapOf
 import kotlinx.coroutines.CoroutineScope
@@ -11,20 +12,6 @@ import kotlinx.coroutines.withContext
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.File
-
-/** How often a word came up: seen in a read bubble, and looked up (tapped / card opened). */
-data class WordStat(
-    val word: SavedWord,
-    val seen: Int,
-    val looked: Int,
-    val lastSeen: Long,
-    val example: String,          // last sentence the word appeared in
-    val exampleSurface: String,   // the word as written in that sentence (may be conjugated)
-    val known: Boolean,
-) {
-    /** Looked-up counts three times as much as seen. */
-    val score get() = looked * 3 + seen
-}
 
 /** Statistics behind the automatic "Frequent" dictionary, kept on the phone. */
 class WordStats(context: Context, private val scope: CoroutineScope) {

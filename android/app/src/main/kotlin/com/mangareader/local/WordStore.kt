@@ -1,29 +1,11 @@
 package com.mangareader.local
 
+import com.mangareader.local.model.*
 import android.content.Context
 import androidx.compose.runtime.mutableStateListOf
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.File
-
-/** A word as kept on the phone (favourites and statistics; works without the PC). */
-data class SavedWord(
-    val key: String,
-    val word: String,          // dictionary form for verbs / adjectives / endings
-    val reading: String,
-    val category: String,
-    val label: String,
-    val meaning: String,
-    val entries: List<Entry>,
-    val kanji: List<KanjiInfo>,
-    val savedAt: Long,
-)
-
-/** Category names in display order. */
-val CATEGORIES = listOf(
-    "Nouns", "Verbs", "い-adjectives", "な-adjectives", "Adverbs", "Particles", "Endings",
-    "Pronouns", "Names", "Conjunctions", "Interjections", "Pre-noun words", "Prefixes & suffixes", "Other",
-)
 
 fun categoryOf(t: Token): String = when {
     t.posEn.contains("(name)") -> "Names"
