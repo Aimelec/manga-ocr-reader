@@ -25,9 +25,6 @@ def create_app(container=None):
     for module in VERSIONED:
         app.include_router(module.router, prefix=API_PREFIX, dependencies=[Depends(require_pairing_code)],
                            responses={401: {"model": ErrorResponse, "description": "Wrong or missing pairing code"}})
-    # Unversioned paths for app builds older than the /api/v1 switch (they do not send the pairing code).
-    for module in VERSIONED:
-        app.include_router(module.router, deprecated=True, include_in_schema=False)
     return app
 
 

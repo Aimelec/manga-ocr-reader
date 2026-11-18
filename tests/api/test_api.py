@@ -106,13 +106,10 @@ def test_apk_download(make_client):
 
 
 @pytest.mark.parametrize("path", ["/read", "/explain"])
-def test_old_unversioned_paths_still_work_for_old_app_builds(make_client, path):
-    client, _ = make_client()
-    if path == "/read":
-        r = client.post(path, files={"image": ("bubble.png", png(), "image/png")})
-    else:
-        r = client.post(path, json={"line": "本だ"})
-    assert r.status_code == 200
+def test_unversioned_paths_are_gone(make_client, path):
+    client, c = make_client()
+    assert client.post(path, json={"line": "本だ"}).status_code == 404
+    assert c.line_explainer.calls == [] and c.bubble_reader.sizes == []
 
 
 def test_openapi_documents_only_the_versioned_paths(make_client):
