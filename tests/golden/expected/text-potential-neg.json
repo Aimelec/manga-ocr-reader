@@ -1,0 +1,287 @@
+{
+ "grammar": [],
+ "hiragana": "このかんじはまだよめない。",
+ "text": "この漢字はまだ読めない。",
+ "tokens": [
+  {
+   "dictionary_form": "この",
+   "entries": [
+    {
+     "kana": [
+      "この",
+      "こん"
+     ],
+     "kanji": [
+      "此の",
+      "斯の"
+     ],
+     "score": 8,
+     "senses": [
+      {
+       "gloss": "this",
+       "pos": "pre-noun adjectival (rentaishi)"
+      },
+      {
+       "gloss": "last (couple of years, etc.); these; past; this",
+       "pos": "pre-noun adjectival (rentaishi)"
+      },
+      {
+       "gloss": "you (as in \"you liar\")",
+       "pos": "pre-noun adjectival (rentaishi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "連体詞",
+   "pos_en": "pre-noun adjective",
+   "reading": "この",
+   "ruby": [
+    [
+     "この",
+     ""
+    ]
+   ],
+   "surface": "この"
+  },
+  {
+   "dictionary_form": "漢字",
+   "entries": [
+    {
+     "kana": [
+      "かんじ"
+     ],
+     "kanji": [
+      "漢字"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "kanji; Chinese characters",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "漢",
+     "kun": [],
+     "meanings": [
+      "Sino-",
+      "China"
+     ],
+     "on": [
+      "カン"
+     ],
+     "strokes": 13
+    },
+    {
+     "char": "字",
+     "kun": [
+      "あざ",
+      "あざな",
+      "-な"
+     ],
+     "meanings": [
+      "character",
+      "letter",
+      "word",
+      "section of village"
+     ],
+     "on": [
+      "ジ"
+     ],
+     "strokes": 6
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "かんじ",
+   "ruby": [
+    [
+     "漢字",
+     "かんじ"
+    ]
+   ],
+   "surface": "漢字"
+  },
+  {
+   "dictionary_form": "は",
+   "entries": [],
+   "form_en": "",
+   "function": "topic marker: 'as for X…'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "は",
+   "ruby": [
+    [
+     "は",
+     ""
+    ]
+   ],
+   "surface": "は"
+  },
+  {
+   "dictionary_form": "まだ",
+   "entries": [
+    {
+     "kana": [
+      "まだ",
+      "いまだ"
+     ],
+     "kanji": [
+      "未だ"
+     ],
+     "score": 8,
+     "senses": [
+      {
+       "gloss": "still; as yet; only",
+       "pos": "adverb (fukushi)"
+      },
+      {
+       "gloss": "(not) yet",
+       "pos": "adverb (fukushi)"
+      },
+      {
+       "gloss": "more; (more) still",
+       "pos": "adverb (fukushi)"
+      },
+      {
+       "gloss": "at least; comparatively; relatively",
+       "pos": "adverb (fukushi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "副詞",
+   "pos_en": "adverb",
+   "reading": "まだ",
+   "ruby": [
+    [
+     "まだ",
+     ""
+    ]
+   ],
+   "surface": "まだ"
+  },
+  {
+   "dictionary_form": "読める",
+   "entries": [
+    {
+     "kana": [
+      "よむ"
+     ],
+     "kanji": [
+      "読む"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "to read",
+       "pos": "Godan verb with 'mu' ending, transitive verb"
+      },
+      {
+       "gloss": "to count",
+       "pos": "Godan verb with 'mu' ending, transitive verb"
+      },
+      {
+       "gloss": "to guess; to predict; to read (someone's thoughts); to see (e.g. into someone's heart); to divine",
+       "pos": "Godan verb with 'mu' ending, transitive verb"
+      }
+     ]
+    }
+   ],
+   "form_en": "negative stem",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "読",
+     "kun": [
+      "よ.む",
+      "-よ.み"
+     ],
+     "meanings": [
+      "read"
+     ],
+     "on": [
+      "ドク",
+      "トク",
+      "トウ"
+     ],
+     "strokes": 14
+    }
+   ],
+   "parts": [],
+   "pos": "動詞",
+   "pos_en": "verb",
+   "reading": "よめ",
+   "ruby": [
+    [
+     "読",
+     "よ"
+    ],
+    [
+     "め",
+     ""
+    ]
+   ],
+   "surface": "読め"
+  },
+  {
+   "dictionary_form": "ない",
+   "entries": [],
+   "form_en": "plain form",
+   "function": "negative: 'not'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助動詞",
+   "pos_en": "auxiliary",
+   "reading": "ない",
+   "ruby": [
+    [
+     "ない",
+     ""
+    ]
+   ],
+   "surface": "ない"
+  },
+  {
+   "dictionary_form": "。",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "。",
+   "ruby": [
+    [
+     "。",
+     ""
+    ]
+   ],
+   "surface": "。"
+  }
+ ]
+}

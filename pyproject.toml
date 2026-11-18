@@ -1,0 +1,7 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = [
+    "golden: compares against recorded outputs (needs the Sudachi + JMdict data)",
+    "slow: loads the OCR model",
+]

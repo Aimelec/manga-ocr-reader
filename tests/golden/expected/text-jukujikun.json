@@ -1,0 +1,418 @@
+{
+ "grammar": [],
+ "hiragana": "きょうもあすもおとなはいそがしい。",
+ "text": "今日も明日も大人は忙しい。",
+ "tokens": [
+  {
+   "dictionary_form": "今日",
+   "entries": [
+    {
+     "kana": [
+      "きょう",
+      "こんにち",
+      "こんち"
+     ],
+     "kanji": [
+      "今日"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "today; this day",
+       "pos": "noun (common) (futsuumeishi), adverb (fukushi)"
+      },
+      {
+       "gloss": "these days; recently; nowadays",
+       "pos": "noun (common) (futsuumeishi), adverb (fukushi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "今",
+     "kun": [
+      "いま"
+     ],
+     "meanings": [
+      "now"
+     ],
+     "on": [
+      "コン",
+      "キン"
+     ],
+     "strokes": 4
+    },
+    {
+     "char": "日",
+     "kun": [
+      "ひ",
+      "-び",
+      "-か"
+     ],
+     "meanings": [
+      "day",
+      "sun",
+      "Japan",
+      "counter for days"
+     ],
+     "on": [
+      "ニチ",
+      "ジツ"
+     ],
+     "strokes": 4
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "きょう",
+   "ruby": [
+    [
+     "今日",
+     "きょう"
+    ]
+   ],
+   "surface": "今日"
+  },
+  {
+   "dictionary_form": "も",
+   "entries": [],
+   "form_en": "",
+   "function": "'also, too'; with numbers or negatives: 'even, as much as'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "も",
+   "ruby": [
+    [
+     "も",
+     ""
+    ]
+   ],
+   "surface": "も"
+  },
+  {
+   "dictionary_form": "明日",
+   "entries": [
+    {
+     "kana": [
+      "あした",
+      "あす",
+      "みょうにち"
+     ],
+     "kanji": [
+      "明日"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "tomorrow",
+       "pos": "noun (common) (futsuumeishi), adverb (fukushi)"
+      },
+      {
+       "gloss": "near future",
+       "pos": "noun (common) (futsuumeishi), adverb (fukushi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "明",
+     "kun": [
+      "あ.かり",
+      "あか.るい",
+      "あか.るむ",
+      "あか.らむ"
+     ],
+     "meanings": [
+      "bright",
+      "light"
+     ],
+     "on": [
+      "メイ",
+      "ミョウ",
+      "ミン"
+     ],
+     "strokes": 8
+    },
+    {
+     "char": "日",
+     "kun": [
+      "ひ",
+      "-び",
+      "-か"
+     ],
+     "meanings": [
+      "day",
+      "sun",
+      "Japan",
+      "counter for days"
+     ],
+     "on": [
+      "ニチ",
+      "ジツ"
+     ],
+     "strokes": 4
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "あす",
+   "ruby": [
+    [
+     "明日",
+     "あす"
+    ]
+   ],
+   "surface": "明日"
+  },
+  {
+   "dictionary_form": "も",
+   "entries": [],
+   "form_en": "",
+   "function": "'also, too'; with numbers or negatives: 'even, as much as'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "も",
+   "ruby": [
+    [
+     "も",
+     ""
+    ]
+   ],
+   "surface": "も"
+  },
+  {
+   "dictionary_form": "大人",
+   "entries": [
+    {
+     "kana": [
+      "おとな",
+      "だいにん"
+     ],
+     "kanji": [
+      "大人"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "adult; grown-up",
+       "pos": "noun (common) (futsuumeishi), nouns which may take the genitive case particle 'no', adjectival nouns or quasi-adjectives (keiyodoshi)"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "たいじん"
+     ],
+     "kanji": [
+      "大人"
+     ],
+     "score": 6,
+     "senses": [
+      {
+       "gloss": "person of virtue; great person; magnanimous person",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "giant",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "adult",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "exalted person",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "大",
+     "kun": [
+      "おお-",
+      "おお.きい",
+      "-おお.いに"
+     ],
+     "meanings": [
+      "large",
+      "big"
+     ],
+     "on": [
+      "ダイ",
+      "タイ"
+     ],
+     "strokes": 3
+    },
+    {
+     "char": "人",
+     "kun": [
+      "ひと",
+      "-り",
+      "-と"
+     ],
+     "meanings": [
+      "person"
+     ],
+     "on": [
+      "ジン",
+      "ニン"
+     ],
+     "strokes": 2
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "おとな",
+   "ruby": [
+    [
+     "大人",
+     "おとな"
+    ]
+   ],
+   "surface": "大人"
+  },
+  {
+   "dictionary_form": "は",
+   "entries": [],
+   "form_en": "",
+   "function": "topic marker: 'as for X…'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "は",
+   "ruby": [
+    [
+     "は",
+     ""
+    ]
+   ],
+   "surface": "は"
+  },
+  {
+   "dictionary_form": "忙しい",
+   "entries": [
+    {
+     "kana": [
+      "いそがしい"
+     ],
+     "kanji": [
+      "忙しい",
+      "忙がしい"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "busy; occupied; hectic",
+       "pos": "adjective (keiyoushi)"
+      },
+      {
+       "gloss": "restless; hurried; fidgety",
+       "pos": "adjective (keiyoushi)"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "せわしい"
+     ],
+     "kanji": [
+      "忙しい"
+     ],
+     "score": 6,
+     "senses": [
+      {
+       "gloss": "busy; hectic; frantic",
+       "pos": "adjective (keiyoushi)"
+      },
+      {
+       "gloss": "restless; hurried; fidgety",
+       "pos": "adjective (keiyoushi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "plain form",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "忙",
+     "kun": [
+      "いそが.しい",
+      "せわ.しい",
+      "おそ.れる",
+      "うれえるさま"
+     ],
+     "meanings": [
+      "busy",
+      "occupied",
+      "restless"
+     ],
+     "on": [
+      "ボウ",
+      "モウ"
+     ],
+     "strokes": 6
+    }
+   ],
+   "parts": [],
+   "pos": "形容詞",
+   "pos_en": "i-adjective",
+   "reading": "いそがしい",
+   "ruby": [
+    [
+     "忙",
+     "いそが"
+    ],
+    [
+     "しい",
+     ""
+    ]
+   ],
+   "surface": "忙しい"
+  },
+  {
+   "dictionary_form": "。",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "。",
+   "ruby": [
+    [
+     "。",
+     ""
+    ]
+   ],
+   "surface": "。"
+  }
+ ]
+}

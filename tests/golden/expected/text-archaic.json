@@ -1,0 +1,509 @@
+{
+ "grammar": [
+  {
+   "at": 11,
+   "explanation": "explanatory tone: 'it's that…, you see'",
+   "match": "のじゃ",
+   "name": "〜んだ / 〜のです"
+  }
+ ],
+ "hiragana": "わしはここでまっておるのじゃ。いかぬぞ。",
+ "text": "わしはここで待っておるのじゃ。行かぬぞ。",
+ "tokens": [
+  {
+   "dictionary_form": "わし",
+   "entries": [
+    {
+     "kana": [
+      "わし"
+     ],
+     "kanji": [
+      "儂",
+      "私"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "I; me",
+       "pos": "pronoun"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "わし",
+      "ワシ"
+     ],
+     "kanji": [
+      "鷲"
+     ],
+     "score": 8,
+     "senses": [
+      {
+       "gloss": "eagle (Accipitridae family)",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "わし",
+      "わがみ"
+     ],
+     "kanji": [
+      "和紙"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "washi; Japanese paper",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "代名詞",
+   "pos_en": "pronoun",
+   "reading": "わし",
+   "ruby": [
+    [
+     "わし",
+     ""
+    ]
+   ],
+   "surface": "わし"
+  },
+  {
+   "dictionary_form": "は",
+   "entries": [],
+   "form_en": "",
+   "function": "topic marker: 'as for X…'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "は",
+   "ruby": [
+    [
+     "は",
+     ""
+    ]
+   ],
+   "surface": "は"
+  },
+  {
+   "dictionary_form": "ここ",
+   "entries": [
+    {
+     "kana": [
+      "ここ"
+     ],
+     "kanji": [
+      "此処",
+      "此所",
+      "是"
+     ],
+     "score": 8,
+     "senses": [
+      {
+       "gloss": "here; this place",
+       "pos": "pronoun"
+      },
+      {
+       "gloss": "this point; here; now",
+       "pos": "pronoun"
+      },
+      {
+       "gloss": "these past ... (e.g. three years); these last ...",
+       "pos": "pronoun"
+      },
+      {
+       "gloss": "the next ... (e.g. few days); these next ...",
+       "pos": "pronoun"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "代名詞",
+   "pos_en": "pronoun",
+   "reading": "ここ",
+   "ruby": [
+    [
+     "ここ",
+     ""
+    ]
+   ],
+   "surface": "ここ"
+  },
+  {
+   "dictionary_form": "で",
+   "entries": [],
+   "form_en": "",
+   "function": "place where an action happens, or means: 'at, in, with, by'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "で",
+   "ruby": [
+    [
+     "で",
+     ""
+    ]
+   ],
+   "surface": "で"
+  },
+  {
+   "dictionary_form": "待つ",
+   "entries": [
+    {
+     "kana": [
+      "まつ"
+     ],
+     "kanji": [
+      "待つ",
+      "俟つ"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "to wait",
+       "pos": "Godan verb with 'tsu' ending, transitive verb, intransitive verb"
+      },
+      {
+       "gloss": "to await; to look forward to; to anticipate",
+       "pos": "Godan verb with 'tsu' ending, transitive verb, intransitive verb"
+      },
+      {
+       "gloss": "to depend on; to need",
+       "pos": "Godan verb with 'tsu' ending, transitive verb, intransitive verb"
+      }
+     ]
+    }
+   ],
+   "form_en": "connective/masu-stem",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "待",
+     "kun": [
+      "ま.つ",
+      "-ま.ち"
+     ],
+     "meanings": [
+      "wait",
+      "depend on"
+     ],
+     "on": [
+      "タイ"
+     ],
+     "strokes": 9
+    }
+   ],
+   "parts": [],
+   "pos": "動詞",
+   "pos_en": "verb",
+   "reading": "まっ",
+   "ruby": [
+    [
+     "待",
+     "ま"
+    ],
+    [
+     "っ",
+     ""
+    ]
+   ],
+   "surface": "待っ"
+  },
+  {
+   "dictionary_form": "て",
+   "entries": [],
+   "form_en": "",
+   "function": "connective: 'and then…' / links to helpers like いる, しまう",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "て",
+   "ruby": [
+    [
+     "て",
+     ""
+    ]
+   ],
+   "surface": "て"
+  },
+  {
+   "dictionary_form": "おる",
+   "entries": [
+    {
+     "kana": [
+      "いる"
+     ],
+     "kanji": [
+      "居る"
+     ],
+     "score": 8,
+     "senses": [
+      {
+       "gloss": "to be (of animate objects); to exist",
+       "pos": "Ichidan verb, intransitive verb"
+      },
+      {
+       "gloss": "to stay",
+       "pos": "Ichidan verb, intransitive verb"
+      },
+      {
+       "gloss": "to be ...-ing; to have been ...-ing",
+       "pos": "Ichidan verb, auxiliary verb"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "おる"
+     ],
+     "kanji": [
+      "居る"
+     ],
+     "score": 8,
+     "senses": [
+      {
+       "gloss": "to be (animate); to be; to exist",
+       "pos": "Godan verb with 'ru' ending, intransitive verb"
+      },
+      {
+       "gloss": "to be ..ing",
+       "pos": "Godan verb with 'ru' ending, auxiliary verb"
+      },
+      {
+       "gloss": "to (have the audacity to) do",
+       "pos": "Godan verb with 'ru' ending, auxiliary verb"
+      }
+     ]
+    }
+   ],
+   "form_en": "plain form (before noun)",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "動詞",
+   "pos_en": "verb",
+   "reading": "おる",
+   "ruby": [
+    [
+     "おる",
+     ""
+    ]
+   ],
+   "surface": "おる"
+  },
+  {
+   "dictionary_form": "の",
+   "entries": [],
+   "form_en": "",
+   "function": "possessive ''s' / links nouns / turns a verb into a noun / soft question at the end",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "の",
+   "ruby": [
+    [
+     "の",
+     ""
+    ]
+   ],
+   "surface": "の"
+  },
+  {
+   "dictionary_form": "じゃ",
+   "entries": [],
+   "form_en": "plain form",
+   "function": "contraction of では ('is not' with ない / 'well then' at start)",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助動詞",
+   "pos_en": "auxiliary",
+   "reading": "じゃ",
+   "ruby": [
+    [
+     "じゃ",
+     ""
+    ]
+   ],
+   "surface": "じゃ"
+  },
+  {
+   "dictionary_form": "。",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "。",
+   "ruby": [
+    [
+     "。",
+     ""
+    ]
+   ],
+   "surface": "。"
+  },
+  {
+   "dictionary_form": "行く",
+   "entries": [
+    {
+     "kana": [
+      "いく",
+      "ゆく"
+     ],
+     "kanji": [
+      "行く",
+      "逝く",
+      "往く"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "to go; to move (in a direction or towards a specific location); to head (towards); to be transported (towards); to reach",
+       "pos": "Godan verb - Iku/Yuku special class, intransitive verb"
+      },
+      {
+       "gloss": "to proceed; to take place",
+       "pos": "Godan verb - Iku/Yuku special class, intransitive verb"
+      },
+      {
+       "gloss": "to pass through; to come and go",
+       "pos": "Godan verb - Iku/Yuku special class, intransitive verb"
+      },
+      {
+       "gloss": "to walk",
+       "pos": "Godan verb - Iku/Yuku special class, intransitive verb"
+      }
+     ]
+    }
+   ],
+   "form_en": "negative stem",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "行",
+     "kun": [
+      "い.く",
+      "ゆ.く",
+      "-ゆ.き",
+      "-ゆき"
+     ],
+     "meanings": [
+      "going",
+      "journey",
+      "carry out",
+      "conduct",
+      "act"
+     ],
+     "on": [
+      "コウ",
+      "ギョウ",
+      "アン"
+     ],
+     "strokes": 6
+    }
+   ],
+   "parts": [],
+   "pos": "動詞",
+   "pos_en": "verb",
+   "reading": "いか",
+   "ruby": [
+    [
+     "行",
+     "い"
+    ],
+    [
+     "か",
+     ""
+    ]
+   ],
+   "surface": "行か"
+  },
+  {
+   "dictionary_form": "ぬ",
+   "entries": [],
+   "form_en": "plain form",
+   "function": "old/literary negative 'not'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助動詞",
+   "pos_en": "auxiliary",
+   "reading": "ぬ",
+   "ruby": [
+    [
+     "ぬ",
+     ""
+    ]
+   ],
+   "surface": "ぬ"
+  },
+  {
+   "dictionary_form": "ぞ",
+   "entries": [],
+   "form_en": "",
+   "function": "strong emphasis (rough, masculine)",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "ぞ",
+   "ruby": [
+    [
+     "ぞ",
+     ""
+    ]
+   ],
+   "surface": "ぞ"
+  },
+  {
+   "dictionary_form": "。",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "。",
+   "ruby": [
+    [
+     "。",
+     ""
+    ]
+   ],
+   "surface": "。"
+  }
+ ]
+}

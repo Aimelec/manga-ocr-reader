@@ -1,0 +1,510 @@
+{
+ "grammar": [],
+ "hiragana": "こくさいうちゅうかいはつきこうのはっぴょうをきいた。",
+ "text": "国際宇宙開発機構の発表を聞いた。",
+ "tokens": [
+  {
+   "dictionary_form": "国際",
+   "entries": [
+    {
+     "kana": [
+      "こくさい"
+     ],
+     "kanji": [
+      "国際"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "international",
+       "pos": "nouns which may take the genitive case particle 'no', noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "diplomatic intercourse",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "国",
+     "kun": [
+      "くに"
+     ],
+     "meanings": [
+      "country"
+     ],
+     "on": [
+      "コク"
+     ],
+     "strokes": 8
+    },
+    {
+     "char": "際",
+     "kun": [
+      "きわ",
+      "-ぎわ"
+     ],
+     "meanings": [
+      "occasion",
+      "side",
+      "edge",
+      "verge",
+      "dangerous"
+     ],
+     "on": [
+      "サイ"
+     ],
+     "strokes": 14
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "こくさい",
+   "ruby": [
+    [
+     "国際",
+     "こくさい"
+    ]
+   ],
+   "surface": "国際"
+  },
+  {
+   "dictionary_form": "宇宙",
+   "entries": [
+    {
+     "kana": [
+      "うちゅう"
+     ],
+     "kanji": [
+      "宇宙"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "universe; cosmos; space",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "宇",
+     "kun": [],
+     "meanings": [
+      "eaves",
+      "roof",
+      "house",
+      "heaven"
+     ],
+     "on": [
+      "ウ"
+     ],
+     "strokes": 6
+    },
+    {
+     "char": "宙",
+     "kun": [],
+     "meanings": [
+      "mid-air",
+      "air",
+      "space",
+      "sky",
+      "memorization"
+     ],
+     "on": [
+      "チュウ"
+     ],
+     "strokes": 8
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "うちゅう",
+   "ruby": [
+    [
+     "宇宙",
+     "うちゅう"
+    ]
+   ],
+   "surface": "宇宙"
+  },
+  {
+   "dictionary_form": "開発",
+   "entries": [
+    {
+     "kana": [
+      "かいはつ",
+      "かいほつ"
+     ],
+     "kanji": [
+      "開発"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "development; exploitation",
+       "pos": "noun (common) (futsuumeishi), nouns which may take the genitive case particle 'no', noun or participle which takes the aux. verb suru"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "開",
+     "kun": [
+      "ひら.く",
+      "ひら.き",
+      "-びら.き",
+      "ひら.ける"
+     ],
+     "meanings": [
+      "open",
+      "unfold",
+      "unseal"
+     ],
+     "on": [
+      "カイ"
+     ],
+     "strokes": 12
+    },
+    {
+     "char": "発",
+     "kun": [
+      "た.つ",
+      "あば.く",
+      "おこ.る",
+      "つか.わす"
+     ],
+     "meanings": [
+      "departure",
+      "discharge",
+      "publish",
+      "emit",
+      "start from"
+     ],
+     "on": [
+      "ハツ",
+      "ホツ"
+     ],
+     "strokes": 9
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "かいはつ",
+   "ruby": [
+    [
+     "開発",
+     "かいはつ"
+    ]
+   ],
+   "surface": "開発"
+  },
+  {
+   "dictionary_form": "機構",
+   "entries": [
+    {
+     "kana": [
+      "きこう"
+     ],
+     "kanji": [
+      "機構"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "mechanism; organization; organisation",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "機",
+     "kun": [
+      "はた"
+     ],
+     "meanings": [
+      "loom",
+      "mechanism",
+      "machine",
+      "airplane",
+      "opportunity"
+     ],
+     "on": [
+      "キ"
+     ],
+     "strokes": 16
+    },
+    {
+     "char": "構",
+     "kun": [
+      "かま.える",
+      "かま.う"
+     ],
+     "meanings": [
+      "posture",
+      "build",
+      "pretend"
+     ],
+     "on": [
+      "コウ"
+     ],
+     "strokes": 14
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "きこう",
+   "ruby": [
+    [
+     "機構",
+     "きこう"
+    ]
+   ],
+   "surface": "機構"
+  },
+  {
+   "dictionary_form": "の",
+   "entries": [],
+   "form_en": "",
+   "function": "possessive ''s' / links nouns / turns a verb into a noun / soft question at the end",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "の",
+   "ruby": [
+    [
+     "の",
+     ""
+    ]
+   ],
+   "surface": "の"
+  },
+  {
+   "dictionary_form": "発表",
+   "entries": [
+    {
+     "kana": [
+      "はっぴょう"
+     ],
+     "kanji": [
+      "発表"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "announcement; publication; presenting; statement; communique; making known; breaking (news story); expressing (one's opinion); releasing; unveiling",
+       "pos": "noun (common) (futsuumeishi), noun or participle which takes the aux. verb suru"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "発",
+     "kun": [
+      "た.つ",
+      "あば.く",
+      "おこ.る",
+      "つか.わす"
+     ],
+     "meanings": [
+      "departure",
+      "discharge",
+      "publish",
+      "emit",
+      "start from"
+     ],
+     "on": [
+      "ハツ",
+      "ホツ"
+     ],
+     "strokes": 9
+    },
+    {
+     "char": "表",
+     "kun": [
+      "おもて",
+      "-おもて",
+      "あらわ.す",
+      "あらわ.れる"
+     ],
+     "meanings": [
+      "surface",
+      "table",
+      "chart",
+      "diagram"
+     ],
+     "on": [
+      "ヒョウ"
+     ],
+     "strokes": 8
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "はっぴょう",
+   "ruby": [
+    [
+     "発表",
+     "はっぴょう"
+    ]
+   ],
+   "surface": "発表"
+  },
+  {
+   "dictionary_form": "を",
+   "entries": [],
+   "form_en": "",
+   "function": "direct-object marker",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "を",
+   "ruby": [
+    [
+     "を",
+     ""
+    ]
+   ],
+   "surface": "を"
+  },
+  {
+   "dictionary_form": "聞く",
+   "entries": [
+    {
+     "kana": [
+      "きく"
+     ],
+     "kanji": [
+      "聞く",
+      "聴く"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "to hear",
+       "pos": "Godan verb with 'ku' ending, transitive verb"
+      },
+      {
+       "gloss": "to listen (e.g. to music)",
+       "pos": "Godan verb with 'ku' ending, transitive verb"
+      },
+      {
+       "gloss": "to ask; to enquire; to query",
+       "pos": "Godan verb with 'ku' ending, transitive verb"
+      },
+      {
+       "gloss": "to hear about; to hear of; to learn of",
+       "pos": "Godan verb with 'ku' ending, transitive verb"
+      }
+     ]
+    }
+   ],
+   "form_en": "connective/masu-stem",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "聞",
+     "kun": [
+      "き.く",
+      "き.こえる"
+     ],
+     "meanings": [
+      "hear",
+      "ask",
+      "listen"
+     ],
+     "on": [
+      "ブン",
+      "モン"
+     ],
+     "strokes": 14
+    }
+   ],
+   "parts": [],
+   "pos": "動詞",
+   "pos_en": "verb",
+   "reading": "きい",
+   "ruby": [
+    [
+     "聞",
+     "き"
+    ],
+    [
+     "い",
+     ""
+    ]
+   ],
+   "surface": "聞い"
+  },
+  {
+   "dictionary_form": "た",
+   "entries": [],
+   "form_en": "plain form",
+   "function": "past tense / completed action",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助動詞",
+   "pos_en": "auxiliary",
+   "reading": "た",
+   "ruby": [
+    [
+     "た",
+     ""
+    ]
+   ],
+   "surface": "た"
+  },
+  {
+   "dictionary_form": "。",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "。",
+   "ruby": [
+    [
+     "。",
+     ""
+    ]
+   ],
+   "surface": "。"
+  }
+ ]
+}

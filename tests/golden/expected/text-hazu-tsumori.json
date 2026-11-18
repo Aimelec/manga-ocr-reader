@@ -1,0 +1,697 @@
+{
+ "grammar": [
+  {
+   "at": 7,
+   "explanation": "'should be, expected to'",
+   "match": "はず",
+   "name": "〜はず"
+  },
+  {
+   "at": 15,
+   "explanation": "'intend to'",
+   "match": "つもり",
+   "name": "〜つもり"
+  }
+ ],
+ "hiragana": "かれはもうついたはずだ。わたくしはいくつもりだ。",
+ "text": "彼はもう着いたはずだ。私は行くつもりだ。",
+ "tokens": [
+  {
+   "dictionary_form": "彼",
+   "entries": [
+    {
+     "kana": [
+      "かれ"
+     ],
+     "kanji": [
+      "彼"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "he; him",
+       "pos": "pronoun"
+      },
+      {
+       "gloss": "boyfriend",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "あれ",
+      "あ"
+     ],
+     "kanji": [
+      "彼",
+      "彼れ"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "that; that thing",
+       "pos": "pronoun"
+      },
+      {
+       "gloss": "that person",
+       "pos": "pronoun"
+      },
+      {
+       "gloss": "then; that time",
+       "pos": "pronoun"
+      },
+      {
+       "gloss": "that place (over there)",
+       "pos": "pronoun"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "かの"
+     ],
+     "kanji": [
+      "彼の",
+      "彼"
+     ],
+     "score": 4,
+     "senses": [
+      {
+       "gloss": "that well-known ...",
+       "pos": "pre-noun adjectival (rentaishi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "彼",
+     "kun": [
+      "かれ",
+      "かの",
+      "か.の"
+     ],
+     "meanings": [
+      "he",
+      "that",
+      "the"
+     ],
+     "on": [
+      "ヒ"
+     ],
+     "strokes": 8
+    }
+   ],
+   "parts": [],
+   "pos": "代名詞",
+   "pos_en": "pronoun",
+   "reading": "かれ",
+   "ruby": [
+    [
+     "彼",
+     "かれ"
+    ]
+   ],
+   "surface": "彼"
+  },
+  {
+   "dictionary_form": "は",
+   "entries": [],
+   "form_en": "",
+   "function": "topic marker: 'as for X…'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "は",
+   "ruby": [
+    [
+     "は",
+     ""
+    ]
+   ],
+   "surface": "は"
+  },
+  {
+   "dictionary_form": "もう",
+   "entries": [
+    {
+     "kana": [
+      "もう",
+      "もー"
+     ],
+     "kanji": [],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "now; soon; shortly; before long; presently",
+       "pos": "adverb (fukushi)"
+      },
+      {
+       "gloss": "already; yet; by now; (not) anymore",
+       "pos": "adverb (fukushi)"
+      },
+      {
+       "gloss": "further; more; again; another; the other",
+       "pos": "adverb (fukushi)"
+      },
+      {
+       "gloss": "tsk; dammit; jeez; come on; what the hell",
+       "pos": "interjection (kandoushi)"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "もう"
+     ],
+     "kanji": [
+      "蒙"
+     ],
+     "score": 6,
+     "senses": [
+      {
+       "gloss": "ignorance",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "covering; concealing",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "Mongolia",
+       "pos": "noun (common) (futsuumeishi), prefix"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "もう"
+     ],
+     "kanji": [
+      "猛"
+     ],
+     "score": 6,
+     "senses": [
+      {
+       "gloss": "greatly energetic",
+       "pos": "adjectival nouns or quasi-adjectives (keiyodoshi)"
+      },
+      {
+       "gloss": "ferocious",
+       "pos": "adjectival nouns or quasi-adjectives (keiyodoshi)"
+      },
+      {
+       "gloss": "extreme; severe",
+       "pos": "prefix"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "副詞",
+   "pos_en": "adverb",
+   "reading": "もう",
+   "ruby": [
+    [
+     "もう",
+     ""
+    ]
+   ],
+   "surface": "もう"
+  },
+  {
+   "dictionary_form": "着く",
+   "entries": [
+    {
+     "kana": [
+      "つく"
+     ],
+     "kanji": [
+      "着く"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "to arrive at; to reach",
+       "pos": "Godan verb with 'ku' ending, intransitive verb"
+      },
+      {
+       "gloss": "to sit on; to sit at (e.g. the table)",
+       "pos": "Godan verb with 'ku' ending, intransitive verb"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "はく"
+     ],
+     "kanji": [
+      "履く",
+      "佩く",
+      "穿く"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "to put on (lower-body clothing, e.g. pants, skirt, footwear); to wear",
+       "pos": "Godan verb with 'ku' ending, transitive verb"
+      },
+      {
+       "gloss": "to affix (a sword to one's hip)",
+       "pos": "Godan verb with 'ku' ending, transitive verb"
+      },
+      {
+       "gloss": "to affix (a bowstring to a bow)",
+       "pos": "Godan verb with 'ku' ending, transitive verb"
+      }
+     ]
+    }
+   ],
+   "form_en": "connective/masu-stem",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "着",
+     "kun": [
+      "き.る",
+      "き.せる",
+      "つ.く",
+      "つ.ける"
+     ],
+     "meanings": [
+      "don",
+      "arrive",
+      "wear",
+      "counter for suits of clothing"
+     ],
+     "on": [
+      "チャク",
+      "ジャク"
+     ],
+     "strokes": 12
+    }
+   ],
+   "parts": [],
+   "pos": "動詞",
+   "pos_en": "verb",
+   "reading": "つい",
+   "ruby": [
+    [
+     "着",
+     "つ"
+    ],
+    [
+     "い",
+     ""
+    ]
+   ],
+   "surface": "着い"
+  },
+  {
+   "dictionary_form": "た",
+   "entries": [],
+   "form_en": "plain form (before noun)",
+   "function": "past tense / completed action",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助動詞",
+   "pos_en": "auxiliary",
+   "reading": "た",
+   "ruby": [
+    [
+     "た",
+     ""
+    ]
+   ],
+   "surface": "た"
+  },
+  {
+   "dictionary_form": "はず",
+   "entries": [
+    {
+     "kana": [
+      "はず"
+     ],
+     "kanji": [
+      "筈",
+      "弭"
+     ],
+     "score": 8,
+     "senses": [
+      {
+       "gloss": "should (be); bound (to be); expected (to be); must (be)",
+       "pos": "auxiliary"
+      },
+      {
+       "gloss": "nock (of a bow)",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "nock (of an arrow)",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "nock-shaped grip (between thumb and forefinger)",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "はず",
+   "ruby": [
+    [
+     "はず",
+     ""
+    ]
+   ],
+   "surface": "はず"
+  },
+  {
+   "dictionary_form": "だ",
+   "entries": [],
+   "form_en": "plain form",
+   "function": "copula 'is' (casual); after some verbs: past tense",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助動詞",
+   "pos_en": "auxiliary",
+   "reading": "だ",
+   "ruby": [
+    [
+     "だ",
+     ""
+    ]
+   ],
+   "surface": "だ"
+  },
+  {
+   "dictionary_form": "。",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "。",
+   "ruby": [
+    [
+     "。",
+     ""
+    ]
+   ],
+   "surface": "。"
+  },
+  {
+   "dictionary_form": "私",
+   "entries": [
+    {
+     "kana": [
+      "わたくし"
+     ],
+     "kanji": [
+      "私"
+     ],
+     "score": 8,
+     "senses": [
+      {
+       "gloss": "I; me",
+       "pos": "pronoun"
+      },
+      {
+       "gloss": "personal (affairs, etc.); private",
+       "pos": "nouns which may take the genitive case particle 'no', noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "selfishness; partiality",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "secrecy; confidentiality",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "わたし"
+     ],
+     "kanji": [
+      "私"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "I; me",
+       "pos": "pronoun"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "あたし",
+      "あたくし",
+      "あたい"
+     ],
+     "kanji": [
+      "私"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "I; me",
+       "pos": "pronoun"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "私",
+     "kun": [
+      "わたくし",
+      "わたし"
+     ],
+     "meanings": [
+      "private",
+      "I",
+      "me"
+     ],
+     "on": [
+      "シ"
+     ],
+     "strokes": 7
+    }
+   ],
+   "parts": [],
+   "pos": "代名詞",
+   "pos_en": "pronoun",
+   "reading": "わたくし",
+   "ruby": [
+    [
+     "私",
+     "わたくし"
+    ]
+   ],
+   "surface": "私"
+  },
+  {
+   "dictionary_form": "は",
+   "entries": [],
+   "form_en": "",
+   "function": "topic marker: 'as for X…'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "は",
+   "ruby": [
+    [
+     "は",
+     ""
+    ]
+   ],
+   "surface": "は"
+  },
+  {
+   "dictionary_form": "行く",
+   "entries": [
+    {
+     "kana": [
+      "いく",
+      "ゆく"
+     ],
+     "kanji": [
+      "行く",
+      "逝く",
+      "往く"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "to go; to move (in a direction or towards a specific location); to head (towards); to be transported (towards); to reach",
+       "pos": "Godan verb - Iku/Yuku special class, intransitive verb"
+      },
+      {
+       "gloss": "to proceed; to take place",
+       "pos": "Godan verb - Iku/Yuku special class, intransitive verb"
+      },
+      {
+       "gloss": "to pass through; to come and go",
+       "pos": "Godan verb - Iku/Yuku special class, intransitive verb"
+      },
+      {
+       "gloss": "to walk",
+       "pos": "Godan verb - Iku/Yuku special class, intransitive verb"
+      }
+     ]
+    }
+   ],
+   "form_en": "plain form (before noun)",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "行",
+     "kun": [
+      "い.く",
+      "ゆ.く",
+      "-ゆ.き",
+      "-ゆき"
+     ],
+     "meanings": [
+      "going",
+      "journey",
+      "carry out",
+      "conduct",
+      "act"
+     ],
+     "on": [
+      "コウ",
+      "ギョウ",
+      "アン"
+     ],
+     "strokes": 6
+    }
+   ],
+   "parts": [],
+   "pos": "動詞",
+   "pos_en": "verb",
+   "reading": "いく",
+   "ruby": [
+    [
+     "行",
+     "い"
+    ],
+    [
+     "く",
+     ""
+    ]
+   ],
+   "surface": "行く"
+  },
+  {
+   "dictionary_form": "つもり",
+   "entries": [
+    {
+     "kana": [
+      "つもり"
+     ],
+     "kanji": [
+      "積もり",
+      "積り"
+     ],
+     "score": 8,
+     "senses": [
+      {
+       "gloss": "intention; plan",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "conviction; belief",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "つもり",
+   "ruby": [
+    [
+     "つもり",
+     ""
+    ]
+   ],
+   "surface": "つもり"
+  },
+  {
+   "dictionary_form": "だ",
+   "entries": [],
+   "form_en": "plain form",
+   "function": "copula 'is' (casual); after some verbs: past tense",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助動詞",
+   "pos_en": "auxiliary",
+   "reading": "だ",
+   "ruby": [
+    [
+     "だ",
+     ""
+    ]
+   ],
+   "surface": "だ"
+  },
+  {
+   "dictionary_form": "。",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "。",
+   "ruby": [
+    [
+     "。",
+     ""
+    ]
+   ],
+   "surface": "。"
+  }
+ ]
+}

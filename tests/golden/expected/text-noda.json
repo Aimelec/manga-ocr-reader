@@ -1,0 +1,449 @@
+{
+ "grammar": [
+  {
+   "at": 4,
+   "explanation": "explanatory tone: 'it's that…, you see'",
+   "match": "んだ",
+   "name": "〜んだ / 〜のです"
+  }
+ ],
+ "hiragana": "もうおそいんだから、はやくねなさい。",
+ "text": "もう遅いんだから、早く寝なさい。",
+ "tokens": [
+  {
+   "dictionary_form": "もう",
+   "entries": [
+    {
+     "kana": [
+      "もう",
+      "もー"
+     ],
+     "kanji": [],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "now; soon; shortly; before long; presently",
+       "pos": "adverb (fukushi)"
+      },
+      {
+       "gloss": "already; yet; by now; (not) anymore",
+       "pos": "adverb (fukushi)"
+      },
+      {
+       "gloss": "further; more; again; another; the other",
+       "pos": "adverb (fukushi)"
+      },
+      {
+       "gloss": "tsk; dammit; jeez; come on; what the hell",
+       "pos": "interjection (kandoushi)"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "もう"
+     ],
+     "kanji": [
+      "蒙"
+     ],
+     "score": 6,
+     "senses": [
+      {
+       "gloss": "ignorance",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "covering; concealing",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "Mongolia",
+       "pos": "noun (common) (futsuumeishi), prefix"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "もう"
+     ],
+     "kanji": [
+      "猛"
+     ],
+     "score": 6,
+     "senses": [
+      {
+       "gloss": "greatly energetic",
+       "pos": "adjectival nouns or quasi-adjectives (keiyodoshi)"
+      },
+      {
+       "gloss": "ferocious",
+       "pos": "adjectival nouns or quasi-adjectives (keiyodoshi)"
+      },
+      {
+       "gloss": "extreme; severe",
+       "pos": "prefix"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "副詞",
+   "pos_en": "adverb",
+   "reading": "もう",
+   "ruby": [
+    [
+     "もう",
+     ""
+    ]
+   ],
+   "surface": "もう"
+  },
+  {
+   "dictionary_form": "遅い",
+   "entries": [
+    {
+     "kana": [
+      "おそい"
+     ],
+     "kanji": [
+      "遅い",
+      "鈍い",
+      "晩い"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "slow; time-consuming; sluggish",
+       "pos": "adjective (keiyoushi)"
+      },
+      {
+       "gloss": "late (in the day); towards the end (of the day or night); until a time far into the day or night",
+       "pos": "adjective (keiyoushi)"
+      },
+      {
+       "gloss": "later (than expected or usual); late; behind schedule; behind time; tardy; overdue; unpunctual",
+       "pos": "adjective (keiyoushi)"
+      },
+      {
+       "gloss": "too late; having missed the boat",
+       "pos": "adjective (keiyoushi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "plain form (before noun)",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "遅",
+     "kun": [
+      "おく.れる",
+      "おく.らす",
+      "おそ.い"
+     ],
+     "meanings": [
+      "slow",
+      "late",
+      "back",
+      "later"
+     ],
+     "on": [
+      "チ"
+     ],
+     "strokes": 12
+    }
+   ],
+   "parts": [],
+   "pos": "形容詞",
+   "pos_en": "i-adjective",
+   "reading": "おそい",
+   "ruby": [
+    [
+     "遅",
+     "おそ"
+    ],
+    [
+     "い",
+     ""
+    ]
+   ],
+   "surface": "遅い"
+  },
+  {
+   "dictionary_form": "ん",
+   "entries": [],
+   "form_en": "",
+   "function": "colloquial negative 'not' (or contraction of の)",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "ん",
+   "ruby": [
+    [
+     "ん",
+     ""
+    ]
+   ],
+   "surface": "ん"
+  },
+  {
+   "dictionary_form": "だ",
+   "entries": [],
+   "form_en": "plain form",
+   "function": "copula 'is' (casual); after some verbs: past tense",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助動詞",
+   "pos_en": "auxiliary",
+   "reading": "だ",
+   "ruby": [
+    [
+     "だ",
+     ""
+    ]
+   ],
+   "surface": "だ"
+  },
+  {
+   "dictionary_form": "から",
+   "entries": [],
+   "form_en": "",
+   "function": "'from'; after a clause: 'because'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "から",
+   "ruby": [
+    [
+     "から",
+     ""
+    ]
+   ],
+   "surface": "から"
+  },
+  {
+   "dictionary_form": "、",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "、",
+   "ruby": [
+    [
+     "、",
+     ""
+    ]
+   ],
+   "surface": "、"
+  },
+  {
+   "dictionary_form": "早い",
+   "entries": [
+    {
+     "kana": [
+      "はやい"
+     ],
+     "kanji": [
+      "早い",
+      "速い",
+      "疾い"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "fast; quick; hasty; brisk",
+       "pos": "adjective (keiyoushi)"
+      },
+      {
+       "gloss": "early (in the day, etc.); premature",
+       "pos": "adjective (keiyoushi)"
+      },
+      {
+       "gloss": "(too) soon; not yet; (too) early",
+       "pos": "adjective (keiyoushi)"
+      },
+      {
+       "gloss": "easy; simple; quick",
+       "pos": "adjective (keiyoushi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "connective/masu-stem",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "早",
+     "kun": [
+      "はや.い",
+      "はや",
+      "はや-",
+      "はや.まる"
+     ],
+     "meanings": [
+      "early",
+      "fast"
+     ],
+     "on": [
+      "ソウ",
+      "サッ"
+     ],
+     "strokes": 6
+    }
+   ],
+   "parts": [],
+   "pos": "形容詞",
+   "pos_en": "i-adjective",
+   "reading": "はやく",
+   "ruby": [
+    [
+     "早",
+     "はや"
+    ],
+    [
+     "く",
+     ""
+    ]
+   ],
+   "surface": "早く"
+  },
+  {
+   "dictionary_form": "寝る",
+   "entries": [
+    {
+     "kana": [
+      "ねる"
+     ],
+     "kanji": [
+      "寝る",
+      "寐る"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "to sleep (lying down)",
+       "pos": "Ichidan verb, intransitive verb"
+      },
+      {
+       "gloss": "to go to bed; to lie in bed",
+       "pos": "Ichidan verb, intransitive verb"
+      },
+      {
+       "gloss": "to lie down",
+       "pos": "Ichidan verb, intransitive verb"
+      },
+      {
+       "gloss": "to sleep (with someone, i.e. have intercourse)",
+       "pos": "Ichidan verb, intransitive verb"
+      }
+     ]
+    }
+   ],
+   "form_en": "connective/masu-stem",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "寝",
+     "kun": [
+      "ね.る",
+      "ね.かす",
+      "い.ぬ",
+      "みたまや"
+     ],
+     "meanings": [
+      "lie down",
+      "sleep",
+      "rest",
+      "bed",
+      "remain unsold"
+     ],
+     "on": [
+      "シン"
+     ],
+     "strokes": 13
+    }
+   ],
+   "parts": [],
+   "pos": "動詞",
+   "pos_en": "verb",
+   "reading": "ね",
+   "ruby": [
+    [
+     "寝",
+     "ね"
+    ]
+   ],
+   "surface": "寝"
+  },
+  {
+   "dictionary_form": "なさる",
+   "entries": [
+    {
+     "kana": [
+      "なさる"
+     ],
+     "kanji": [
+      "為さる"
+     ],
+     "score": 8,
+     "senses": [
+      {
+       "gloss": "to do",
+       "pos": "Godan verb - -aru special class, transitive verb"
+      }
+     ]
+    }
+   ],
+   "form_en": "imperative",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "動詞",
+   "pos_en": "verb",
+   "reading": "なさい",
+   "ruby": [
+    [
+     "なさい",
+     ""
+    ]
+   ],
+   "surface": "なさい"
+  },
+  {
+   "dictionary_form": "。",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "。",
+   "ruby": [
+    [
+     "。",
+     ""
+    ]
+   ],
+   "surface": "。"
+  }
+ ]
+}

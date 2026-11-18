@@ -1,0 +1,352 @@
+{
+ "grammar": [
+  {
+   "at": 6,
+   "explanation": "'only…' (literally 'nothing but… not')",
+   "match": "しかない",
+   "name": "しか〜ない"
+  }
+ ],
+ "hiragana": "さいふには百えんしかない。",
+ "text": "財布には百円しかない。",
+ "tokens": [
+  {
+   "dictionary_form": "財布",
+   "entries": [
+    {
+     "kana": [
+      "さいふ"
+     ],
+     "kanji": [
+      "財布"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "purse; handbag; wallet",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "財",
+     "kun": [
+      "たから"
+     ],
+     "meanings": [
+      "property",
+      "money",
+      "wealth",
+      "assets"
+     ],
+     "on": [
+      "ザイ",
+      "サイ",
+      "ゾク"
+     ],
+     "strokes": 10
+    },
+    {
+     "char": "布",
+     "kun": [
+      "ぬの",
+      "し.く",
+      "きれ"
+     ],
+     "meanings": [
+      "linen",
+      "cloth",
+      "spread",
+      "distribute"
+     ],
+     "on": [
+      "フ",
+      "ホ"
+     ],
+     "strokes": 5
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "さいふ",
+   "ruby": [
+    [
+     "財布",
+     "さいふ"
+    ]
+   ],
+   "surface": "財布"
+  },
+  {
+   "dictionary_form": "に",
+   "entries": [],
+   "form_en": "",
+   "function": "target / destination / time / location of existence: 'to, at, in, on'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "に",
+   "ruby": [
+    [
+     "に",
+     ""
+    ]
+   ],
+   "surface": "に"
+  },
+  {
+   "dictionary_form": "は",
+   "entries": [],
+   "form_en": "",
+   "function": "topic marker: 'as for X…'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "は",
+   "ruby": [
+    [
+     "は",
+     ""
+    ]
+   ],
+   "surface": "は"
+  },
+  {
+   "dictionary_form": "百",
+   "entries": [
+    {
+     "kana": [
+      "ひゃく",
+      "もも",
+      "はく"
+     ],
+     "kanji": [
+      "１００",
+      "百",
+      "陌"
+     ],
+     "score": 1,
+     "senses": [
+      {
+       "gloss": "100; hundred",
+       "pos": "numeric"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "百",
+     "kun": [
+      "もも"
+     ],
+     "meanings": [
+      "hundred"
+     ],
+     "on": [
+      "ヒャク",
+      "ビャク"
+     ],
+     "strokes": 6
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "百",
+   "ruby": [
+    [
+     "百",
+     "百"
+    ]
+   ],
+   "surface": "百"
+  },
+  {
+   "dictionary_form": "円",
+   "entries": [
+    {
+     "kana": [
+      "えん"
+     ],
+     "kanji": [
+      "円",
+      "圓"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "yen (Japanese monetary unit)",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "circle",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "まる",
+      "マル"
+     ],
+     "kanji": [
+      "丸",
+      "円"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "circle",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "entirety; whole; full; complete",
+       "pos": "noun (common) (futsuumeishi), noun, used as a prefix"
+      },
+      {
+       "gloss": "money; dough; moola",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "enclosure inside a castle's walls",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "円",
+     "kun": [
+      "まる.い",
+      "まる",
+      "まど",
+      "まど.か"
+     ],
+     "meanings": [
+      "circle",
+      "yen",
+      "round"
+     ],
+     "on": [
+      "エン"
+     ],
+     "strokes": 4
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "えん",
+   "ruby": [
+    [
+     "円",
+     "えん"
+    ]
+   ],
+   "surface": "円"
+  },
+  {
+   "dictionary_form": "しか",
+   "entries": [],
+   "form_en": "",
+   "function": "'only' (always followed by a negative verb)",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "しか",
+   "ruby": [
+    [
+     "しか",
+     ""
+    ]
+   ],
+   "surface": "しか"
+  },
+  {
+   "dictionary_form": "ない",
+   "entries": [
+    {
+     "kana": [
+      "ない"
+     ],
+     "kanji": [
+      "無い"
+     ],
+     "score": 8,
+     "senses": [
+      {
+       "gloss": "nonexistent; not being (there)",
+       "pos": "adjective (keiyoushi)"
+      },
+      {
+       "gloss": "unowned; not had; unpossessed",
+       "pos": "adjective (keiyoushi)"
+      },
+      {
+       "gloss": "unique",
+       "pos": "adjective (keiyoushi)"
+      },
+      {
+       "gloss": "not; impossible; won't happen",
+       "pos": "adjective (keiyoushi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "plain form",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "形容詞",
+   "pos_en": "i-adjective",
+   "reading": "ない",
+   "ruby": [
+    [
+     "ない",
+     ""
+    ]
+   ],
+   "surface": "ない"
+  },
+  {
+   "dictionary_form": "。",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "。",
+   "ruby": [
+    [
+     "。",
+     ""
+    ]
+   ],
+   "surface": "。"
+  }
+ ]
+}

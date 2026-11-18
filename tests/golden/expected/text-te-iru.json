@@ -1,0 +1,343 @@
+{
+ "grammar": [
+  {
+   "at": 7,
+   "explanation": "ongoing action ('is doing') or resulting state ('has done / is in a state')",
+   "match": "ている",
+   "name": "〜ている / 〜てる"
+  }
+ ],
+ "hiragana": "あめがずっとふっている。",
+ "text": "雨がずっと降っている。",
+ "tokens": [
+  {
+   "dictionary_form": "雨",
+   "entries": [
+    {
+     "kana": [
+      "あめ"
+     ],
+     "kanji": [
+      "雨"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "rain",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "rainy day; rainy weather",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "the November suit (in hanafuda)",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "雨",
+     "kun": [
+      "あめ",
+      "あま-",
+      "-さめ"
+     ],
+     "meanings": [
+      "rain"
+     ],
+     "on": [
+      "ウ"
+     ],
+     "strokes": 8
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "あめ",
+   "ruby": [
+    [
+     "雨",
+     "あめ"
+    ]
+   ],
+   "surface": "雨"
+  },
+  {
+   "dictionary_form": "が",
+   "entries": [],
+   "form_en": "",
+   "function": "subject marker; at the end of a clause: 'but'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "が",
+   "ruby": [
+    [
+     "が",
+     ""
+    ]
+   ],
+   "surface": "が"
+  },
+  {
+   "dictionary_form": "ずっと",
+   "entries": [
+    {
+     "kana": [
+      "ずっと",
+      "ずーっと",
+      "ずうっと"
+     ],
+     "kanji": [],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "continuously in some state (for a long time, distance); throughout; all along; the whole time; all the way",
+       "pos": "adverb (fukushi)"
+      },
+      {
+       "gloss": "much (better, etc.); by far; far and away",
+       "pos": "adverb (fukushi)"
+      },
+      {
+       "gloss": "far away; long ago",
+       "pos": "adverb (fukushi)"
+      },
+      {
+       "gloss": "direct; straight",
+       "pos": "adverb (fukushi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "副詞",
+   "pos_en": "adverb",
+   "reading": "ずっと",
+   "ruby": [
+    [
+     "ずっと",
+     ""
+    ]
+   ],
+   "surface": "ずっと"
+  },
+  {
+   "dictionary_form": "降る",
+   "entries": [
+    {
+     "kana": [
+      "くだる"
+     ],
+     "kanji": [
+      "下る",
+      "降る"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "to descend; to go down; to come down",
+       "pos": "Godan verb with 'ru' ending, intransitive verb"
+      },
+      {
+       "gloss": "to be handed down (of an order, judgment, etc.)",
+       "pos": "Godan verb with 'ru' ending, intransitive verb"
+      },
+      {
+       "gloss": "to pass (of time)",
+       "pos": "Godan verb with 'ru' ending, intransitive verb"
+      },
+      {
+       "gloss": "to surrender; to capitulate",
+       "pos": "Godan verb with 'ru' ending, intransitive verb"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "ふる"
+     ],
+     "kanji": [
+      "降る"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "to fall (of rain, snow, ash, etc.); to come down",
+       "pos": "Godan verb with 'ru' ending, intransitive verb"
+      },
+      {
+       "gloss": "to form (of frost)",
+       "pos": "Godan verb with 'ru' ending, intransitive verb"
+      },
+      {
+       "gloss": "to beam down (of sunlight or moonlight); to pour in",
+       "pos": "Godan verb with 'ru' ending, intransitive verb"
+      },
+      {
+       "gloss": "to visit (of luck, misfortune, etc.); to come; to arrive",
+       "pos": "Godan verb with 'ru' ending, intransitive verb"
+      }
+     ]
+    }
+   ],
+   "form_en": "connective/masu-stem",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "降",
+     "kun": [
+      "お.りる",
+      "お.ろす",
+      "ふ.る",
+      "ふ.り"
+     ],
+     "meanings": [
+      "descend",
+      "precipitate",
+      "fall",
+      "surrender"
+     ],
+     "on": [
+      "コウ",
+      "ゴ"
+     ],
+     "strokes": 10
+    }
+   ],
+   "parts": [],
+   "pos": "動詞",
+   "pos_en": "verb",
+   "reading": "ふっ",
+   "ruby": [
+    [
+     "降",
+     "ふ"
+    ],
+    [
+     "っ",
+     ""
+    ]
+   ],
+   "surface": "降っ"
+  },
+  {
+   "dictionary_form": "て",
+   "entries": [],
+   "form_en": "",
+   "function": "connective: 'and then…' / links to helpers like いる, しまう",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "て",
+   "ruby": [
+    [
+     "て",
+     ""
+    ]
+   ],
+   "surface": "て"
+  },
+  {
+   "dictionary_form": "いる",
+   "entries": [
+    {
+     "kana": [
+      "いる"
+     ],
+     "kanji": [
+      "居る"
+     ],
+     "score": 8,
+     "senses": [
+      {
+       "gloss": "to be (of animate objects); to exist",
+       "pos": "Ichidan verb, intransitive verb"
+      },
+      {
+       "gloss": "to stay",
+       "pos": "Ichidan verb, intransitive verb"
+      },
+      {
+       "gloss": "to be ...-ing; to have been ...-ing",
+       "pos": "Ichidan verb, auxiliary verb"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "おる"
+     ],
+     "kanji": [
+      "居る"
+     ],
+     "score": 8,
+     "senses": [
+      {
+       "gloss": "to be (animate); to be; to exist",
+       "pos": "Godan verb with 'ru' ending, intransitive verb"
+      },
+      {
+       "gloss": "to be ..ing",
+       "pos": "Godan verb with 'ru' ending, auxiliary verb"
+      },
+      {
+       "gloss": "to (have the audacity to) do",
+       "pos": "Godan verb with 'ru' ending, auxiliary verb"
+      }
+     ]
+    }
+   ],
+   "form_en": "plain form",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "動詞",
+   "pos_en": "verb",
+   "reading": "いる",
+   "ruby": [
+    [
+     "いる",
+     ""
+    ]
+   ],
+   "surface": "いる"
+  },
+  {
+   "dictionary_form": "。",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "。",
+   "ruby": [
+    [
+     "。",
+     ""
+    ]
+   ],
+   "surface": "。"
+  }
+ ]
+}

@@ -1,0 +1,231 @@
+{
+ "grammar": [],
+ "hiragana": "え……ほんとうに？！",
+ "text": "え……本当に？！",
+ "tokens": [
+  {
+   "dictionary_form": "え",
+   "entries": [
+    {
+     "kana": [
+      "ええ",
+      "えー"
+     ],
+     "kanji": [],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "yes; that is correct; right",
+       "pos": "interjection (kandoushi)"
+      },
+      {
+       "gloss": "um; errr",
+       "pos": "interjection (kandoushi)"
+      },
+      {
+       "gloss": "huh?",
+       "pos": "interjection (kandoushi)"
+      },
+      {
+       "gloss": "grrr; gah; Must I?",
+       "pos": "interjection (kandoushi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "感動詞",
+   "pos_en": "interjection",
+   "reading": "え",
+   "ruby": [
+    [
+     "え",
+     ""
+    ]
+   ],
+   "surface": "え"
+  },
+  {
+   "dictionary_form": "…",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "…",
+   "ruby": [
+    [
+     "…",
+     ""
+    ]
+   ],
+   "surface": "…"
+  },
+  {
+   "dictionary_form": "…",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "…",
+   "ruby": [
+    [
+     "…",
+     ""
+    ]
+   ],
+   "surface": "…"
+  },
+  {
+   "dictionary_form": "本当",
+   "entries": [
+    {
+     "kana": [
+      "ほんとう",
+      "ほんと",
+      "ホント"
+     ],
+     "kanji": [
+      "本当",
+      "本當"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "truth; reality; actuality; fact",
+       "pos": "noun (common) (futsuumeishi), nouns which may take the genitive case particle 'no', adjectival nouns or quasi-adjectives (keiyodoshi)"
+      },
+      {
+       "gloss": "proper; right; correct; official",
+       "pos": "nouns which may take the genitive case particle 'no', adjectival nouns or quasi-adjectives (keiyodoshi)"
+      },
+      {
+       "gloss": "genuine; authentic; real; natural; veritable",
+       "pos": "nouns which may take the genitive case particle 'no', adjectival nouns or quasi-adjectives (keiyodoshi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "本",
+     "kun": [
+      "もと"
+     ],
+     "meanings": [
+      "book",
+      "present",
+      "main",
+      "origin",
+      "true"
+     ],
+     "on": [
+      "ホン"
+     ],
+     "strokes": 5
+    },
+    {
+     "char": "当",
+     "kun": [
+      "あ.たる",
+      "あ.たり",
+      "あ.てる",
+      "あ.て"
+     ],
+     "meanings": [
+      "hit",
+      "right",
+      "appropriate",
+      "himself"
+     ],
+     "on": [
+      "トウ"
+     ],
+     "strokes": 6
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "ほんとう",
+   "ruby": [
+    [
+     "本当",
+     "ほんとう"
+    ]
+   ],
+   "surface": "本当"
+  },
+  {
+   "dictionary_form": "に",
+   "entries": [],
+   "form_en": "",
+   "function": "target / destination / time / location of existence: 'to, at, in, on'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "に",
+   "ruby": [
+    [
+     "に",
+     ""
+    ]
+   ],
+   "surface": "に"
+  },
+  {
+   "dictionary_form": "?",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "？",
+   "ruby": [
+    [
+     "？",
+     ""
+    ]
+   ],
+   "surface": "？"
+  },
+  {
+   "dictionary_form": "!",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "！",
+   "ruby": [
+    [
+     "！",
+     ""
+    ]
+   ],
+   "surface": "！"
+  }
+ ]
+}

@@ -1,0 +1,217 @@
+{
+ "grammar": [],
+ "hiragana": "ありがとう、これからもよろしく。",
+ "text": "ありがとう、これからもよろしく。",
+ "tokens": [
+  {
+   "dictionary_form": "ありがとう",
+   "entries": [
+    {
+     "kana": [
+      "ありがとう",
+      "ありがと"
+     ],
+     "kanji": [
+      "有り難う",
+      "有難う"
+     ],
+     "score": 8,
+     "senses": [
+      {
+       "gloss": "thank you; thanks",
+       "pos": "interjection (kandoushi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "感動詞",
+   "pos_en": "interjection",
+   "reading": "ありがとう",
+   "ruby": [
+    [
+     "ありがとう",
+     ""
+    ]
+   ],
+   "surface": "ありがとう"
+  },
+  {
+   "dictionary_form": "、",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "、",
+   "ruby": [
+    [
+     "、",
+     ""
+    ]
+   ],
+   "surface": "、"
+  },
+  {
+   "dictionary_form": "これ",
+   "entries": [
+    {
+     "kana": [
+      "これ"
+     ],
+     "kanji": [
+      "此れ",
+      "是",
+      "是れ"
+     ],
+     "score": 8,
+     "senses": [
+      {
+       "gloss": "this; this one",
+       "pos": "pronoun"
+      },
+      {
+       "gloss": "this person",
+       "pos": "pronoun"
+      },
+      {
+       "gloss": "now; this point (in time)",
+       "pos": "pronoun"
+      },
+      {
+       "gloss": "here",
+       "pos": "pronoun"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "代名詞",
+   "pos_en": "pronoun",
+   "reading": "これ",
+   "ruby": [
+    [
+     "これ",
+     ""
+    ]
+   ],
+   "surface": "これ"
+  },
+  {
+   "dictionary_form": "から",
+   "entries": [],
+   "form_en": "",
+   "function": "'from'; after a clause: 'because'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "から",
+   "ruby": [
+    [
+     "から",
+     ""
+    ]
+   ],
+   "surface": "から"
+  },
+  {
+   "dictionary_form": "も",
+   "entries": [],
+   "form_en": "",
+   "function": "'also, too'; with numbers or negatives: 'even, as much as'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "も",
+   "ruby": [
+    [
+     "も",
+     ""
+    ]
+   ],
+   "surface": "も"
+  },
+  {
+   "dictionary_form": "よろしく",
+   "entries": [
+    {
+     "kana": [
+      "よろしく"
+     ],
+     "kanji": [
+      "宜しく",
+      "宜敷く"
+     ],
+     "score": 8,
+     "senses": [
+      {
+       "gloss": "well; properly; suitably",
+       "pos": "expressions (phrases, clauses, etc.), adverb (fukushi)"
+      },
+      {
+       "gloss": "best regards; please remember me; please treat me favorably (favourably); please take care of; please do",
+       "pos": "expressions (phrases, clauses, etc.), adverb (fukushi)"
+      },
+      {
+       "gloss": "just like ...; as though one were ...",
+       "pos": "expressions (phrases, clauses, etc.), adverb (fukushi)"
+      },
+      {
+       "gloss": "by all means; of course",
+       "pos": "expressions (phrases, clauses, etc.), adverb (fukushi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "副詞",
+   "pos_en": "adverb",
+   "reading": "よろしく",
+   "ruby": [
+    [
+     "よろしく",
+     ""
+    ]
+   ],
+   "surface": "よろしく"
+  },
+  {
+   "dictionary_form": "。",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "。",
+   "ruby": [
+    [
+     "。",
+     ""
+    ]
+   ],
+   "surface": "。"
+  }
+ ]
+}

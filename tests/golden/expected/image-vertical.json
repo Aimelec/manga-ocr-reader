@@ -1,0 +1,603 @@
+{
+ "grammar": [
+  {
+   "at": 11,
+   "explanation": "ongoing action ('is doing') or resulting state ('has done / is in a state')",
+   "match": "ている",
+   "name": "〜ている / 〜てる"
+  }
+ ],
+ "hiragana": "あすのあさ、えきのまえでまっている。",
+ "text": "明日の朝、駅の前で待っている。",
+ "tokens": [
+  {
+   "dictionary_form": "明日",
+   "entries": [
+    {
+     "kana": [
+      "あした",
+      "あす",
+      "みょうにち"
+     ],
+     "kanji": [
+      "明日"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "tomorrow",
+       "pos": "noun (common) (futsuumeishi), adverb (fukushi)"
+      },
+      {
+       "gloss": "near future",
+       "pos": "noun (common) (futsuumeishi), adverb (fukushi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "明",
+     "kun": [
+      "あ.かり",
+      "あか.るい",
+      "あか.るむ",
+      "あか.らむ"
+     ],
+     "meanings": [
+      "bright",
+      "light"
+     ],
+     "on": [
+      "メイ",
+      "ミョウ",
+      "ミン"
+     ],
+     "strokes": 8
+    },
+    {
+     "char": "日",
+     "kun": [
+      "ひ",
+      "-び",
+      "-か"
+     ],
+     "meanings": [
+      "day",
+      "sun",
+      "Japan",
+      "counter for days"
+     ],
+     "on": [
+      "ニチ",
+      "ジツ"
+     ],
+     "strokes": 4
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "あす",
+   "ruby": [
+    [
+     "明日",
+     "あす"
+    ]
+   ],
+   "surface": "明日"
+  },
+  {
+   "dictionary_form": "の",
+   "entries": [],
+   "form_en": "",
+   "function": "possessive ''s' / links nouns / turns a verb into a noun / soft question at the end",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "の",
+   "ruby": [
+    [
+     "の",
+     ""
+    ]
+   ],
+   "surface": "の"
+  },
+  {
+   "dictionary_form": "朝",
+   "entries": [
+    {
+     "kana": [
+      "あさ",
+      "あした"
+     ],
+     "kanji": [
+      "朝",
+      "晨"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "morning",
+       "pos": "noun (common) (futsuumeishi), adverb (fukushi)"
+      },
+      {
+       "gloss": "breakfast",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "next morning",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "ちょう"
+     ],
+     "kanji": [
+      "朝"
+     ],
+     "score": 6,
+     "senses": [
+      {
+       "gloss": "dynasty",
+       "pos": "noun (common) (futsuumeishi), noun, used as a suffix"
+      },
+      {
+       "gloss": "reign",
+       "pos": "noun (common) (futsuumeishi), noun, used as a suffix"
+      },
+      {
+       "gloss": "period; epoch; age",
+       "pos": "noun (common) (futsuumeishi), noun, used as a suffix"
+      },
+      {
+       "gloss": "court",
+       "pos": "noun (common) (futsuumeishi), noun, used as a suffix"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "朝",
+     "kun": [
+      "あさ"
+     ],
+     "meanings": [
+      "morning",
+      "dynasty",
+      "regime",
+      "epoch",
+      "period"
+     ],
+     "on": [
+      "チョウ"
+     ],
+     "strokes": 12
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "あさ",
+   "ruby": [
+    [
+     "朝",
+     "あさ"
+    ]
+   ],
+   "surface": "朝"
+  },
+  {
+   "dictionary_form": "、",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "、",
+   "ruby": [
+    [
+     "、",
+     ""
+    ]
+   ],
+   "surface": "、"
+  },
+  {
+   "dictionary_form": "駅",
+   "entries": [
+    {
+     "kana": [
+      "えき"
+     ],
+     "kanji": [
+      "駅",
+      "驛"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "railway station; train station",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "staging post on a highway (in pre-modern Japan)",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "counter for railway stations and bus stations",
+       "pos": "counter"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "駅",
+     "kun": [],
+     "meanings": [
+      "station"
+     ],
+     "on": [
+      "エキ"
+     ],
+     "strokes": 14
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "えき",
+   "ruby": [
+    [
+     "駅",
+     "えき"
+    ]
+   ],
+   "surface": "駅"
+  },
+  {
+   "dictionary_form": "の",
+   "entries": [],
+   "form_en": "",
+   "function": "possessive ''s' / links nouns / turns a verb into a noun / soft question at the end",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "の",
+   "ruby": [
+    [
+     "の",
+     ""
+    ]
+   ],
+   "surface": "の"
+  },
+  {
+   "dictionary_form": "前",
+   "entries": [
+    {
+     "kana": [
+      "まえ"
+     ],
+     "kanji": [
+      "前"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "in front (of); before (e.g. a building)",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "before; earlier; previously; prior; ago; (minutes) to (the hour)",
+       "pos": "noun (common) (futsuumeishi), nouns which may take the genitive case particle 'no', adverb (fukushi)"
+      },
+      {
+       "gloss": "(the) front; frontal part; fore; head (e.g. of a line)",
+       "pos": "noun (common) (futsuumeishi), nouns which may take the genitive case particle 'no'"
+      },
+      {
+       "gloss": "forward; ahead",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "さき"
+     ],
+     "kanji": [
+      "先",
+      "前",
+      "先き"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "point; tip; end; nozzle",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "head (of a line); front",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "first; before; ahead (of)",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "(the way) ahead; beyond",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "ぜん"
+     ],
+     "kanji": [
+      "前"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "last (i.e. immediately preceding); previous; ex-; former",
+       "pos": "noun, used as a prefix"
+      },
+      {
+       "gloss": "pre- (e.g. premodern)",
+       "pos": "noun, used as a prefix"
+      },
+      {
+       "gloss": "before",
+       "pos": "noun, used as a suffix"
+      },
+      {
+       "gloss": "before; earlier",
+       "pos": "noun (common) (futsuumeishi), adverb (fukushi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "前",
+     "kun": [
+      "まえ",
+      "-まえ"
+     ],
+     "meanings": [
+      "in front",
+      "before"
+     ],
+     "on": [
+      "ゼン"
+     ],
+     "strokes": 9
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "まえ",
+   "ruby": [
+    [
+     "前",
+     "まえ"
+    ]
+   ],
+   "surface": "前"
+  },
+  {
+   "dictionary_form": "で",
+   "entries": [],
+   "form_en": "",
+   "function": "place where an action happens, or means: 'at, in, with, by'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "で",
+   "ruby": [
+    [
+     "で",
+     ""
+    ]
+   ],
+   "surface": "で"
+  },
+  {
+   "dictionary_form": "待つ",
+   "entries": [
+    {
+     "kana": [
+      "まつ"
+     ],
+     "kanji": [
+      "待つ",
+      "俟つ"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "to wait",
+       "pos": "Godan verb with 'tsu' ending, transitive verb, intransitive verb"
+      },
+      {
+       "gloss": "to await; to look forward to; to anticipate",
+       "pos": "Godan verb with 'tsu' ending, transitive verb, intransitive verb"
+      },
+      {
+       "gloss": "to depend on; to need",
+       "pos": "Godan verb with 'tsu' ending, transitive verb, intransitive verb"
+      }
+     ]
+    }
+   ],
+   "form_en": "connective/masu-stem",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "待",
+     "kun": [
+      "ま.つ",
+      "-ま.ち"
+     ],
+     "meanings": [
+      "wait",
+      "depend on"
+     ],
+     "on": [
+      "タイ"
+     ],
+     "strokes": 9
+    }
+   ],
+   "parts": [],
+   "pos": "動詞",
+   "pos_en": "verb",
+   "reading": "まっ",
+   "ruby": [
+    [
+     "待",
+     "ま"
+    ],
+    [
+     "っ",
+     ""
+    ]
+   ],
+   "surface": "待っ"
+  },
+  {
+   "dictionary_form": "て",
+   "entries": [],
+   "form_en": "",
+   "function": "connective: 'and then…' / links to helpers like いる, しまう",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "て",
+   "ruby": [
+    [
+     "て",
+     ""
+    ]
+   ],
+   "surface": "て"
+  },
+  {
+   "dictionary_form": "いる",
+   "entries": [
+    {
+     "kana": [
+      "いる"
+     ],
+     "kanji": [
+      "居る"
+     ],
+     "score": 8,
+     "senses": [
+      {
+       "gloss": "to be (of animate objects); to exist",
+       "pos": "Ichidan verb, intransitive verb"
+      },
+      {
+       "gloss": "to stay",
+       "pos": "Ichidan verb, intransitive verb"
+      },
+      {
+       "gloss": "to be ...-ing; to have been ...-ing",
+       "pos": "Ichidan verb, auxiliary verb"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "おる"
+     ],
+     "kanji": [
+      "居る"
+     ],
+     "score": 8,
+     "senses": [
+      {
+       "gloss": "to be (animate); to be; to exist",
+       "pos": "Godan verb with 'ru' ending, intransitive verb"
+      },
+      {
+       "gloss": "to be ..ing",
+       "pos": "Godan verb with 'ru' ending, auxiliary verb"
+      },
+      {
+       "gloss": "to (have the audacity to) do",
+       "pos": "Godan verb with 'ru' ending, auxiliary verb"
+      }
+     ]
+    }
+   ],
+   "form_en": "plain form",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "動詞",
+   "pos_en": "verb",
+   "reading": "いる",
+   "ruby": [
+    [
+     "いる",
+     ""
+    ]
+   ],
+   "surface": "いる"
+  },
+  {
+   "dictionary_form": "。",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "。",
+   "ruby": [
+    [
+     "。",
+     ""
+    ]
+   ],
+   "surface": "。"
+  }
+ ]
+}

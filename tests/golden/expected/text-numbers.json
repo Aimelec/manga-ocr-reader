@@ -1,0 +1,460 @@
+{
+ "grammar": [],
+ "hiragana": "三にんで二じかんもはなした。",
+ "text": "三人で二時間も話した。",
+ "tokens": [
+  {
+   "dictionary_form": "三",
+   "entries": [
+    {
+     "kana": [
+      "さん",
+      "み"
+     ],
+     "kanji": [
+      "三",
+      "３",
+      "参"
+     ],
+     "score": 1,
+     "senses": [
+      {
+       "gloss": "three",
+       "pos": "numeric"
+      },
+      {
+       "gloss": "tri-",
+       "pos": "prefix"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "サン"
+     ],
+     "kanji": [
+      "三"
+     ],
+     "score": 0,
+     "senses": [
+      {
+       "gloss": "three",
+       "pos": "numeric"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "三",
+     "kun": [
+      "み",
+      "み.つ",
+      "みっ.つ"
+     ],
+     "meanings": [
+      "three"
+     ],
+     "on": [
+      "サン",
+      "ゾウ"
+     ],
+     "strokes": 3
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "三",
+   "ruby": [
+    [
+     "三",
+     "三"
+    ]
+   ],
+   "surface": "三"
+  },
+  {
+   "dictionary_form": "人",
+   "entries": [
+    {
+     "kana": [
+      "じん"
+     ],
+     "kanji": [
+      "人"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "-ian (e.g. Italian); -ite (e.g. Tokyoite)",
+       "pos": "suffix"
+      },
+      {
+       "gloss": "-er (e.g. performer, etc.); person working with ...",
+       "pos": "suffix"
+      },
+      {
+       "gloss": "man; person; people",
+       "pos": "suffix"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "にん"
+     ],
+     "kanji": [
+      "人"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "counter for people",
+       "pos": "counter"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "と"
+     ],
+     "kanji": [
+      "人"
+     ],
+     "score": 6,
+     "senses": [
+      {
+       "gloss": "person",
+       "pos": "suffix"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "人",
+     "kun": [
+      "ひと",
+      "-り",
+      "-と"
+     ],
+     "meanings": [
+      "person"
+     ],
+     "on": [
+      "ジン",
+      "ニン"
+     ],
+     "strokes": 2
+    }
+   ],
+   "parts": [],
+   "pos": "接尾辞",
+   "pos_en": "suffix",
+   "reading": "にん",
+   "ruby": [
+    [
+     "人",
+     "にん"
+    ]
+   ],
+   "surface": "人"
+  },
+  {
+   "dictionary_form": "で",
+   "entries": [],
+   "form_en": "",
+   "function": "place where an action happens, or means: 'at, in, with, by'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "で",
+   "ruby": [
+    [
+     "で",
+     ""
+    ]
+   ],
+   "surface": "で"
+  },
+  {
+   "dictionary_form": "二",
+   "entries": [
+    {
+     "kana": [
+      "に",
+      "ふた",
+      "ふ"
+     ],
+     "kanji": [
+      "二",
+      "２",
+      "弐"
+     ],
+     "score": 1,
+     "senses": [
+      {
+       "gloss": "two",
+       "pos": "numeric"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "アル"
+     ],
+     "kanji": [
+      "二",
+      "２"
+     ],
+     "score": 0,
+     "senses": [
+      {
+       "gloss": "two",
+       "pos": "numeric"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "二",
+     "kun": [
+      "ふた",
+      "ふた.つ",
+      "ふたたび"
+     ],
+     "meanings": [
+      "two",
+      "two radical (no. 7)"
+     ],
+     "on": [
+      "ニ",
+      "ジ"
+     ],
+     "strokes": 2
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "二",
+   "ruby": [
+    [
+     "二",
+     "二"
+    ]
+   ],
+   "surface": "二"
+  },
+  {
+   "dictionary_form": "時間",
+   "entries": [
+    {
+     "kana": [
+      "じかん"
+     ],
+     "kanji": [
+      "時間"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "time",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "hour",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "period; class; lesson",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "時",
+     "kun": [
+      "とき",
+      "-どき"
+     ],
+     "meanings": [
+      "time",
+      "hour"
+     ],
+     "on": [
+      "ジ"
+     ],
+     "strokes": 10
+    },
+    {
+     "char": "間",
+     "kun": [
+      "あいだ",
+      "ま",
+      "あい"
+     ],
+     "meanings": [
+      "interval",
+      "space"
+     ],
+     "on": [
+      "カン",
+      "ケン"
+     ],
+     "strokes": 12
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "じかん",
+   "ruby": [
+    [
+     "時間",
+     "じかん"
+    ]
+   ],
+   "surface": "時間"
+  },
+  {
+   "dictionary_form": "も",
+   "entries": [],
+   "form_en": "",
+   "function": "'also, too'; with numbers or negatives: 'even, as much as'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "も",
+   "ruby": [
+    [
+     "も",
+     ""
+    ]
+   ],
+   "surface": "も"
+  },
+  {
+   "dictionary_form": "話す",
+   "entries": [
+    {
+     "kana": [
+      "はなす"
+     ],
+     "kanji": [
+      "話す",
+      "咄す"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "to talk; to speak; to converse; to chat",
+       "pos": "Godan verb with 'su' ending, transitive verb"
+      },
+      {
+       "gloss": "to tell; to explain; to narrate; to mention; to describe; to discuss",
+       "pos": "Godan verb with 'su' ending, transitive verb"
+      },
+      {
+       "gloss": "to speak (a language)",
+       "pos": "Godan verb with 'su' ending, transitive verb"
+      }
+     ]
+    }
+   ],
+   "form_en": "connective/masu-stem",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "話",
+     "kun": [
+      "はな.す",
+      "はなし"
+     ],
+     "meanings": [
+      "tale",
+      "talk"
+     ],
+     "on": [
+      "ワ"
+     ],
+     "strokes": 13
+    }
+   ],
+   "parts": [],
+   "pos": "動詞",
+   "pos_en": "verb",
+   "reading": "はなし",
+   "ruby": [
+    [
+     "話",
+     "はな"
+    ],
+    [
+     "し",
+     ""
+    ]
+   ],
+   "surface": "話し"
+  },
+  {
+   "dictionary_form": "た",
+   "entries": [],
+   "form_en": "plain form",
+   "function": "past tense / completed action",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助動詞",
+   "pos_en": "auxiliary",
+   "reading": "た",
+   "ruby": [
+    [
+     "た",
+     ""
+    ]
+   ],
+   "surface": "た"
+  },
+  {
+   "dictionary_form": "。",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "。",
+   "ruby": [
+    [
+     "。",
+     ""
+    ]
+   ],
+   "surface": "。"
+  }
+ ]
+}

@@ -1,0 +1,5 @@
+# Keep line endings consistent in the repo (LF), Windows scripts as CRLF.
+* text=auto eol=lf
+*.bat text eol=crlf
+*.png binary
+*.apk binary

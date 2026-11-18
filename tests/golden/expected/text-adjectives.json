@@ -1,0 +1,436 @@
+{
+ "grammar": [],
+ "hiragana": "しずかなへやはあたたかくてきもちいい。",
+ "text": "静かな部屋は暖かくて気持ちいい。",
+ "tokens": [
+  {
+   "dictionary_form": "静か",
+   "entries": [
+    {
+     "kana": [
+      "しずか"
+     ],
+     "kanji": [
+      "静か",
+      "閑か"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "quiet; silent",
+       "pos": "adjectival nouns or quasi-adjectives (keiyodoshi)"
+      },
+      {
+       "gloss": "slow; unhurried",
+       "pos": "adjectival nouns or quasi-adjectives (keiyodoshi)"
+      },
+      {
+       "gloss": "calm; peaceful",
+       "pos": "adjectival nouns or quasi-adjectives (keiyodoshi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "静",
+     "kun": [
+      "しず-",
+      "しず.か",
+      "しず.まる",
+      "しず.める"
+     ],
+     "meanings": [
+      "quiet"
+     ],
+     "on": [
+      "セイ",
+      "ジョウ"
+     ],
+     "strokes": 14
+    }
+   ],
+   "parts": [],
+   "pos": "形状詞",
+   "pos_en": "na-adjective",
+   "reading": "しずか",
+   "ruby": [
+    [
+     "静",
+     "しず"
+    ],
+    [
+     "か",
+     ""
+    ]
+   ],
+   "surface": "静か"
+  },
+  {
+   "dictionary_form": "だ",
+   "entries": [],
+   "form_en": "plain form (before noun)",
+   "function": "after a plain verb: prohibition 'don't!'; at sentence end: emotion / self-talk",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助動詞",
+   "pos_en": "auxiliary",
+   "reading": "な",
+   "ruby": [
+    [
+     "な",
+     ""
+    ]
+   ],
+   "surface": "な"
+  },
+  {
+   "dictionary_form": "部屋",
+   "entries": [
+    {
+     "kana": [
+      "へや"
+     ],
+     "kanji": [
+      "部屋"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "room; chamber",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "apartment; flat; pad",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "stable",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "部",
+     "kun": [
+      "-べ"
+     ],
+     "meanings": [
+      "section",
+      "bureau",
+      "dept",
+      "class",
+      "copy"
+     ],
+     "on": [
+      "ブ"
+     ],
+     "strokes": 11
+    },
+    {
+     "char": "屋",
+     "kun": [
+      "や"
+     ],
+     "meanings": [
+      "roof",
+      "house",
+      "shop",
+      "dealer",
+      "seller"
+     ],
+     "on": [
+      "オク"
+     ],
+     "strokes": 9
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "へや",
+   "ruby": [
+    [
+     "部屋",
+     "へや"
+    ]
+   ],
+   "surface": "部屋"
+  },
+  {
+   "dictionary_form": "は",
+   "entries": [],
+   "form_en": "",
+   "function": "topic marker: 'as for X…'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "は",
+   "ruby": [
+    [
+     "は",
+     ""
+    ]
+   ],
+   "surface": "は"
+  },
+  {
+   "dictionary_form": "暖かい",
+   "entries": [
+    {
+     "kana": [
+      "あたたかい",
+      "あったかい"
+     ],
+     "kanji": [
+      "暖かい",
+      "温かい",
+      "暖い"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "warm; mild; (pleasantly) hot",
+       "pos": "adjective (keiyoushi)"
+      },
+      {
+       "gloss": "considerate; kind; genial",
+       "pos": "adjective (keiyoushi)"
+      },
+      {
+       "gloss": "warm (of a colour); mellow",
+       "pos": "adjective (keiyoushi)"
+      },
+      {
+       "gloss": "having enough money",
+       "pos": "adjective (keiyoushi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "connective/masu-stem",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "暖",
+     "kun": [
+      "あたた.か",
+      "あたた.かい",
+      "あたた.まる",
+      "あたた.める"
+     ],
+     "meanings": [
+      "warmth"
+     ],
+     "on": [
+      "ダン",
+      "ノン"
+     ],
+     "strokes": 13
+    }
+   ],
+   "parts": [],
+   "pos": "形容詞",
+   "pos_en": "i-adjective",
+   "reading": "あたたかく",
+   "ruby": [
+    [
+     "暖",
+     "あたた"
+    ],
+    [
+     "かく",
+     ""
+    ]
+   ],
+   "surface": "暖かく"
+  },
+  {
+   "dictionary_form": "て",
+   "entries": [],
+   "form_en": "",
+   "function": "connective: 'and then…' / links to helpers like いる, しまう",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "て",
+   "ruby": [
+    [
+     "て",
+     ""
+    ]
+   ],
+   "surface": "て"
+  },
+  {
+   "dictionary_form": "気持ち",
+   "entries": [
+    {
+     "kana": [
+      "きもち"
+     ],
+     "kanji": [
+      "気持ち",
+      "気持"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "feeling; sensation; mood; state of mind",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "preparedness; readiness; attitude",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "thought; sentiment; consideration; solicitude; gratitude",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "slightly; a bit; a little",
+       "pos": "noun (common) (futsuumeishi), adverb (fukushi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "気",
+     "kun": [
+      "き"
+     ],
+     "meanings": [
+      "spirit",
+      "mind",
+      "air",
+      "atmosphere",
+      "mood"
+     ],
+     "on": [
+      "キ",
+      "ケ"
+     ],
+     "strokes": 6
+    },
+    {
+     "char": "持",
+     "kun": [
+      "も.つ",
+      "-も.ち",
+      "も.てる"
+     ],
+     "meanings": [
+      "hold",
+      "have"
+     ],
+     "on": [
+      "ジ"
+     ],
+     "strokes": 9
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "きもち",
+   "ruby": [
+    [
+     "気持",
+     "きも"
+    ],
+    [
+     "ち",
+     ""
+    ]
+   ],
+   "surface": "気持ち"
+  },
+  {
+   "dictionary_form": "いい",
+   "entries": [
+    {
+     "kana": [
+      "よい",
+      "えい"
+     ],
+     "kanji": [
+      "良い",
+      "善い",
+      "好い"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "good; excellent; fine; nice; pleasant; agreeable",
+       "pos": "adjective (keiyoushi)"
+      },
+      {
+       "gloss": "sufficient; enough; ready; prepared",
+       "pos": "adjective (keiyoushi)"
+      },
+      {
+       "gloss": "profitable (deal, business offer, etc.); beneficial",
+       "pos": "adjective (keiyoushi)"
+      },
+      {
+       "gloss": "OK; all right; fine; no problem",
+       "pos": "adjective (keiyoushi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "plain form",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "形容詞",
+   "pos_en": "i-adjective",
+   "reading": "いい",
+   "ruby": [
+    [
+     "いい",
+     ""
+    ]
+   ],
+   "surface": "いい"
+  },
+  {
+   "dictionary_form": "。",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "。",
+   "ruby": [
+    [
+     "。",
+     ""
+    ]
+   ],
+   "surface": "。"
+  }
+ ]
+}

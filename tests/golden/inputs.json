@@ -1,0 +1,30 @@
+{
+  "_about": "Fixed inputs for the golden tests. All sentences are original (written for this project). Each one targets a feature of the analyzer; 'covers' says which.",
+  "texts": [
+    {"id": "basic-verb", "covers": "furigana only over kanji (食べる), plain verb", "text": "朝ごはんを食べる。"},
+    {"id": "okurigana", "covers": "kanji + kana word split for ruby", "text": "新しい靴を買いに行きたい。"},
+    {"id": "jukujikun", "covers": "irregular readings (今日, 明日, 大人)", "text": "今日も明日も大人は忙しい。"},
+    {"id": "katakana", "covers": "katakana loanwords, no furigana", "text": "コーヒーとケーキをください。"},
+    {"id": "name", "covers": "person name (proper noun, JMnedict)", "text": "田中さんはどこですか。"},
+    {"id": "compound", "covers": "long compound looked up by parts", "text": "国際宇宙開発機構の発表を聞いた。"},
+    {"id": "particles", "covers": "particle explanations (は が を に で へ と から まで)", "text": "私は駅から学校まで友達と歩いて行った。"},
+    {"id": "te-iru", "covers": "auxiliary and ている pattern", "text": "雨がずっと降っている。"},
+    {"id": "potential-neg", "covers": "negative / potential forms", "text": "この漢字はまだ読めない。"},
+    {"id": "conditional", "covers": "conditional たら / ば", "text": "時間があれば、手伝ってくれたら嬉しい。"},
+    {"id": "noda", "covers": "explanatory んだ", "text": "もう遅いんだから、早く寝なさい。"},
+    {"id": "kamoshirenai", "covers": "grammar pattern かもしれない", "text": "明日は雪が降るかもしれない。"},
+    {"id": "hazu-tsumori", "covers": "grammar patterns はず / つもり", "text": "彼はもう着いたはずだ。私は行くつもりだ。"},
+    {"id": "shika-nai", "covers": "grammar pattern しか〜ない", "text": "財布には百円しかない。"},
+    {"id": "rough", "covers": "rough speech, contractions (じゃねえ)", "text": "そんなこと知らねえよ、俺のせいじゃねえ。"},
+    {"id": "archaic", "covers": "archaic speech (ぬ, おる, じゃ)", "text": "わしはここで待っておるのじゃ。行かぬぞ。"},
+    {"id": "keigo", "covers": "polite and humble forms", "text": "少々お待ちいただけますでしょうか。"},
+    {"id": "punctuation", "covers": "ellipsis and symbols (Sudachi empty tokens)", "text": "え……本当に？！"},
+    {"id": "numbers", "covers": "numbers and counters", "text": "三人で二時間も話した。"},
+    {"id": "adjectives", "covers": "i- and na-adjectives", "text": "静かな部屋は暖かくて気持ちいい。"},
+    {"id": "kana-only-word", "covers": "words usually written in kana (ありがとう, よろしく)", "text": "ありがとう、これからもよろしく。"},
+    {"id": "repeat-mark", "covers": "kanji repetition mark 々", "text": "人々が時々集まる。"}
+  ],
+  "images": [
+    {"id": "vertical", "covers": "OCR of generated vertical text (test/make_test.py)", "path": "test/vertical.png"}
+  ]
+}

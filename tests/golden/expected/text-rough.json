@@ -1,0 +1,496 @@
+{
+ "grammar": [
+  {
+   "at": 15,
+   "explanation": "'is not', or at the end: 'isn't it? / see!'",
+   "match": "じゃねえ",
+   "name": "じゃない"
+  }
+ ],
+ "hiragana": "そんなことしらねえよ、おれのせいじゃねえ。",
+ "text": "そんなこと知らねえよ、俺のせいじゃねえ。",
+ "tokens": [
+  {
+   "dictionary_form": "そんな",
+   "entries": [
+    {
+     "kana": [
+      "そんな"
+     ],
+     "kanji": [],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "such; that sort of; that kind of; like that",
+       "pos": "pre-noun adjectival (rentaishi)"
+      },
+      {
+       "gloss": "no way!; never!",
+       "pos": "interjection (kandoushi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "連体詞",
+   "pos_en": "pre-noun adjective",
+   "reading": "そんな",
+   "ruby": [
+    [
+     "そんな",
+     ""
+    ]
+   ],
+   "surface": "そんな"
+  },
+  {
+   "dictionary_form": "こと",
+   "entries": [
+    {
+     "kana": [
+      "こと",
+      "こん"
+     ],
+     "kanji": [
+      "事",
+      "縡"
+     ],
+     "score": 10,
+     "senses": [
+      {
+       "gloss": "thing; matter",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "incident; occurrence; event; something serious; trouble; crisis",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "circumstances; situation; state of affairs",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "work; business; affair",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "こと",
+      "そう"
+     ],
+     "kanji": [
+      "琴",
+      "箏",
+      "筝"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "koto (13-stringed Japanese zither)",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "stringed instrument",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "zheng (Chinese zither); guzheng",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "こと"
+     ],
+     "kanji": [
+      "古都"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "ancient city; former capital",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "こと",
+   "ruby": [
+    [
+     "こと",
+     ""
+    ]
+   ],
+   "surface": "こと"
+  },
+  {
+   "dictionary_form": "知る",
+   "entries": [
+    {
+     "kana": [
+      "しる"
+     ],
+     "kanji": [
+      "知る",
+      "識る"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "to be aware of; to know; to be conscious of; to cognize; to cognise",
+       "pos": "Godan verb with 'ru' ending, transitive verb"
+      },
+      {
+       "gloss": "to notice; to feel",
+       "pos": "Godan verb with 'ru' ending, transitive verb"
+      },
+      {
+       "gloss": "to understand; to comprehend; to grasp",
+       "pos": "Godan verb with 'ru' ending, transitive verb"
+      },
+      {
+       "gloss": "to remember; to be acquainted with (a procedure)",
+       "pos": "Godan verb with 'ru' ending, transitive verb"
+      }
+     ]
+    }
+   ],
+   "form_en": "negative stem",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "知",
+     "kun": [
+      "し.る",
+      "し.らせる"
+     ],
+     "meanings": [
+      "know",
+      "wisdom"
+     ],
+     "on": [
+      "チ"
+     ],
+     "strokes": 8
+    }
+   ],
+   "parts": [],
+   "pos": "動詞",
+   "pos_en": "verb",
+   "reading": "しら",
+   "ruby": [
+    [
+     "知",
+     "し"
+    ],
+    [
+     "ら",
+     ""
+    ]
+   ],
+   "surface": "知ら"
+  },
+  {
+   "dictionary_form": "ねえ",
+   "entries": [],
+   "form_en": "plain form",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助動詞",
+   "pos_en": "auxiliary",
+   "reading": "ねえ",
+   "ruby": [
+    [
+     "ねえ",
+     ""
+    ]
+   ],
+   "surface": "ねえ"
+  },
+  {
+   "dictionary_form": "よ",
+   "entries": [],
+   "form_en": "",
+   "function": "emphasis, telling something new: 'I tell you, you know'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "よ",
+   "ruby": [
+    [
+     "よ",
+     ""
+    ]
+   ],
+   "surface": "よ"
+  },
+  {
+   "dictionary_form": "、",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "、",
+   "ruby": [
+    [
+     "、",
+     ""
+    ]
+   ],
+   "surface": "、"
+  },
+  {
+   "dictionary_form": "俺",
+   "entries": [
+    {
+     "kana": [
+      "おれ",
+      "おらあ",
+      "おり"
+     ],
+     "kanji": [
+      "俺",
+      "己"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "I; me",
+       "pos": "pronoun"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "俺",
+     "kun": [
+      "おれ",
+      "われ"
+     ],
+     "meanings": [
+      "I",
+      "myself"
+     ],
+     "on": [
+      "エン"
+     ],
+     "strokes": 10
+    }
+   ],
+   "parts": [],
+   "pos": "代名詞",
+   "pos_en": "pronoun",
+   "reading": "おれ",
+   "ruby": [
+    [
+     "俺",
+     "おれ"
+    ]
+   ],
+   "surface": "俺"
+  },
+  {
+   "dictionary_form": "の",
+   "entries": [],
+   "form_en": "",
+   "function": "possessive ''s' / links nouns / turns a verb into a noun / soft question at the end",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "の",
+   "ruby": [
+    [
+     "の",
+     ""
+    ]
+   ],
+   "surface": "の"
+  },
+  {
+   "dictionary_form": "せい",
+   "entries": [
+    {
+     "kana": [
+      "せい",
+      "せえ"
+     ],
+     "kanji": [
+      "所為"
+     ],
+     "score": 10,
+     "senses": [
+      {
+       "gloss": "consequence; outcome; result; blame",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "せい"
+     ],
+     "kanji": [
+      "制"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "system; organization; organisation; imperial command; laws; regulation; control; government; suppression; restraint; holding back; establishment",
+       "pos": "noun (common) (futsuumeishi), noun, used as a suffix"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "せい",
+      "しょう",
+      "そう"
+     ],
+     "kanji": [
+      "姓"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "surname; family name",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "hereditary title (used in ancient Japan to denote rank and political standing)",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "せい",
+   "ruby": [
+    [
+     "せい",
+     ""
+    ]
+   ],
+   "surface": "せい"
+  },
+  {
+   "dictionary_form": "だ",
+   "entries": [],
+   "form_en": "connective/masu-stem",
+   "function": "contraction of では ('is not' with ない / 'well then' at start)",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助動詞",
+   "pos_en": "auxiliary",
+   "reading": "じゃ",
+   "ruby": [
+    [
+     "じゃ",
+     ""
+    ]
+   ],
+   "surface": "じゃ"
+  },
+  {
+   "dictionary_form": "ねえ",
+   "entries": [
+    {
+     "kana": [
+      "ない"
+     ],
+     "kanji": [
+      "無い"
+     ],
+     "score": 8,
+     "senses": [
+      {
+       "gloss": "nonexistent; not being (there)",
+       "pos": "adjective (keiyoushi)"
+      },
+      {
+       "gloss": "unowned; not had; unpossessed",
+       "pos": "adjective (keiyoushi)"
+      },
+      {
+       "gloss": "unique",
+       "pos": "adjective (keiyoushi)"
+      },
+      {
+       "gloss": "not; impossible; won't happen",
+       "pos": "adjective (keiyoushi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "plain form",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "形容詞",
+   "pos_en": "i-adjective",
+   "reading": "ねえ",
+   "ruby": [
+    [
+     "ねえ",
+     ""
+    ]
+   ],
+   "surface": "ねえ"
+  },
+  {
+   "dictionary_form": "。",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "。",
+   "ruby": [
+    [
+     "。",
+     ""
+    ]
+   ],
+   "surface": "。"
+  }
+ ]
+}

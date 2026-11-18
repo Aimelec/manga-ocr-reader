@@ -1,0 +1,404 @@
+{
+ "grammar": [
+  {
+   "at": 7,
+   "explanation": "'maybe, might'",
+   "match": "かもしれ",
+   "name": "〜かもしれない / 〜かも"
+  }
+ ],
+ "hiragana": "あすはゆきがふるかもしれない。",
+ "text": "明日は雪が降るかもしれない。",
+ "tokens": [
+  {
+   "dictionary_form": "明日",
+   "entries": [
+    {
+     "kana": [
+      "あした",
+      "あす",
+      "みょうにち"
+     ],
+     "kanji": [
+      "明日"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "tomorrow",
+       "pos": "noun (common) (futsuumeishi), adverb (fukushi)"
+      },
+      {
+       "gloss": "near future",
+       "pos": "noun (common) (futsuumeishi), adverb (fukushi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "明",
+     "kun": [
+      "あ.かり",
+      "あか.るい",
+      "あか.るむ",
+      "あか.らむ"
+     ],
+     "meanings": [
+      "bright",
+      "light"
+     ],
+     "on": [
+      "メイ",
+      "ミョウ",
+      "ミン"
+     ],
+     "strokes": 8
+    },
+    {
+     "char": "日",
+     "kun": [
+      "ひ",
+      "-び",
+      "-か"
+     ],
+     "meanings": [
+      "day",
+      "sun",
+      "Japan",
+      "counter for days"
+     ],
+     "on": [
+      "ニチ",
+      "ジツ"
+     ],
+     "strokes": 4
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "あす",
+   "ruby": [
+    [
+     "明日",
+     "あす"
+    ]
+   ],
+   "surface": "明日"
+  },
+  {
+   "dictionary_form": "は",
+   "entries": [],
+   "form_en": "",
+   "function": "topic marker: 'as for X…'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "は",
+   "ruby": [
+    [
+     "は",
+     ""
+    ]
+   ],
+   "surface": "は"
+  },
+  {
+   "dictionary_form": "雪",
+   "entries": [
+    {
+     "kana": [
+      "ゆき"
+     ],
+     "kanji": [
+      "雪"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "snow; snowfall",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "雪",
+     "kun": [
+      "ゆき"
+     ],
+     "meanings": [
+      "snow"
+     ],
+     "on": [
+      "セツ"
+     ],
+     "strokes": 11
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "ゆき",
+   "ruby": [
+    [
+     "雪",
+     "ゆき"
+    ]
+   ],
+   "surface": "雪"
+  },
+  {
+   "dictionary_form": "が",
+   "entries": [],
+   "form_en": "",
+   "function": "subject marker; at the end of a clause: 'but'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "が",
+   "ruby": [
+    [
+     "が",
+     ""
+    ]
+   ],
+   "surface": "が"
+  },
+  {
+   "dictionary_form": "降る",
+   "entries": [
+    {
+     "kana": [
+      "ふる"
+     ],
+     "kanji": [
+      "降る"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "to fall (of rain, snow, ash, etc.); to come down",
+       "pos": "Godan verb with 'ru' ending, intransitive verb"
+      },
+      {
+       "gloss": "to form (of frost)",
+       "pos": "Godan verb with 'ru' ending, intransitive verb"
+      },
+      {
+       "gloss": "to beam down (of sunlight or moonlight); to pour in",
+       "pos": "Godan verb with 'ru' ending, intransitive verb"
+      },
+      {
+       "gloss": "to visit (of luck, misfortune, etc.); to come; to arrive",
+       "pos": "Godan verb with 'ru' ending, intransitive verb"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "くだる"
+     ],
+     "kanji": [
+      "下る",
+      "降る"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "to descend; to go down; to come down",
+       "pos": "Godan verb with 'ru' ending, intransitive verb"
+      },
+      {
+       "gloss": "to be handed down (of an order, judgment, etc.)",
+       "pos": "Godan verb with 'ru' ending, intransitive verb"
+      },
+      {
+       "gloss": "to pass (of time)",
+       "pos": "Godan verb with 'ru' ending, intransitive verb"
+      },
+      {
+       "gloss": "to surrender; to capitulate",
+       "pos": "Godan verb with 'ru' ending, intransitive verb"
+      }
+     ]
+    }
+   ],
+   "form_en": "plain form",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "降",
+     "kun": [
+      "お.りる",
+      "お.ろす",
+      "ふ.る",
+      "ふ.り"
+     ],
+     "meanings": [
+      "descend",
+      "precipitate",
+      "fall",
+      "surrender"
+     ],
+     "on": [
+      "コウ",
+      "ゴ"
+     ],
+     "strokes": 10
+    }
+   ],
+   "parts": [],
+   "pos": "動詞",
+   "pos_en": "verb",
+   "reading": "ふる",
+   "ruby": [
+    [
+     "降",
+     "ふ"
+    ],
+    [
+     "る",
+     ""
+    ]
+   ],
+   "surface": "降る"
+  },
+  {
+   "dictionary_form": "か",
+   "entries": [],
+   "form_en": "",
+   "function": "question marker / 'or'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "か",
+   "ruby": [
+    [
+     "か",
+     ""
+    ]
+   ],
+   "surface": "か"
+  },
+  {
+   "dictionary_form": "も",
+   "entries": [],
+   "form_en": "",
+   "function": "'also, too'; with numbers or negatives: 'even, as much as'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "も",
+   "ruby": [
+    [
+     "も",
+     ""
+    ]
+   ],
+   "surface": "も"
+  },
+  {
+   "dictionary_form": "しれる",
+   "entries": [
+    {
+     "kana": [
+      "しれる"
+     ],
+     "kanji": [
+      "知れる"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "to become known; to come to light; to be discovered",
+       "pos": "Ichidan verb, intransitive verb"
+      },
+      {
+       "gloss": "to be known; to be understood",
+       "pos": "Ichidan verb, intransitive verb"
+      },
+      {
+       "gloss": "to obviously not amount to much; to seem trivial",
+       "pos": "Ichidan verb, intransitive verb"
+      },
+      {
+       "gloss": "to be evident; to be obvious; to go without saying",
+       "pos": "Ichidan verb, intransitive verb"
+      }
+     ]
+    }
+   ],
+   "form_en": "negative stem",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "動詞",
+   "pos_en": "verb",
+   "reading": "しれ",
+   "ruby": [
+    [
+     "しれ",
+     ""
+    ]
+   ],
+   "surface": "しれ"
+  },
+  {
+   "dictionary_form": "ない",
+   "entries": [],
+   "form_en": "plain form",
+   "function": "negative: 'not'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助動詞",
+   "pos_en": "auxiliary",
+   "reading": "ない",
+   "ruby": [
+    [
+     "ない",
+     ""
+    ]
+   ],
+   "surface": "ない"
+  },
+  {
+   "dictionary_form": "。",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "。",
+   "ruby": [
+    [
+     "。",
+     ""
+    ]
+   ],
+   "surface": "。"
+  }
+ ]
+}

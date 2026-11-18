@@ -1,0 +1,448 @@
+{
+ "grammar": [
+  {
+   "at": 10,
+   "explanation": "someone does something for me/us",
+   "match": "てくれ",
+   "name": "〜てくれる"
+  },
+  {
+   "at": 13,
+   "explanation": "'if / when… (after that)'",
+   "match": "たら",
+   "name": "〜たら"
+  }
+ ],
+ "hiragana": "じかんがあれば、てつだってくれたらうれしい。",
+ "text": "時間があれば、手伝ってくれたら嬉しい。",
+ "tokens": [
+  {
+   "dictionary_form": "時間",
+   "entries": [
+    {
+     "kana": [
+      "じかん"
+     ],
+     "kanji": [
+      "時間"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "time",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "hour",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "period; class; lesson",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "時",
+     "kun": [
+      "とき",
+      "-どき"
+     ],
+     "meanings": [
+      "time",
+      "hour"
+     ],
+     "on": [
+      "ジ"
+     ],
+     "strokes": 10
+    },
+    {
+     "char": "間",
+     "kun": [
+      "あいだ",
+      "ま",
+      "あい"
+     ],
+     "meanings": [
+      "interval",
+      "space"
+     ],
+     "on": [
+      "カン",
+      "ケン"
+     ],
+     "strokes": 12
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "じかん",
+   "ruby": [
+    [
+     "時間",
+     "じかん"
+    ]
+   ],
+   "surface": "時間"
+  },
+  {
+   "dictionary_form": "が",
+   "entries": [],
+   "form_en": "",
+   "function": "subject marker; at the end of a clause: 'but'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "が",
+   "ruby": [
+    [
+     "が",
+     ""
+    ]
+   ],
+   "surface": "が"
+  },
+  {
+   "dictionary_form": "ある",
+   "entries": [
+    {
+     "kana": [
+      "ある"
+     ],
+     "kanji": [
+      "有る",
+      "在る"
+     ],
+     "score": 8,
+     "senses": [
+      {
+       "gloss": "to be; to exist; to live",
+       "pos": "Godan verb with 'ru' ending (irregular verb), intransitive verb"
+      },
+      {
+       "gloss": "to have",
+       "pos": "Godan verb with 'ru' ending (irregular verb), intransitive verb"
+      },
+      {
+       "gloss": "to be located",
+       "pos": "Godan verb with 'ru' ending (irregular verb), intransitive verb"
+      },
+      {
+       "gloss": "to be equipped with",
+       "pos": "Godan verb with 'ru' ending (irregular verb), intransitive verb"
+      }
+     ]
+    }
+   ],
+   "form_en": "conditional (-ba) stem",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "動詞",
+   "pos_en": "verb",
+   "reading": "あれ",
+   "ruby": [
+    [
+     "あれ",
+     ""
+    ]
+   ],
+   "surface": "あれ"
+  },
+  {
+   "dictionary_form": "ば",
+   "entries": [],
+   "form_en": "",
+   "function": "conditional: 'if…'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "ば",
+   "ruby": [
+    [
+     "ば",
+     ""
+    ]
+   ],
+   "surface": "ば"
+  },
+  {
+   "dictionary_form": "、",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "、",
+   "ruby": [
+    [
+     "、",
+     ""
+    ]
+   ],
+   "surface": "、"
+  },
+  {
+   "dictionary_form": "手伝う",
+   "entries": [
+    {
+     "kana": [
+      "てつだう"
+     ],
+     "kanji": [
+      "手伝う",
+      "手つだう"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "to help; to assist; to aid",
+       "pos": "Godan verb with 'u' ending, transitive verb"
+      },
+      {
+       "gloss": "to contribute to; to be a factor in",
+       "pos": "Godan verb with 'u' ending, transitive verb"
+      }
+     ]
+    }
+   ],
+   "form_en": "connective/masu-stem",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "手",
+     "kun": [
+      "て",
+      "て-",
+      "-て",
+      "た-"
+     ],
+     "meanings": [
+      "hand"
+     ],
+     "on": [
+      "シュ",
+      "ズ"
+     ],
+     "strokes": 4
+    },
+    {
+     "char": "伝",
+     "kun": [
+      "つた.わる",
+      "つた.える",
+      "つた.う",
+      "つだ.う"
+     ],
+     "meanings": [
+      "transmit",
+      "go along",
+      "walk along",
+      "follow",
+      "report"
+     ],
+     "on": [
+      "デン",
+      "テン"
+     ],
+     "strokes": 6
+    }
+   ],
+   "parts": [],
+   "pos": "動詞",
+   "pos_en": "verb",
+   "reading": "てつだっ",
+   "ruby": [
+    [
+     "手伝",
+     "てつだ"
+    ],
+    [
+     "っ",
+     ""
+    ]
+   ],
+   "surface": "手伝っ"
+  },
+  {
+   "dictionary_form": "て",
+   "entries": [],
+   "form_en": "",
+   "function": "connective: 'and then…' / links to helpers like いる, しまう",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "て",
+   "ruby": [
+    [
+     "て",
+     ""
+    ]
+   ],
+   "surface": "て"
+  },
+  {
+   "dictionary_form": "くれる",
+   "entries": [
+    {
+     "kana": [
+      "くれる"
+     ],
+     "kanji": [
+      "呉れる"
+     ],
+     "score": 8,
+     "senses": [
+      {
+       "gloss": "to give; to let (one) have",
+       "pos": "Ichidan verb - kureru special class, transitive verb"
+      },
+      {
+       "gloss": "to give",
+       "pos": "Ichidan verb - kureru special class, transitive verb"
+      },
+      {
+       "gloss": "to do for one; to take the trouble to do",
+       "pos": "auxiliary verb, Ichidan verb - kureru special class"
+      },
+      {
+       "gloss": "to do to someone's disadvantage",
+       "pos": "auxiliary verb, Ichidan verb - kureru special class"
+      }
+     ]
+    }
+   ],
+   "form_en": "connective/masu-stem",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "動詞",
+   "pos_en": "verb",
+   "reading": "くれ",
+   "ruby": [
+    [
+     "くれ",
+     ""
+    ]
+   ],
+   "surface": "くれ"
+  },
+  {
+   "dictionary_form": "た",
+   "entries": [],
+   "form_en": "conditional (-ba) stem",
+   "function": "past tense / completed action",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助動詞",
+   "pos_en": "auxiliary",
+   "reading": "たら",
+   "ruby": [
+    [
+     "たら",
+     ""
+    ]
+   ],
+   "surface": "たら"
+  },
+  {
+   "dictionary_form": "嬉しい",
+   "entries": [
+    {
+     "kana": [
+      "うれしい"
+     ],
+     "kanji": [
+      "嬉しい"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "happy; glad; pleased; delighted; overjoyed",
+       "pos": "adjective (keiyoushi)"
+      },
+      {
+       "gloss": "joyful; delightful; gratifying; pleasant",
+       "pos": "adjective (keiyoushi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "plain form",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "嬉",
+     "kun": [
+      "うれ.しい",
+      "たの.しむ"
+     ],
+     "meanings": [
+      "glad",
+      "pleased",
+      "rejoice"
+     ],
+     "on": [
+      "キ"
+     ],
+     "strokes": 15
+    }
+   ],
+   "parts": [],
+   "pos": "形容詞",
+   "pos_en": "i-adjective",
+   "reading": "うれしい",
+   "ruby": [
+    [
+     "嬉",
+     "うれ"
+    ],
+    [
+     "しい",
+     ""
+    ]
+   ],
+   "surface": "嬉しい"
+  },
+  {
+   "dictionary_form": "。",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "。",
+   "ruby": [
+    [
+     "。",
+     ""
+    ]
+   ],
+   "surface": "。"
+  }
+ ]
+}

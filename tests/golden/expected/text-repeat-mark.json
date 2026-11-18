@@ -1,0 +1,236 @@
+{
+ "grammar": [],
+ "hiragana": "ひとびとがときどきあつまる。",
+ "text": "人々が時々集まる。",
+ "tokens": [
+  {
+   "dictionary_form": "人々",
+   "entries": [
+    {
+     "kana": [
+      "ひとびと"
+     ],
+     "kanji": [
+      "人々",
+      "人びと",
+      "人人"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "people; men and women",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "each person; everybody",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "にんにん"
+     ],
+     "kanji": [
+      "人々",
+      "人人"
+     ],
+     "score": 6,
+     "senses": [
+      {
+       "gloss": "each person; everybody",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "人",
+     "kun": [
+      "ひと",
+      "-り",
+      "-と"
+     ],
+     "meanings": [
+      "person"
+     ],
+     "on": [
+      "ジン",
+      "ニン"
+     ],
+     "strokes": 2
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "ひとびと",
+   "ruby": [
+    [
+     "人々",
+     "ひとびと"
+    ]
+   ],
+   "surface": "人々"
+  },
+  {
+   "dictionary_form": "が",
+   "entries": [],
+   "form_en": "",
+   "function": "subject marker; at the end of a clause: 'but'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "が",
+   "ruby": [
+    [
+     "が",
+     ""
+    ]
+   ],
+   "surface": "が"
+  },
+  {
+   "dictionary_form": "時々",
+   "entries": [
+    {
+     "kana": [
+      "ときどき"
+     ],
+     "kanji": [
+      "時々",
+      "時時",
+      "時どき"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "sometimes; occasionally; at times; from time to time; now and then; once in a while; at intervals",
+       "pos": "adverb (fukushi), nouns which may take the genitive case particle 'no'"
+      },
+      {
+       "gloss": "seasonal; of the season; appropriate (for the season or occasion)",
+       "pos": "nouns which may take the genitive case particle 'no', noun (common) (futsuumeishi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "時",
+     "kun": [
+      "とき",
+      "-どき"
+     ],
+     "meanings": [
+      "time",
+      "hour"
+     ],
+     "on": [
+      "ジ"
+     ],
+     "strokes": 10
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "ときどき",
+   "ruby": [
+    [
+     "時々",
+     "ときどき"
+    ]
+   ],
+   "surface": "時々"
+  },
+  {
+   "dictionary_form": "集まる",
+   "entries": [
+    {
+     "kana": [
+      "あつまる"
+     ],
+     "kanji": [
+      "集まる",
+      "集る"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "to gather; to collect; to assemble",
+       "pos": "Godan verb with 'ru' ending, intransitive verb"
+      }
+     ]
+    }
+   ],
+   "form_en": "plain form",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "集",
+     "kun": [
+      "あつ.まる",
+      "あつ.める",
+      "つど.う"
+     ],
+     "meanings": [
+      "gather",
+      "meet",
+      "congregate",
+      "swarm",
+      "flock"
+     ],
+     "on": [
+      "シュウ"
+     ],
+     "strokes": 12
+    }
+   ],
+   "parts": [],
+   "pos": "動詞",
+   "pos_en": "verb",
+   "reading": "あつまる",
+   "ruby": [
+    [
+     "集",
+     "あつ"
+    ],
+    [
+     "まる",
+     ""
+    ]
+   ],
+   "surface": "集まる"
+  },
+  {
+   "dictionary_form": "。",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "。",
+   "ruby": [
+    [
+     "。",
+     ""
+    ]
+   ],
+   "surface": "。"
+  }
+ ]
+}

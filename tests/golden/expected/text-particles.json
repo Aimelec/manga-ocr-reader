@@ -1,0 +1,568 @@
+{
+ "grammar": [
+  {
+   "at": 14,
+   "explanation": "'go on doing / go away doing / leave behind (置いていく)'",
+   "match": "て行",
+   "name": "〜ていく"
+  }
+ ],
+ "hiragana": "わたくしはえきからがっこうまでともだちとあるいていった。",
+ "text": "私は駅から学校まで友達と歩いて行った。",
+ "tokens": [
+  {
+   "dictionary_form": "私",
+   "entries": [
+    {
+     "kana": [
+      "わたくし"
+     ],
+     "kanji": [
+      "私"
+     ],
+     "score": 8,
+     "senses": [
+      {
+       "gloss": "I; me",
+       "pos": "pronoun"
+      },
+      {
+       "gloss": "personal (affairs, etc.); private",
+       "pos": "nouns which may take the genitive case particle 'no', noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "selfishness; partiality",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "secrecy; confidentiality",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "わたし"
+     ],
+     "kanji": [
+      "私"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "I; me",
+       "pos": "pronoun"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "あたし",
+      "あたくし",
+      "あたい"
+     ],
+     "kanji": [
+      "私"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "I; me",
+       "pos": "pronoun"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "私",
+     "kun": [
+      "わたくし",
+      "わたし"
+     ],
+     "meanings": [
+      "private",
+      "I",
+      "me"
+     ],
+     "on": [
+      "シ"
+     ],
+     "strokes": 7
+    }
+   ],
+   "parts": [],
+   "pos": "代名詞",
+   "pos_en": "pronoun",
+   "reading": "わたくし",
+   "ruby": [
+    [
+     "私",
+     "わたくし"
+    ]
+   ],
+   "surface": "私"
+  },
+  {
+   "dictionary_form": "は",
+   "entries": [],
+   "form_en": "",
+   "function": "topic marker: 'as for X…'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "は",
+   "ruby": [
+    [
+     "は",
+     ""
+    ]
+   ],
+   "surface": "は"
+  },
+  {
+   "dictionary_form": "駅",
+   "entries": [
+    {
+     "kana": [
+      "えき"
+     ],
+     "kanji": [
+      "駅",
+      "驛"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "railway station; train station",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "staging post on a highway (in pre-modern Japan)",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "counter for railway stations and bus stations",
+       "pos": "counter"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "駅",
+     "kun": [],
+     "meanings": [
+      "station"
+     ],
+     "on": [
+      "エキ"
+     ],
+     "strokes": 14
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "えき",
+   "ruby": [
+    [
+     "駅",
+     "えき"
+    ]
+   ],
+   "surface": "駅"
+  },
+  {
+   "dictionary_form": "から",
+   "entries": [],
+   "form_en": "",
+   "function": "'from'; after a clause: 'because'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "から",
+   "ruby": [
+    [
+     "から",
+     ""
+    ]
+   ],
+   "surface": "から"
+  },
+  {
+   "dictionary_form": "学校",
+   "entries": [
+    {
+     "kana": [
+      "がっこう"
+     ],
+     "kanji": [
+      "学校",
+      "學校"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "school",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "学",
+     "kun": [
+      "まな.ぶ"
+     ],
+     "meanings": [
+      "study",
+      "learning",
+      "science"
+     ],
+     "on": [
+      "ガク"
+     ],
+     "strokes": 8
+    },
+    {
+     "char": "校",
+     "kun": [],
+     "meanings": [
+      "exam",
+      "school",
+      "printing",
+      "proof",
+      "correction"
+     ],
+     "on": [
+      "コウ",
+      "キョウ"
+     ],
+     "strokes": 10
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "がっこう",
+   "ruby": [
+    [
+     "学校",
+     "がっこう"
+    ]
+   ],
+   "surface": "学校"
+  },
+  {
+   "dictionary_form": "まで",
+   "entries": [],
+   "form_en": "",
+   "function": "'until, up to, as far as'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "まで",
+   "ruby": [
+    [
+     "まで",
+     ""
+    ]
+   ],
+   "surface": "まで"
+  },
+  {
+   "dictionary_form": "友達",
+   "entries": [
+    {
+     "kana": [
+      "ともだち"
+     ],
+     "kanji": [
+      "友達",
+      "友だち"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "friend; companion",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "友",
+     "kun": [
+      "とも"
+     ],
+     "meanings": [
+      "friend"
+     ],
+     "on": [
+      "ユウ"
+     ],
+     "strokes": 4
+    },
+    {
+     "char": "達",
+     "kun": [
+      "-たち"
+     ],
+     "meanings": [
+      "accomplished",
+      "reach",
+      "arrive",
+      "attain"
+     ],
+     "on": [
+      "タツ",
+      "ダ"
+     ],
+     "strokes": 12
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "ともだち",
+   "ruby": [
+    [
+     "友達",
+     "ともだち"
+    ]
+   ],
+   "surface": "友達"
+  },
+  {
+   "dictionary_form": "と",
+   "entries": [],
+   "form_en": "",
+   "function": "'and' (complete list) / 'with' / quotation / 'when, if'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "と",
+   "ruby": [
+    [
+     "と",
+     ""
+    ]
+   ],
+   "surface": "と"
+  },
+  {
+   "dictionary_form": "歩く",
+   "entries": [
+    {
+     "kana": [
+      "あるく"
+     ],
+     "kanji": [
+      "歩く"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "to walk",
+       "pos": "Godan verb with 'ku' ending, intransitive verb"
+      }
+     ]
+    }
+   ],
+   "form_en": "connective/masu-stem",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "歩",
+     "kun": [
+      "ある.く",
+      "あゆ.む"
+     ],
+     "meanings": [
+      "walk",
+      "counter for steps"
+     ],
+     "on": [
+      "ホ",
+      "ブ",
+      "フ"
+     ],
+     "strokes": 8
+    }
+   ],
+   "parts": [],
+   "pos": "動詞",
+   "pos_en": "verb",
+   "reading": "あるい",
+   "ruby": [
+    [
+     "歩",
+     "ある"
+    ],
+    [
+     "い",
+     ""
+    ]
+   ],
+   "surface": "歩い"
+  },
+  {
+   "dictionary_form": "て",
+   "entries": [],
+   "form_en": "",
+   "function": "connective: 'and then…' / links to helpers like いる, しまう",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "て",
+   "ruby": [
+    [
+     "て",
+     ""
+    ]
+   ],
+   "surface": "て"
+  },
+  {
+   "dictionary_form": "行く",
+   "entries": [
+    {
+     "kana": [
+      "いく",
+      "ゆく"
+     ],
+     "kanji": [
+      "行く",
+      "逝く",
+      "往く"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "to go; to move (in a direction or towards a specific location); to head (towards); to be transported (towards); to reach",
+       "pos": "Godan verb - Iku/Yuku special class, intransitive verb"
+      },
+      {
+       "gloss": "to proceed; to take place",
+       "pos": "Godan verb - Iku/Yuku special class, intransitive verb"
+      },
+      {
+       "gloss": "to pass through; to come and go",
+       "pos": "Godan verb - Iku/Yuku special class, intransitive verb"
+      },
+      {
+       "gloss": "to walk",
+       "pos": "Godan verb - Iku/Yuku special class, intransitive verb"
+      }
+     ]
+    }
+   ],
+   "form_en": "connective/masu-stem",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "行",
+     "kun": [
+      "い.く",
+      "ゆ.く",
+      "-ゆ.き",
+      "-ゆき"
+     ],
+     "meanings": [
+      "going",
+      "journey",
+      "carry out",
+      "conduct",
+      "act"
+     ],
+     "on": [
+      "コウ",
+      "ギョウ",
+      "アン"
+     ],
+     "strokes": 6
+    }
+   ],
+   "parts": [],
+   "pos": "動詞",
+   "pos_en": "verb",
+   "reading": "いっ",
+   "ruby": [
+    [
+     "行",
+     "い"
+    ],
+    [
+     "っ",
+     ""
+    ]
+   ],
+   "surface": "行っ"
+  },
+  {
+   "dictionary_form": "た",
+   "entries": [],
+   "form_en": "plain form",
+   "function": "past tense / completed action",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助動詞",
+   "pos_en": "auxiliary",
+   "reading": "た",
+   "ruby": [
+    [
+     "た",
+     ""
+    ]
+   ],
+   "surface": "た"
+  },
+  {
+   "dictionary_form": "。",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "。",
+   "ruby": [
+    [
+     "。",
+     ""
+    ]
+   ],
+   "surface": "。"
+  }
+ ]
+}

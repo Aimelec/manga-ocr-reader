@@ -1,0 +1,329 @@
+{
+ "grammar": [
+  {
+   "at": 11,
+   "explanation": "'probably…' / 'right?'",
+   "match": "でしょ",
+   "name": "〜だろう / 〜でしょう"
+  }
+ ],
+ "hiragana": "しょうしょうおまちいただけますでしょうか。",
+ "text": "少々お待ちいただけますでしょうか。",
+ "tokens": [
+  {
+   "dictionary_form": "少々",
+   "entries": [
+    {
+     "kana": [
+      "しょうしょう"
+     ],
+     "kanji": [
+      "少々",
+      "少少",
+      "小々"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "just a minute; small quantity",
+       "pos": "adverb (fukushi), noun (common) (futsuumeishi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "少",
+     "kun": [
+      "すく.ない",
+      "すこ.し"
+     ],
+     "meanings": [
+      "few",
+      "little"
+     ],
+     "on": [
+      "ショウ"
+     ],
+     "strokes": 4
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "しょうしょう",
+   "ruby": [
+    [
+     "少々",
+     "しょうしょう"
+    ]
+   ],
+   "surface": "少々"
+  },
+  {
+   "dictionary_form": "お",
+   "entries": [
+    {
+     "kana": [
+      "ご"
+     ],
+     "kanji": [
+      "御"
+     ],
+     "score": 8,
+     "senses": [
+      {
+       "gloss": "honorific/polite/humble prefix",
+       "pos": "prefix"
+      },
+      {
+       "gloss": "honorific suffix",
+       "pos": "suffix"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "お",
+      "おん"
+     ],
+     "kanji": [
+      "御"
+     ],
+     "score": 8,
+     "senses": [
+      {
+       "gloss": "honorific/polite/humble prefix",
+       "pos": "prefix"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "ぎょ"
+     ],
+     "kanji": [
+      "御"
+     ],
+     "score": 6,
+     "senses": [
+      {
+       "gloss": "honorific affix",
+       "pos": "prefix, suffix"
+      },
+      {
+       "gloss": "honorific prefix",
+       "pos": "prefix"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "接頭辞",
+   "pos_en": "prefix",
+   "reading": "お",
+   "ruby": [
+    [
+     "お",
+     ""
+    ]
+   ],
+   "surface": "お"
+  },
+  {
+   "dictionary_form": "待つ",
+   "entries": [
+    {
+     "kana": [
+      "まつ"
+     ],
+     "kanji": [
+      "待つ",
+      "俟つ"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "to wait",
+       "pos": "Godan verb with 'tsu' ending, transitive verb, intransitive verb"
+      },
+      {
+       "gloss": "to await; to look forward to; to anticipate",
+       "pos": "Godan verb with 'tsu' ending, transitive verb, intransitive verb"
+      },
+      {
+       "gloss": "to depend on; to need",
+       "pos": "Godan verb with 'tsu' ending, transitive verb, intransitive verb"
+      }
+     ]
+    }
+   ],
+   "form_en": "connective/masu-stem",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "待",
+     "kun": [
+      "ま.つ",
+      "-ま.ち"
+     ],
+     "meanings": [
+      "wait",
+      "depend on"
+     ],
+     "on": [
+      "タイ"
+     ],
+     "strokes": 9
+    }
+   ],
+   "parts": [],
+   "pos": "動詞",
+   "pos_en": "verb",
+   "reading": "まち",
+   "ruby": [
+    [
+     "待",
+     "ま"
+    ],
+    [
+     "ち",
+     ""
+    ]
+   ],
+   "surface": "待ち"
+  },
+  {
+   "dictionary_form": "いただける",
+   "entries": [
+    {
+     "kana": [
+      "いただく"
+     ],
+     "kanji": [
+      "頂く",
+      "戴く"
+     ],
+     "score": 8,
+     "senses": [
+      {
+       "gloss": "to receive; to get; to accept; to take; to buy",
+       "pos": "Godan verb with 'ku' ending, transitive verb"
+      },
+      {
+       "gloss": "to eat; to drink",
+       "pos": "Godan verb with 'ku' ending, transitive verb"
+      },
+      {
+       "gloss": "to be crowned with; to wear (on one's head); to have (on top)",
+       "pos": "Godan verb with 'ku' ending, transitive verb"
+      },
+      {
+       "gloss": "to have (as one's leader); to live under (a ruler); to install (a president)",
+       "pos": "Godan verb with 'ku' ending, transitive verb"
+      }
+     ]
+    }
+   ],
+   "form_en": "connective/masu-stem",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "動詞",
+   "pos_en": "verb",
+   "reading": "いただけ",
+   "ruby": [
+    [
+     "いただけ",
+     ""
+    ]
+   ],
+   "surface": "いただけ"
+  },
+  {
+   "dictionary_form": "ます",
+   "entries": [],
+   "form_en": "plain form",
+   "function": "polite verb ending",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助動詞",
+   "pos_en": "auxiliary",
+   "reading": "ます",
+   "ruby": [
+    [
+     "ます",
+     ""
+    ]
+   ],
+   "surface": "ます"
+  },
+  {
+   "dictionary_form": "です",
+   "entries": [],
+   "form_en": "volitional (let's / probably)",
+   "function": "copula 'is' (polite)",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助動詞",
+   "pos_en": "auxiliary",
+   "reading": "でしょう",
+   "ruby": [
+    [
+     "でしょう",
+     ""
+    ]
+   ],
+   "surface": "でしょう"
+  },
+  {
+   "dictionary_form": "か",
+   "entries": [],
+   "form_en": "",
+   "function": "question marker / 'or'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "か",
+   "ruby": [
+    [
+     "か",
+     ""
+    ]
+   ],
+   "surface": "か"
+  },
+  {
+   "dictionary_form": "。",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "。",
+   "ruby": [
+    [
+     "。",
+     ""
+    ]
+   ],
+   "surface": "。"
+  }
+ ]
+}

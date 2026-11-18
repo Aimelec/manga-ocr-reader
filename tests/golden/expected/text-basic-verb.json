@@ -1,0 +1,167 @@
+{
+ "grammar": [],
+ "hiragana": "あさごはんをたべる。",
+ "text": "朝ごはんを食べる。",
+ "tokens": [
+  {
+   "dictionary_form": "朝ごはん",
+   "entries": [
+    {
+     "kana": [
+      "あさごはん"
+     ],
+     "kanji": [
+      "朝ご飯",
+      "朝ごはん",
+      "朝御飯"
+     ],
+     "score": 7,
+     "senses": [
+      {
+       "gloss": "breakfast",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "朝",
+     "kun": [
+      "あさ"
+     ],
+     "meanings": [
+      "morning",
+      "dynasty",
+      "regime",
+      "epoch",
+      "period"
+     ],
+     "on": [
+      "チョウ"
+     ],
+     "strokes": 12
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "あさごはん",
+   "ruby": [
+    [
+     "朝",
+     "あさ"
+    ],
+    [
+     "ごはん",
+     ""
+    ]
+   ],
+   "surface": "朝ごはん"
+  },
+  {
+   "dictionary_form": "を",
+   "entries": [],
+   "form_en": "",
+   "function": "direct-object marker",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "を",
+   "ruby": [
+    [
+     "を",
+     ""
+    ]
+   ],
+   "surface": "を"
+  },
+  {
+   "dictionary_form": "食べる",
+   "entries": [
+    {
+     "kana": [
+      "たべる"
+     ],
+     "kanji": [
+      "食べる",
+      "喰べる"
+     ],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "to eat",
+       "pos": "Ichidan verb, transitive verb"
+      },
+      {
+       "gloss": "to live on (e.g. a salary); to live off; to subsist on",
+       "pos": "Ichidan verb, transitive verb"
+      }
+     ]
+    }
+   ],
+   "form_en": "plain form",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "食",
+     "kun": [
+      "く.う",
+      "く.らう",
+      "た.べる",
+      "は.む"
+     ],
+     "meanings": [
+      "eat",
+      "food"
+     ],
+     "on": [
+      "ショク",
+      "ジキ"
+     ],
+     "strokes": 9
+    }
+   ],
+   "parts": [],
+   "pos": "動詞",
+   "pos_en": "verb",
+   "reading": "たべる",
+   "ruby": [
+    [
+     "食",
+     "た"
+    ],
+    [
+     "べる",
+     ""
+    ]
+   ],
+   "surface": "食べる"
+  },
+  {
+   "dictionary_form": "。",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "。",
+   "ruby": [
+    [
+     "。",
+     ""
+    ]
+   ],
+   "surface": "。"
+  }
+ ]
+}

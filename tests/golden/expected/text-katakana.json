@@ -1,0 +1,171 @@
+{
+ "grammar": [],
+ "hiragana": "コーヒーとケーキをください。",
+ "text": "コーヒーとケーキをください。",
+ "tokens": [
+  {
+   "dictionary_form": "コーヒー",
+   "entries": [
+    {
+     "kana": [
+      "コーヒー"
+     ],
+     "kanji": [
+      "珈琲"
+     ],
+     "score": 10,
+     "senses": [
+      {
+       "gloss": "coffee",
+       "pos": "noun (common) (futsuumeishi), nouns which may take the genitive case particle 'no'"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "コーヒー",
+   "ruby": [
+    [
+     "コーヒー",
+     ""
+    ]
+   ],
+   "surface": "コーヒー"
+  },
+  {
+   "dictionary_form": "と",
+   "entries": [],
+   "form_en": "",
+   "function": "'and' (complete list) / 'with' / quotation / 'when, if'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "と",
+   "ruby": [
+    [
+     "と",
+     ""
+    ]
+   ],
+   "surface": "と"
+  },
+  {
+   "dictionary_form": "ケーキ",
+   "entries": [
+    {
+     "kana": [
+      "ケーキ"
+     ],
+     "kanji": [],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "cake",
+       "pos": "noun (common) (futsuumeishi)"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun",
+   "reading": "ケーキ",
+   "ruby": [
+    [
+     "ケーキ",
+     ""
+    ]
+   ],
+   "surface": "ケーキ"
+  },
+  {
+   "dictionary_form": "を",
+   "entries": [],
+   "form_en": "",
+   "function": "direct-object marker",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "を",
+   "ruby": [
+    [
+     "を",
+     ""
+    ]
+   ],
+   "surface": "を"
+  },
+  {
+   "dictionary_form": "くださる",
+   "entries": [
+    {
+     "kana": [
+      "くださる"
+     ],
+     "kanji": [
+      "下さる"
+     ],
+     "score": 8,
+     "senses": [
+      {
+       "gloss": "to give; to confer; to bestow",
+       "pos": "Godan verb - -aru special class"
+      },
+      {
+       "gloss": "to kindly do for one; to oblige; to favour; to favor",
+       "pos": "Godan verb - -aru special class"
+      }
+     ]
+    }
+   ],
+   "form_en": "imperative",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "動詞",
+   "pos_en": "verb",
+   "reading": "ください",
+   "ruby": [
+    [
+     "ください",
+     ""
+    ]
+   ],
+   "surface": "ください"
+  },
+  {
+   "dictionary_form": "。",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "。",
+   "ruby": [
+    [
+     "。",
+     ""
+    ]
+   ],
+   "surface": "。"
+  }
+ ]
+}

@@ -1,0 +1,305 @@
+{
+ "grammar": [],
+ "hiragana": "たなかさんはどこですか。",
+ "text": "田中さんはどこですか。",
+ "tokens": [
+  {
+   "dictionary_form": "田中",
+   "entries": [
+    {
+     "kana": [
+      "たなか"
+     ],
+     "kanji": [
+      "田中"
+     ],
+     "score": 2,
+     "senses": [
+      {
+       "gloss": "Tanaka",
+       "pos": "name"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "たなた"
+     ],
+     "kanji": [
+      "田中"
+     ],
+     "score": 0,
+     "senses": [
+      {
+       "gloss": "Tanata",
+       "pos": "name"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "たんか"
+     ],
+     "kanji": [
+      "田中"
+     ],
+     "score": 0,
+     "senses": [
+      {
+       "gloss": "Tanka",
+       "pos": "name"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": true,
+   "kanji": [
+    {
+     "char": "田",
+     "kun": [
+      "た"
+     ],
+     "meanings": [
+      "rice field",
+      "rice paddy"
+     ],
+     "on": [
+      "デン"
+     ],
+     "strokes": 5
+    },
+    {
+     "char": "中",
+     "kun": [
+      "なか",
+      "うち",
+      "あた.る"
+     ],
+     "meanings": [
+      "in",
+      "inside",
+      "middle",
+      "mean",
+      "center"
+     ],
+     "on": [
+      "チュウ"
+     ],
+     "strokes": 4
+    }
+   ],
+   "parts": [],
+   "pos": "名詞",
+   "pos_en": "noun (name)",
+   "reading": "たなか",
+   "ruby": [
+    [
+     "田中",
+     "たなか"
+    ]
+   ],
+   "surface": "田中"
+  },
+  {
+   "dictionary_form": "さん",
+   "entries": [
+    {
+     "kana": [
+      "さん"
+     ],
+     "kanji": [],
+     "score": 9,
+     "senses": [
+      {
+       "gloss": "Mr.; Mrs.; Miss; Ms.; -san",
+       "pos": "suffix"
+      },
+      {
+       "gloss": "politeness marker",
+       "pos": "suffix"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "さん",
+      "ざん"
+     ],
+     "kanji": [
+      "山"
+     ],
+     "score": 8,
+     "senses": [
+      {
+       "gloss": "Mt.; Mount",
+       "pos": "suffix"
+      },
+      {
+       "gloss": "Mt.; Mount",
+       "pos": "suffix"
+      }
+     ]
+    },
+    {
+     "kana": [
+      "さん"
+     ],
+     "kanji": [
+      "産"
+     ],
+     "score": 8,
+     "senses": [
+      {
+       "gloss": "(giving) birth; childbirth; delivery; confinement",
+       "pos": "noun (common) (futsuumeishi)"
+      },
+      {
+       "gloss": "native of; product of",
+       "pos": "noun (common) (futsuumeishi), noun, used as a suffix"
+      },
+      {
+       "gloss": "assets; property; fortune",
+       "pos": "noun (common) (futsuumeishi), noun, used as a suffix"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "接尾辞",
+   "pos_en": "suffix",
+   "reading": "さん",
+   "ruby": [
+    [
+     "さん",
+     ""
+    ]
+   ],
+   "surface": "さん"
+  },
+  {
+   "dictionary_form": "は",
+   "entries": [],
+   "form_en": "",
+   "function": "topic marker: 'as for X…'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "は",
+   "ruby": [
+    [
+     "は",
+     ""
+    ]
+   ],
+   "surface": "は"
+  },
+  {
+   "dictionary_form": "どこ",
+   "entries": [
+    {
+     "kana": [
+      "どこ",
+      "いずこ",
+      "いずく"
+     ],
+     "kanji": [
+      "何処",
+      "何所",
+      "何處"
+     ],
+     "score": 10,
+     "senses": [
+      {
+       "gloss": "where; what place",
+       "pos": "pronoun"
+      },
+      {
+       "gloss": "how much (long, far); what extent",
+       "pos": "pronoun"
+      }
+     ]
+    }
+   ],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "代名詞",
+   "pos_en": "pronoun",
+   "reading": "どこ",
+   "ruby": [
+    [
+     "どこ",
+     ""
+    ]
+   ],
+   "surface": "どこ"
+  },
+  {
+   "dictionary_form": "です",
+   "entries": [],
+   "form_en": "plain form",
+   "function": "copula 'is' (polite)",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助動詞",
+   "pos_en": "auxiliary",
+   "reading": "です",
+   "ruby": [
+    [
+     "です",
+     ""
+    ]
+   ],
+   "surface": "です"
+  },
+  {
+   "dictionary_form": "か",
+   "entries": [],
+   "form_en": "",
+   "function": "question marker / 'or'",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "助詞",
+   "pos_en": "particle",
+   "reading": "か",
+   "ruby": [
+    [
+     "か",
+     ""
+    ]
+   ],
+   "surface": "か"
+  },
+  {
+   "dictionary_form": "。",
+   "entries": [],
+   "form_en": "",
+   "function": "",
+   "has_kanji": false,
+   "kanji": [],
+   "parts": [],
+   "pos": "補助記号",
+   "pos_en": "punctuation",
+   "reading": "。",
+   "ruby": [
+    [
+     "。",
+     ""
+    ]
+   ],
+   "surface": "。"
+  }
+ ]
+}
