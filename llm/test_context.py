@@ -19,7 +19,7 @@ HERE = Path(__file__).parent
 ROOT = HERE.parent
 sys.path.insert(0, str(ROOT))
 
-from llm.prompt import SYSTEM, user_message  # noqa: E402
+from backend.domain.prompts import SYSTEM, user_message  # noqa: E402
 from reader_core import analyze  # noqa: E402
 
 PORT = 8091

@@ -52,3 +52,28 @@ class Container:
         """Load the heavy models now instead of on the first request."""
         self.ocr.warm_up()
         self.tokenizer.warm_up()
+
+    @cached_property
+    def llm_runtime(self):
+        import sys
+
+        from backend.adapters.llama_server import LlamaServer
+        s, llm = self.settings, self.settings.llm
+        tie = None
+        if sys.platform == "win32":
+            from backend.adapters.win_job import kill_with_parent as tie
+        server = LlamaServer(s.llama_server, s.root / llm.model, llm.device, llm.port, llm.context_size,
+                             llm.idle_seconds, s.llm_log, tie_to_parent=tie)
+        server.start_idle_watch()
+        return server
+
+    @cached_property
+    def chat(self):
+        from backend.adapters.openai_chat import OpenAiCompatibleChat
+        return OpenAiCompatibleChat()
+
+    @cached_property
+    def line_explainer(self):
+        from backend.services.explain import LineExplainer
+        return LineExplainer(self.llm_runtime, self.chat, self.analyzer,
+                             temperature=self.settings.llm.temperature, max_tokens=self.settings.llm.max_tokens)

@@ -1,7 +1,7 @@
 """Interfaces the use cases depend on (dependency inversion). Implementations live in backend.adapters
 and backend.repositories; tests use fakes. Any class with these methods fits: no inheritance needed."""
 from dataclasses import dataclass, field
-from typing import Optional, Protocol
+from typing import ContextManager, Iterator, Optional, Protocol
 
 from PIL import Image
 
@@ -36,3 +36,13 @@ class WordDictionary(Protocol):
 
     def lookup_kanji(self, char: str) -> Optional[dict]: ...
 
+
+
+class ChatModel(Protocol):
+    def stream_chat(self, base_url: str, messages: list[dict], temperature: float, max_tokens: int) -> Iterator[str]:
+        """Yields the answer piece by piece."""
+
+
+class ModelRuntime(Protocol):
+    def session(self) -> ContextManager[str]:
+        """Keeps the model available inside the `with` block; yields its base URL."""

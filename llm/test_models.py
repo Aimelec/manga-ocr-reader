@@ -12,7 +12,8 @@ import time
 import urllib.request
 from pathlib import Path
 
-from prompt import SYSTEM, user_message
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from backend.domain.prompts import SYSTEM, user_message  # noqa: E402
 
 HERE = Path(__file__).parent
 ROOT = HERE.parent

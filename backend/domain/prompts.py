@@ -1,4 +1,4 @@
-"""Prompt for the sentence explanation (shared by the model test and the server)."""
+"""Prompts for the sentence explanation (shared by the model tests in llm/ and the server)."""
 
 SYSTEM = """You help an intermediate Japanese learner read manga. They know basic grammar but struggle with kanji and nuance.
 You get the current speech bubble (OCR text, it may contain recognition mistakes) and sometimes the previous bubbles for context.
@@ -31,7 +31,7 @@ SKIP_POS = ("補助記号", "記号", "空白")
 
 
 def analysis_block(tokens):
-    """tokens: the 'tokens' list from reader_core.analyze()."""
+    """tokens: the "tokens" list from TextAnalyzer.analyze()."""
     rows = []
     for t in tokens:
         if t["pos"] in SKIP_POS:
