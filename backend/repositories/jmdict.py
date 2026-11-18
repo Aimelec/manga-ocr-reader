@@ -39,23 +39,28 @@ class KanjiEntry:
 
 
 class JmdictRepository:
-    """Word, name and kanji lookups. jamdict's SQLite connection is not thread-safe, hence the lock."""
+    """Word, name and kanji lookups, safe to call from any thread.
+
+    A SQLite connection may only be used by the thread that opened it, and the server answers
+    requests on a pool of worker threads. So each thread gets its own jamdict instance (and
+    connection), reused for all of its lookups and closed with the thread.
+    """
 
     def __init__(self, db_file):
         self.db_file = str(db_file)
-        self._lock = threading.Lock()
-        self._jam = None
+        self._local = threading.local()
 
     def _db(self):
-        if self._jam is None:
+        jam = getattr(self._local, "jam", None)
+        if jam is None:
             from jamdict import Jamdict
-            self._jam = Jamdict(db_file=self.db_file, kd2_file=self.db_file, jmnedict_file=self.db_file)
-        return self._jam
+            jam = self._local.jam = Jamdict(db_file=self.db_file, kd2_file=self.db_file,
+                                            jmnedict_file=self.db_file)
+        return jam
 
     def words(self, query, include_names=False):
         """All JMdict entries for `query` and, optionally, the first 5 JMnedict names."""
-        with self._lock:
-            result = self._db().lookup(query, lookup_chars=False, lookup_ne=include_names)
+        result = self._db().lookup(query, lookup_chars=False, lookup_ne=include_names)
         words = [WordEntry(
             kanji=tuple(k.text for k in e.kanji_forms),
             kana=tuple(k.text for k in e.kana_forms),
@@ -70,8 +75,7 @@ class JmdictRepository:
         return words, names
 
     def kanji(self, char):
-        with self._lock:
-            result = self._db().lookup(char, lookup_chars=True, lookup_ne=False)
+        result = self._db().lookup(char, lookup_chars=True, lookup_ne=False)
         for c in result.chars:
             if c.literal != char:
                 continue
