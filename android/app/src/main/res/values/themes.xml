@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg">#111111</color>
+    <color name="card">#1D1D1D</color>
+    <color name="accent">#4DA3FF</color>
+    <color name="icon_bg">#1F3A5F</color>
+
+    <!-- Compose draws the UI; this only sets the window background shown while starting. -->
+    <style name="AppTheme" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/bg</item>
+    </style>
+</resources>

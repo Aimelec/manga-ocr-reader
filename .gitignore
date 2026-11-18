@@ -1,0 +1,44 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Secrets: self-signed certificate + private key (made by server.py)
+cert/
+
+# Large downloads: dictionary database, models, toolchains
+dict/
+dl/
+llm/models/
+tools/
+
+# Logs and local outputs
+*.log
+test/srv.log
+test/out.json
+test/explain.txt
+test/explain_req.json
+
+# Local config (copy llm/config.example.json to llm/config.json)
+llm/config.json
+
+# Android build output and local SDK path
+android/.gradle/
+android/.kotlin/
+android/build/
+android/app/build/
+android/local.properties
+*.apk
+*.aab
+*.jks
+*.keystore
+
+# Editors / OS
+.idea/
+.vscode/
+*.iml
+Thumbs.db
+desktop.ini
+
+# Old model-test results (before the test lines were rewritten)
+llm/results_*/

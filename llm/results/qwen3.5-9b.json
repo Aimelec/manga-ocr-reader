@@ -1,0 +1,91 @@
+{
+ "model": "qwen3.5-9b",
+ "file": "Qwen3.5-9B-Q6_K.gguf",
+ "answers": [
+  {
+   "id": "archaic-1",
+   "line": "そなたは旅の者か。この峠を夜に越えようとは、命が惜しくないと見える。",
+   "seconds": 3.34,
+   "tokens_per_second": 74.5,
+   "answer": "TRANSLATION: Are you a traveler? To try to cross this pass at night, you seem to not care about your life.\nLITERAL: You are traveler of journey? This pass at night cross want to do, life is precious not see.\nNOTES:\n- Tone is formal and archaic, using the honorific/respectful style typical of a superior addressing an inferior or a stranger.\n- \"そなた\" (sonata) is an old-fashioned way to say \"you,\" often used by nobles or in fantasy settings to address someone of lower status.\n- \"命が惜しくない\" literally means \"life is not precious,\" implying the person is reckless or foolish for risking their life.\n- The speaker is likely a guard, elder, or local resident warning a traveler about the danger of the mountain pass."
+  },
+  {
+   "id": "archaic-2",
+   "line": "わしを侮るでない。この山の道は、五十年歩いてきたこの足が覚えておるのじゃ。",
+   "seconds": 2.85,
+   "tokens_per_second": 77.4,
+   "answer": "TRANSLATION: Don't underestimate me. This mountain path is something my feet, which have walked it for fifty years, remember.\nLITERAL: Me (washi) look down upon (aburu) not do. This mountain road is, fifty years walked came this foot (ashi) remember (oboeru) of it (no) is (noja).\nNOTES:\n- The speaker uses rough, archaic dialect (washi, noja, oboeru) to sound like an experienced, older man; this is not a mistake but a stylistic choice.\n- \"Aburu\" means \"to look down on\" or \"to underestimate,\" often used in rough speech where \"kageru\" might be too polite.\n- The subject of \"remember\" is \"my feet\" (kono ashi), emphasizing the character's deep physical connection to the mountain.\n- \"Noja\" is a dialectal contraction of \"no wa,\" used here to give the sentence a firm, declarative tone."
+  },
+  {
+   "id": "archaic-3",
+   "line": "礼には及ばぬ。代わりに、麓の村まで薬を届けてもらえれば、それでよい。",
+   "seconds": 2.42,
+   "tokens_per_second": 76.3,
+   "answer": "TRANSLATION: \"I can't repay you. Instead, if you could deliver medicine to the village at the foot of the mountain, that would be enough.\"\nLITERAL: \"Kitsune ni oyobanu. Kawari ni, shitake no mura made kusuri o todokete moraereba, sore de ii.\"\nNOTES:\n- The speaker is humble and apologetic, offering a favor in return for help received.\n- \"Kitsune ni oyobanu\" is an idiom meaning \"I cannot repay you\" or \"It's beyond my ability to return the favor.\"\n- \"Shitake\" is a contraction of \"shitagawa\" (foot/base), commonly used in rough or dialect speech.\n- The speaker is likely the traveler mentioned in previous bubbles, offering to help the mountain guide."
+  },
+  {
+   "id": "merchant-1",
+   "line": "この毛皮なら銀貨二十枚が相場ですが、今日は特別に十八枚でお譲りしましょう。",
+   "seconds": 2.59,
+   "tokens_per_second": 76.0,
+   "answer": "TRANSLATION: \"For this fur, the going rate is twenty silver coins, but today I'll let you have it for a special price of eighteen.\"\nLITERAL: \"This fur if, silver coin twenty coins is market price but, today is specially eighteen coins with let you give.\"\nNOTES:\n- The speaker is a merchant or dealer offering a discount; the tone is polite but business-like.\n- \"相場\" (sōba) means the prevailing market price or standard rate; \"お譲りしましょう\" is a humble way of saying \"I will give/sell this to you.\"\n- The structure \"～なら\" sets up a condition or topic (\"If it's this fur...\"), followed by the exception \"今日は特別に\" (today, specially).\n- The subject of \"お譲りしましょう\" is the speaker (the seller), who is offering the item to the listener."
+  },
+  {
+   "id": "merchant-2",
+   "line": "足元を見られちゃ困りますな。こっちも生活がかかってるんでね。",
+   "seconds": 2.49,
+   "tokens_per_second": 76.1,
+   "answer": "TRANSLATION: \"If you look down on me, it'll be a problem. My livelihood is at stake here, you know.\"\nLITERAL: Feet bottom being seen (by) -te trouble becomes na. Here (also) life hangs (on) -te ne.\nNOTES:\n- The speaker uses \"な\" (na) and \"んで\" (nde) to sound like a rough, masculine, or slightly old-fashioned character pleading their case.\n- \"足元を見られる\" is an idiom meaning to be looked down upon or treated with contempt; \"見られちゃ\" is a contraction of \"見られてしまう\".\n- \"生活がかかっている\" literally means \"life hangs,\" implying the speaker's survival or job depends on this deal.\n- \"こっちも\" emphasizes that the speaker is just as desperate or important as the listener might assume."
+  },
+  {
+   "id": "merchant-3",
+   "line": "損して得取れ、ってやつですよ。",
+   "seconds": 2.23,
+   "tokens_per_second": 75.9,
+   "answer": "TRANSLATION: That's the idea: \"Take a loss to make a gain.\"\nLITERAL: Loss doing, gain take, that thing you say.\nNOTES:\n- This is a proverbial expression meaning you should accept a small loss now to secure a larger profit later.\n- The phrase ends with \"ってやつですよ\", a colloquial way of saying \"that's the thing\" or \"that's what it means,\" often used to explain a concept.\n- The speaker is likely explaining a strategy or justifying a risky move to someone else.\n- \"損して得取れ\" is the core idiom; the rest of the sentence frames it as a common saying."
+  },
+  {
+   "id": "rough-1",
+   "line": "だから言ったじゃねえか。あいつに任せときゃろくなことにならねえって。",
+   "seconds": 3.25,
+   "tokens_per_second": 76.0,
+   "answer": "TRANSLATION: \"I told you so. If you'd left it to that guy, nothing good would have come of it.\"\nLITERAL: \"So said it wasn't it. That person to trust-leave if, then good thing become won't.\"\nNOTES:\n- **Tone/Style**: Rough, masculine speech using the negative imperative form \"〜ときゃ\" (tokya) and the negative potential \"〜ならねえ\" (naranee).\n- **Idioms/Phrases**: \"だから言ったじゃねえか\" is the standard rough equivalent of \"I told you so,\" where \"じゃねえか\" emphasizes the speaker's certainty or frustration.\n- **Grammar**: \"〜ときゃ\" is a colloquial contraction of \"〜とけば\" (tokeba), meaning \"if you had [action] and [result].\" \"〜ならねえ\" is a rough contraction of \"ならない\" (naranai), meaning \"would not be.\"\n- **Context**: The speaker is scolding someone for trusting the wrong person (\"that guy\"), implying a past event where bad results occurred due to that trust."
+  },
+  {
+   "id": "rough-2",
+   "line": "…まあ、今さら文句言っても始まんねえか。",
+   "seconds": 1.89,
+   "tokens_per_second": 76.2,
+   "answer": "TRANSLATION: \"Well, there's no point in complaining now.\"\nLITERAL: \"...well, now where complaint say even start won't.\"\nNOTES:\n- The speaker is resigned and dismissive, implying that complaining is futile at this stage.\n- \"始まんねえか\" is a rough contraction of \"始まらない\" (hajimaranai), meaning \"won't start\" or \"is pointless.\"\n- The structure \"～ても～ないか\" (even if... won't...) expresses that an action is useless regardless of the attempt.\n- The ellipsis \"…\" suggests a pause or a sigh before delivering this pragmatic conclusion."
+  },
+  {
+   "id": "tsundere",
+   "line": "べ、別にあんたのために作ったわけじゃないんだからね！",
+   "seconds": 2.29,
+   "tokens_per_second": 76.0,
+   "answer": "TRANSLATION: \"N-no, I didn't make it just for you, okay!\"\nLITERAL: \"Be, betsu ni anta no tame ni tsukutta wake janai nda kara ne!\"\nNOTES:\n- The speaker is stuttering (\"べ\") to show embarrassment or nervousness while denying an accusation.\n- \"わけじゃないんだからね\" is a defensive, emphatic way of saying \"it's not that I did it for you,\" often used to sound slightly childish or petulant.\n- The sentence structure \"A wake janai kara ne\" literally means \"It's not the case of A, so (listen to me).\"\n- The subject (I) and object (it) are omitted, relying on context to understand who is speaking and what was made."
+  },
+  {
+   "id": "reading",
+   "line": "明日は朝早いから、もう寝なきゃ。",
+   "seconds": 1.74,
+   "tokens_per_second": 76.7,
+   "answer": "TRANSLATION: Tomorrow is early, so I have to sleep already.\nLITERAL: Tomorrow is morning-early because, already sleep must.\nNOTES:\n- The speaker is deciding to go to bed now because they have an early start tomorrow.\n- \"寝なきゃ\" is a contraction of \"寝ないといけない\" (need to not sleep / must sleep), expressing necessity.\n- The phrase \"朝早い\" literally means \"morning is early,\" but idiomatically refers to having to wake up very early.\n- This is standard casual speech; no dialect or archaic forms are present."
+  },
+  {
+   "id": "ocr-error",
+   "line": "お前の言う通りだ、俺が間遺っていた。",
+   "seconds": 2.49,
+   "tokens_per_second": 77.2,
+   "answer": "TRANSLATION: \"You're right; I was mistaken.\"\nLITERAL: \"Your say as per, I was wronged/stayed.\"\nNOTES:\n- The phrase \"お前の言う通りだ\" is a common concession meaning \"as you said\" or \"you are correct,\" often used to admit fault politely or firmly.\n- \"間遺っていた\" is a typo in the OCR for \"間違っていた\" (machigatte ita), meaning \"I was wrong\" or \"I made a mistake.\" The character 遺 (bequeath/leave behind) does not fit here.\n- The speaker is admitting their error to the listener, shifting from a defensive stance to agreement.\n- \"お前\" (omae) is a rough, informal pronoun for \"you,\" suggesting the relationship is either close friends, rivals, or the speaker is being deliberately blunt."
+  },
+  {
+   "id": "idiom",
+   "line": "猫の手も借りたいほど忙しいんだ、手伝ってくれ。",
+   "seconds": 2.11,
+   "tokens_per_second": 77.2,
+   "answer": "TRANSLATION: I'm so busy I'd even borrow a cat's hand; please help me out.\nLITERAL: Cat's hand also borrow want so busy (da), help (te) give (kure).\nNOTES:\n- The phrase \"猫の手も借りたいほど\" is an idiom meaning \"so busy one would even ask a cat for help,\" implying extreme busyness since cats are traditionally seen as lazy.\n- The sentence structure uses \"ほど...んだ\" to emphasize the degree of the situation described in the first clause.\n- The speaker is explaining their overwhelming workload to request assistance from the listener.\n- The tone is explanatory and pleading, using the polite form \"くれ\" to ask for a favor."
+  }
+ ],
+ "load_seconds": 19.9
+}

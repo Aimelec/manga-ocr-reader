@@ -1,0 +1,91 @@
+{
+ "model": "qwen3-14b",
+ "file": "Qwen3-14B-Q4_K_M.gguf",
+ "answers": [
+  {
+   "id": "archaic-1",
+   "line": "そなたは旅の者か。この峠を夜に越えようとは、命が惜しくないと見える。",
+   "seconds": 3.43,
+   "tokens_per_second": 64.3,
+   "answer": "TRANSLATION: Are you a traveler? It seems you don't value your life, as you intend to cross this pass at night.  \nLITERAL: So-nata wa tabi no mono ka. Kono tōge o yoru ni koeyō to wa, inochi ga oshibaku naku to mieru.  \nNOTES:  \n- <tone and speech style: archaic, formal, and somewhat dramatic, typical of older or noble speech>  \n- <「そなた」is an archaic or honorific form of \"you,\" often used in older or formal contexts>  \n- <「命が惜しくない」literally means \"not valuing one's life,\" which is a strong way to express recklessness>  \n- <「峠を夜に越えようとは」implies the speaker is surprised or concerned about the listener's intention to cross the pass at night>"
+  },
+  {
+   "id": "archaic-2",
+   "line": "わしを侮るでない。この山の道は、五十年歩いてきたこの足が覚えておるのじゃ。",
+   "seconds": 3.05,
+   "tokens_per_second": 64.5,
+   "answer": "TRANSLATION: Do not look down on me. This mountain path is known to these feet that have walked it for fifty years.  \nLITERAL: I am not to be looked down on. This mountain path is what these feet, which have walked it for fifty years, remember.  \nNOTES:  \n- The tone is **formal and authoritative**, with the use of じゃ at the end of the sentence, which is a dialectal or archaic form of です.  \n- 侮るでない is a contraction of 侮るな (don't look down on), showing **rough or direct speech**.  \n- 五十年歩いてきたこの足が覚えておるのじゃ uses a **poetic or archaic structure** to emphasize the speaker's long experience.  \n- The subject (the speaker) is implied but not stated, as is common in Japanese when the subject is clear from context."
+  },
+  {
+   "id": "archaic-3",
+   "line": "礼には及ばぬ。代わりに、麓の村まで薬を届けてもらえれば、それでよい。",
+   "seconds": 2.91,
+   "tokens_per_second": 64.4,
+   "answer": "TRANSLATION: I cannot offer proper thanks. Instead, if you could deliver medicine to the village at the foot of the mountain, that would be enough.  \nLITERAL: 礼には及ばぬ。代わりに、麓の村まで薬を届けてもらえれば、それでよい。  \nNOTES:  \n- The tone is formal and respectful, typical of a situation where someone is expressing gratitude but cannot offer proper thanks.  \n- \"礼には及ばぬ\" is a polite way of saying \"I cannot offer proper thanks\" or \"I cannot repay you adequately.\"  \n- \"代わりに\" means \"instead\" or \"in exchange,\" showing the speaker is offering an alternative form of gratitude.  \n- The subject is implied to be the speaker, likely the older man from the previous dialogue, who is asking the traveler to deliver medicine as a form of repayment."
+  },
+  {
+   "id": "merchant-1",
+   "line": "この毛皮なら銀貨二十枚が相場ですが、今日は特別に十八枚でお譲りしましょう。",
+   "seconds": 2.9,
+   "tokens_per_second": 64.2,
+   "answer": "TRANSLATION: If it's this fur, the usual price is twenty silver coins, but today I'll let you have it for eighteen.  \nLITERAL: Kono kawa-ba nara ginka nijū-mai ga sōba desu ga, kyou wa toku-betsu ni hachiji-mai de o-tsurayoshi mashou.  \nNOTES:  \n- The tone is polite and business-like, typical of a shopkeeper or seller.  \n- \"お譲りしましょう\" (o-tsurayoshi mashou) is a polite way of saying \"I'll let you have it\" or \"I'll sell it to you.\"  \n- \"相場\" (sōba) refers to the usual or market price.  \n- The subject is implied to be the speaker, who is offering a discount on the fur."
+  },
+  {
+   "id": "merchant-2",
+   "line": "足元を見られちゃ困りますな。こっちも生活がかかってるんでね。",
+   "seconds": 2.61,
+   "tokens_per_second": 63.8,
+   "answer": "TRANSLATION: I'd be in trouble if you looked down at my feet. This is also about my livelihood, you know.  \nLITERAL: Ashimoto o mirarechā komarimasu na. Kocchi mo seikatsu ga kakatteru nde ne.  \nNOTES:  \n- The tone is polite but slightly defensive, showing the speaker is trying to be reasonable while also asserting their own position.  \n- \"足元を見られちゃ困りますな\" uses the casual contraction \"ちゃ\" (from ちゃう or ちゃい) to soften the sentence, making it sound more conversational.  \n- \"生活がかかってる\" is a common expression meaning \"depends on my livelihood\" or \"is about my living,\" emphasizing the importance of the situation."
+  },
+  {
+   "id": "merchant-3",
+   "line": "損して得取れ、ってやつですよ。",
+   "seconds": 2.32,
+   "tokens_per_second": 64.4,
+   "answer": "TRANSLATION: It's that saying, \"Lose something to gain something else.\"\nLITERAL: Loss and gain, that's the thing.\nNOTES:\n- The phrase \"損して得取れ\" is a common Japanese proverb meaning \"lose something to gain something else\" or \"lose in order to gain.\"\n- The phrase \"ってやつですよ\" is a casual way of saying \"that's the thing\" or \"that's what it is,\" often used to explain or clarify a saying or concept.\n- The structure \"損して得取れ\" is a classical or proverbial expression, often used in modern contexts to explain a situation where a loss leads to a greater gain."
+  },
+  {
+   "id": "rough-1",
+   "line": "だから言ったじゃねえか。あいつに任せときゃろくなことにならねえって。",
+   "seconds": 2.52,
+   "tokens_per_second": 64.1,
+   "answer": "TRANSLATION: That's exactly what I said. If you leave it to him, nothing good will come of it.  \nLITERAL: Dakara iita ja nee ka. Aitsu ni makase tokya rokuna koto ni nara nee tte.  \nNOTES:  \n- The tone is rough and assertive, typical of someone expressing frustration or certainty.  \n- \"じゃねえか\" is a contraction of \"じゃないか\" (isn't it?), used to emphasize a point.  \n- \"ならねえ\" is a contraction of \"ならない\" (won't happen), used in a rough or informal tone.  \n- The subject is implied to be the listener, who was previously advised not to trust the other person."
+  },
+  {
+   "id": "rough-2",
+   "line": "…まあ、今さら文句言っても始まんねえか。",
+   "seconds": 2.78,
+   "tokens_per_second": 63.7,
+   "answer": "TRANSLATION: ...Well, it's too late to complain now. It won't do any good.  \nLITERAL: …maa, imasara monku itte mo hajimannene ka.  \nNOTES:  \n- The tone is casual and rough, typical of colloquial speech.  \n- \"今さら\" (imasara) is an idiom meaning \"now, at this late stage\" or \"too late.\"  \n- \"始まんねえ\" (hajimannene) is a contraction of \"始まらない\" (hajimaranai), meaning \"won't start\" or \"won't do any good.\" The use of \"ねえ\" adds a casual, conversational tone.  \n- The speaker is likely dismissing complaints as pointless, possibly in response to someone else's frustration."
+  },
+  {
+   "id": "tsundere",
+   "line": "べ、別にあんたのために作ったわけじゃないんだからね！",
+   "seconds": 2.73,
+   "tokens_per_second": 63.8,
+   "answer": "TRANSLATION: I didn't make it for you specifically, you know!\nLITERAL: Be, betsu ni anta no tame ni tsukutta wake janai ndakara ne!\nNOTES:\n- The tone is **angry and defensive**, with a mix of **polite and rough speech**. The use of \"んだからね\" adds emphasis and a slightly confrontational tone.\n- \"べ\" is a contraction of \"べつに\" (betsu ni), meaning \"especially\" or \"particularly.\"\n- \"じゃん\" is a contraction of \"じゃない\" (janai), used here to emphasize the negation.\n- The phrase \"ために作った\" (tame ni tsukutta) means \"made for,\" and the speaker is clarifying that the action wasn't done specifically for the listener."
+  },
+  {
+   "id": "reading",
+   "line": "明日は朝早いから、もう寝なきゃ。",
+   "seconds": 2.4,
+   "tokens_per_second": 63.7,
+   "answer": "TRANSLATION: Tomorrow is early in the morning, so I should go to bed already.  \nLITERAL: Tomorrow is early in the morning, so I must go to sleep.  \n\nNOTES:  \n- The tone is neutral and conversational, typical of everyday speech.  \n- \"寝なきゃ\" is a contraction of \"寝なくちゃ\" which comes from \"寝なければ\" (if I don't sleep). It's a casual way of expressing necessity.  \n- \"朝早い\" means \"early in the morning\" and is a common way to express that one has to wake up early.  \n- The subject \"I\" is omitted but implied, which is common in Japanese when the subject is clear from context."
+  },
+  {
+   "id": "ocr-error",
+   "line": "お前の言う通りだ、俺が間遺っていた。",
+   "seconds": 2.24,
+   "tokens_per_second": 63.7,
+   "answer": "TRANSLATION: You're right, I was wrong.  \nLITERAL: Omae no iu toori da, ore ga maagitatte ita.  \nNOTES:  \n- The tone is **confessional and apologetic**, typical of a male character admitting fault.  \n- \"お前の言う通りだ\" is a **set phrase** meaning \"You're right\" or \"As you said.\"  \n- \"間遺っていた\" is likely a misrecognition of \"間違っていた\" (machigatte ita), meaning \"was wrong.\"  \n- The speaker is **admitting fault** to someone else, possibly a friend or a superior."
+  },
+  {
+   "id": "idiom",
+   "line": "猫の手も借りたいほど忙しいんだ、手伝ってくれ。",
+   "seconds": 2.48,
+   "tokens_per_second": 63.8,
+   "answer": "TRANSLATION: I'm so busy I'd even take help from a cat's paw, please help me out.  \nLITERAL: Neko no te mo karitai hodo muzukashii nda, tetsudatte kure.  \nNOTES:  \n- The phrase \"猫の手も借りたい\" is an idiom meaning \"so busy that even a cat's paw would be borrowed\" – a humorous way to express extreme busyness.  \n- The sentence uses the casual form \"nda\" (だ) and \"kure\" (くれ) to show a polite request.  \n- The structure \"～ほど～\" is used to express the degree of something, in this case, how busy the speaker is."
+  }
+ ],
+ "load_seconds": 22.9
+}

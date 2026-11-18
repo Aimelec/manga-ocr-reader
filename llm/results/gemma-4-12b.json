@@ -1,0 +1,91 @@
+{
+ "model": "gemma-4-12b",
+ "file": "gemma-4-12b-it-Q5_K_M.gguf",
+ "answers": [
+  {
+   "id": "archaic-1",
+   "line": "そなたは旅の者か。この峠を夜に越えようとは、命が惜しくないと見える。",
+   "seconds": 4.72,
+   "tokens_per_second": 54.6,
+   "answer": "TRANSLATION: Are you a traveler? Attempting to cross this pass at night suggests you have little regard for your life.\nLITERAL: You (honorific/archaic) are traveler's person. This pass (object) night at cross-try-to, life (subject) precious-not-to-be seen.\nNOTES:\n- The tone is archaic and formal, typical of a fantasy setting or a \"samurai\" style character.\n- そなた is an archaic way to say \"you,\" often used by older characters or those in high-fantasy settings.\n- 命が惜しくない (inochi ga oshiku nai) is a set phrase meaning \"to be reckless\" or \"to not value one's life.\"\n- ～と見える is a grammar structure used to express an inference or observation based on what is seen (similar to \"it seems that...\")."
+  },
+  {
+   "id": "archaic-2",
+   "line": "わしを侮るでない。この山の道は、五十年歩いてきたこの足が覚えておるのじゃ。",
+   "seconds": 4.55,
+   "tokens_per_second": 58.9,
+   "answer": "TRANSLATION: Don't underestimate me. These legs of mine, which have walked these mountain paths for fifty years, remember them well.\nLITERAL: Me [object marker] underestimate do not. This mountain's path [topic marker] this fifty years walked [past tense] this legs [subject marker] remember [present tense] [polite/archaic ending].\nNOTES:\n- The speaker uses an elderly, authoritative, and slightly archaic style, indicated by the pronouns わし (washi) and the sentence-ending particle のじゃ (no ja).\n- 侮るでない (asuru denai) is a firm command. The ~でない form is a way to say \"do not\" in a formal or stern manner.\n- The phrase この足が覚えておる (kono ashi ga oboete oru) uses the ~おる (oru) form, which is a humble or regional alternative to ~いる (iru) for \"to be doing\" or \"to have.\"\n- The structure uses a relative clause: この山の道は [五十年歩いてきたこの足が覚えておる] (The mountain path [which these legs that walked for 50 years remember])."
+  },
+  {
+   "id": "archaic-3",
+   "line": "礼には及ばぬ。代わりに、麓の村まで薬を届けてもらえれば、それでよい。",
+   "seconds": 4.01,
+   "tokens_per_second": 58.8,
+   "answer": "TRANSLATION: No need for thanks. Instead, if you could just deliver the medicine to the village at the foot of the mountain, that would be enough.\nLITERAL: Thanks to (as for) is not reach. Instead, foot (base) village until medicine (obj) deliver receive if, with that, is good.\nNOTES:\n- The speaker is using a formal yet slightly archaic/stately tone (common for an older character or a person of status), indicated by the use of 「～れば」 and 「～よい」.\n- 「礼には及ばぬ」 is a set phrase meaning \"No need for thanks\" or \"Don't mention it.\" It literally means \"It does not reach the level of [requiring] thanks.\"\n- 「麓」 (fumoto) specifically refers to the base or foot of a mountain or hill.\n- The grammar 「～てもらえれば」 is a conditional form of 「～てもらう」 (to have someone do something for you). It expresses a polite request or a condition for a favor."
+  },
+  {
+   "id": "merchant-1",
+   "line": "この毛皮なら銀貨二十枚が相場ですが、今日は特別に十八枚でお譲りしましょう。",
+   "seconds": 3.91,
+   "tokens_per_second": 58.8,
+   "answer": "TRANSLATION: The market price for this fur is twenty silver coins, but today I'll let you have it for eighteen as a special deal.\nLITERAL: This fur if, silver coins twenty pieces [is] market price, but, today specially eighteen pieces for [to] hand over [I] shall do.\nNOTES:\n- The speaker is likely a merchant or a shopkeeper using polite, professional speech (です/ます style).\n- お譲りしましょう (o-yuzuri shimashou) is a humble/polite way to say \"I will give/sell it to you.\" The prefix お and the verb 譲る (to cede/hand over) make the transaction sound like a favor or a generous gesture.\n- 相場 (souba) refers to the current \"going rate\" or \"market price\" for a specific commodity.\n- 特別に (tokubetsu ni) is a common phrase used in sales to indicate a \"special\" discount or exception to the rule."
+  },
+  {
+   "id": "merchant-2",
+   "line": "足元を見られちゃ困りますな。こっちも生活がかかってるんでね。",
+   "seconds": 3.33,
+   "tokens_per_second": 58.8,
+   "answer": "TRANSLATION: You can't just try to lowball me like that. I've got a living to make, you know.\nLITERAL: Feet looked at [being] troubled. This side also life is hanging [on], so.\nNOTES:\n- The speaker is using a slightly rough, masculine, and somewhat rural or \"tough guy\" speech style (indicated by the ~な and ~んでね endings).\n- 足元を見る (ashimoto o miru) is an idiom meaning to take advantage of someone's weak position or to \"lowball\" someone.\n- こっち (kocchi) refers to \"my side\" or \"me\" in this context, used to emphasize the speaker's personal situation.\n- ~んでね is a colloquial contraction of ~ているのでね, used here to add a slightly pleading or explanatory nuance to the statement."
+  },
+  {
+   "id": "merchant-3",
+   "line": "損して得取れ、ってやつですよ。",
+   "seconds": 3.46,
+   "tokens_per_second": 58.8,
+   "answer": "TRANSLATION: It's that \"lose little to gain much\" kind of thing.\nLITERAL: Lose and gain-take, [particle] thing is.\nNOTES:\n- The tone is explanatory and slightly casual. The speaker is explaining a concept or justifying an action.\n- 損して得取れ (Son shite eru tore) is a common Japanese proverb. It literally means \"suffer a loss and take a profit,\" similar to \"lose a penny to gain a pound\" or \"take a loss to make a gain.\"\n- ってやつ (tte yatsu) is a very common colloquial construction used to describe a concept, a type of thing, or a situation. It functions like \"the kind of thing called...\" or \"that whole [concept] thing.\"\n- The particle です (desu) at the end makes the sentence polite, even though the preceding parts are somewhat informal."
+  },
+  {
+   "id": "rough-1",
+   "line": "だから言ったじゃねえか。あいつに任せときゃろくなことにならねえって。",
+   "seconds": 3.76,
+   "tokens_per_second": 58.9,
+   "answer": "TRANSLATION: I told you so. Nothing good is going to happen if we leave it to that guy.\nLITERAL: Therefore said wasn't it. That guy to leave if do good thing won't become.\nNOTES:\n- The tone is rough, masculine, and informal. The speaker is frustrated or annoyed.\n- じゃねえか is a rough contraction of じゃなかったか (wasn't it?), used here to emphasize \"I told you so.\"\n- 任せときゃ is a contraction of 任せておけば (if you leave it/entrust it).\n- ろくなことにならねえ is a common set phrase meaning \"nothing good will happen\" or \"it won't turn out well.\" The ねえ is a rough contraction of ない.\n- The subject is \"I\" (implied) and the object is \"it\" (the situation/task). The speaker is criticizing the listener's decision to let \"that guy\" handle the situation."
+  },
+  {
+   "id": "rough-2",
+   "line": "…まあ、今さら文句言っても始まんねえか。",
+   "seconds": 3.74,
+   "tokens_per_second": 58.9,
+   "answer": "TRANSLATION: ...Well, there's no point in complaining now.\nLITERAL: ...Well, now-at-this-point complaints even if said won't start.\nNOTES:\n- The tone is informal and slightly resigned. The use of 「…まあ」 at the start indicates a sigh or a moment of hesitation before accepting the situation.\n- 「始まんねえ」 is a rough contraction of 「始まらない」 (doesn't start). In this context, it's part of the set phrase 「始まらない」 used to mean \"it's no use\" or \"it won't change anything.\"\n- 「今さら」 is a common adverb meaning \"at this late stage\" or \"now, of all times,\" often implying that it's too late to do anything about the situation.\n- The subject is implied to be the speaker, who is reflecting on the fact that complaining won't fix the mess caused by the person mentioned in the previous bubble."
+  },
+  {
+   "id": "tsundere",
+   "line": "べ、別にあんたのために作ったわけじゃないんだからね！",
+   "seconds": 3.12,
+   "tokens_per_second": 59.7,
+   "answer": "TRANSLATION: I-It's not like I made this for you or anything!\nLITERAL: No, not for you made (it) reason isn't from!\nNOTES:\n- The speaker is using a classic \"tsundere\" tone—defensive, slightly embarrassed, and informal.\n- べ、別にあ (Be, betsu ni) is a stuttering contraction of 別に (betsu ni), used here to show the character is flustered.\n- ～わけじゃない (wake janai) is a common construction meaning \"It's not that...\" or \"It's not the case that...\", used to deny an implication.\n- ～んだからね (n dakara ne) adds emphasis to the reason/explanation and a soft \"don't you see?\" nuance at the end."
+  },
+  {
+   "id": "reading",
+   "line": "明日は朝早いから、もう寝なきゃ。",
+   "seconds": 2.59,
+   "tokens_per_second": 59.6,
+   "answer": "TRANSLATION: I have to go to sleep now because I have to get up early tomorrow.\nLITERAL: Tomorrow [as for] morning [is] early, so, already [must] sleep.\nNOTES:\n- The tone is casual and conversational, typical of a friend or family member speaking.\n- 寝なきゃ is a common contraction of 寝なければならない (must sleep). Dropping the final part is very common in spoken Japanese.\n- 朝早い (asa hayai) is a set way to say \"early in the morning\" or \"have an early morning.\"\n- The subject is the speaker (I), which is omitted as is standard in Japanese when the context is clear."
+  },
+  {
+   "id": "ocr-error",
+   "line": "お前の言う通りだ、俺が間遺っていた。",
+   "seconds": 3.63,
+   "tokens_per_second": 59.2,
+   "answer": "OCR: お前の言う通りだ、俺が間違っていた。\n\nTRANSLATION: You're right, I was wrong.\nLITERAL: Your saying's way is, I mistake was.\nNOTES:\n- The tone is masculine and informal. The use of 俺 (ore) and the lack of polite endings indicate a close relationship or a serious, blunt conversation.\n- 間違っていた is the past continuous/progressive form of 間違う (to make a mistake). In this context, it functions as \"I was in the wrong\" or \"I made a mistake.\"\n- The structure [Noun] + の + [Verb] + 通り (toori) is a common way to say \"just as [someone] said\" or \"in the way that [someone] [verb]ed.\"\n- The OCR \"間遺\" is a common recognition error for 間違 (machigai). The correct kanji for \"mistake\" is 間違."
+  },
+  {
+   "id": "idiom",
+   "line": "猫の手も借りたいほど忙しいんだ、手伝ってくれ。",
+   "seconds": 3.43,
+   "tokens_per_second": 59.4,
+   "answer": "TRANSLATION: I'm so busy I'd take help from a cat, so please give me a hand.\nLITERAL: Cat's hand also want to borrow extent busy am, help give.\nNOTES:\n- The tone is casual and slightly desperate. The speaker is likely a friend or colleague asking for a favor.\n- 猫の手も借りたい (neko no te mo karitai) is a common idiom meaning to be extremely busy. It implies that the person is so overwhelmed they would accept help from anyone, even a cat (which obviously can't help).\n- 手伝ってくれ (tetsudatte kure) is a masculine or rough way of saying \"help me.\" The suffix くれ is a command/request form often used by men or in informal settings.\n- ほど (hodo) is used here to indicate the degree of busyness, functioning like \"to the extent that...\""
+  }
+ ],
+ "load_seconds": 25.0
+}

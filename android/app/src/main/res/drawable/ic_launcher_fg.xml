@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Magnifying glass over a page: 108dp adaptive-icon canvas, artwork inside the 66dp safe zone. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#F2F2F2"
+        android:pathData="M30,28 L62,28 L70,36 L70,80 L30,80 Z" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#1F3A5F"
+        android:strokeWidth="3"
+        android:pathData="M37,40 L37,70 M45,40 L45,62 M53,40 L53,58" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFD166"
+        android:strokeWidth="6"
+        android:pathData="M48,56 a12,12 0 1,0 24,0 a12,12 0 1,0 -24,0" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFD166"
+        android:strokeLineCap="round"
+        android:strokeWidth="7"
+        android:pathData="M69,65 L78,74" />
+</vector>
