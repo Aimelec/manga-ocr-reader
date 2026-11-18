@@ -1,0 +1,25 @@
+# Server runtime (Python 3.12). Versions are the ones the project is tested with.
+#
+# PyTorch is only used by manga-ocr, on the CPU. Install the CPU build first so pip does not fetch the
+# much larger CUDA one:
+#   pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+#   pip install -r requirements.txt
+
+# HTTP API
+fastapi==0.143.3
+uvicorn==0.54.0
+python-multipart==0.0.32
+pydantic==2.14.1
+
+# OCR (Transformer model for manga text) and image clean-up
+manga-ocr==0.1.16
+torch==2.14.1
+transformers==5.20.1
+opencv-python-headless==5.0.0.93
+pillow==13.0.0
+numpy==2.5.4
+
+# Japanese analysis: word splitting + readings, offline dictionaries
+SudachiPy==0.7.0
+sudachidict-core==20261015
+jamdict==0.1a11.post2

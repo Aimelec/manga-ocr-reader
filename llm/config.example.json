@@ -1,0 +1,9 @@
+{
+  "model": "llm/models/gemma-4-12b/gemma-4-12b-it-Q5_K_M.gguf",
+  "device": "Vulkan0",
+  "port": 8090,
+  "context_size": 8192,
+  "idle_seconds": 300,
+  "temperature": 0.3,
+  "max_tokens": 700
+}
