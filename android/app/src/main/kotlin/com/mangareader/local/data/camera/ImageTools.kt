@@ -12,7 +12,6 @@ import com.mangareader.local.logic.Photo
 import com.mangareader.local.logic.PhotoCropper
 import com.mangareader.local.logic.Snapshot
 import java.io.ByteArrayOutputStream
-import kotlin.math.abs
 import kotlin.math.max
 import kotlin.math.min
 
@@ -122,11 +121,5 @@ object ImageTools {
             }
         }
         return g
-    }
-
-    fun diff(a: FloatArray, b: FloatArray): Float {
-        var d = 0f
-        for (i in a.indices) d += abs(a[i] - b[i])
-        return d / a.size
     }
 }

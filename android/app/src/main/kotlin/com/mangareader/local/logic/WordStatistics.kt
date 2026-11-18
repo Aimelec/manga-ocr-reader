@@ -1,19 +1,25 @@
-package com.mangareader.local
+package com.mangareader.local.logic
 
-import com.mangareader.local.model.*
 import androidx.compose.runtime.mutableStateMapOf
+import com.mangareader.local.model.ReadResult
+import com.mangareader.local.model.Token
+import com.mangareader.local.model.WordStat
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import com.mangareader.local.logic.StatsStorage
-import com.mangareader.local.logic.StoredStats
 
-/** Statistics behind the automatic "Frequent" dictionary, kept on the phone. */
-class WordStats(private val storage: StatsStorage, private val scope: CoroutineScope) {
-
+/** Statistics behind the automatic "Frequent" dictionary, kept on the phone. Saves are batched. */
+class WordStatistics(
+    private val storage: StatsStorage,
+    private val scope: CoroutineScope,
+    private val now: () -> Long = System::currentTimeMillis,
+    private val io: CoroutineDispatcher = Dispatchers.IO,
+    private val saveDelayMs: Long = 1000,
+) {
     val stats = mutableStateMapOf<String, WordStat>()
 
     // sentences already counted, so rereading a bubble does not count its words again
@@ -35,15 +41,15 @@ class WordStats(private val storage: StatsStorage, private val scope: CoroutineS
         val sentence = r.text.trim()
         if (sentence.isEmpty() || !sentences.add(sentence)) return
         while (sentences.size > MAX_SENTENCES) sentences.remove(sentences.first())
-        val now = System.currentTimeMillis()
+        val t0 = now()
         r.tokens.filter { !it.isPunctuation }.distinctBy { wordKey(it) }.forEach { t ->
             val k = wordKey(t)
             val old = stats[k]
             stats[k] = WordStat(
-                word = old?.word ?: savedWordOf(t),
+                word = old?.word ?: savedWordOf(t, t0),
                 seen = (old?.seen ?: 0) + 1,
                 looked = old?.looked ?: 0,
-                lastSeen = now,
+                lastSeen = t0,
                 example = sentence,
                 exampleSurface = t.surface,
                 known = old?.known ?: false,
@@ -57,7 +63,7 @@ class WordStats(private val storage: StatsStorage, private val scope: CoroutineS
         if (t.isPunctuation) return
         val k = wordKey(t)
         if (!lookedNow.add(r.text.trim() + "|" + k)) return
-        val old = stats[k] ?: WordStat(savedWordOf(t), 1, 0, System.currentTimeMillis(), r.text.trim(), t.surface, false)
+        val old = stats[k] ?: WordStat(savedWordOf(t, now()), 1, 0, now(), r.text.trim(), t.surface, false)
         stats[k] = old.copy(looked = old.looked + 1)
         scheduleSave()
     }
@@ -83,10 +89,9 @@ class WordStats(private val storage: StatsStorage, private val scope: CoroutineS
     private fun scheduleSave() {
         saveJob?.cancel()
         saveJob = scope.launch {
-            delay(1000)
-            val words = stats.values.toList()
-            val sent = sentences.toList()
-            withContext(Dispatchers.IO) { storage.save(StoredStats(words, sent)) }
+            delay(saveDelayMs)
+            val snapshot = StoredStats(stats.values.toList(), sentences.toList())
+            withContext(io) { storage.save(snapshot) }
         }
     }
 

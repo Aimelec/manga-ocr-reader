@@ -17,6 +17,10 @@ import com.mangareader.local.data.camera.CameraController
 import com.mangareader.local.data.local.FavouritesFile
 import com.mangareader.local.data.local.StatsFile
 import com.mangareader.local.data.remote.ServerClient
+import com.mangareader.local.logic.Favourites
+import com.mangareader.local.logic.ReaderViewModel
+import com.mangareader.local.logic.SettingsViewModel
+import com.mangareader.local.logic.WordStatistics
 
 class MainActivity : ComponentActivity() {
 
@@ -29,9 +33,11 @@ class MainActivity : ComponentActivity() {
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
         // Composition root: the only place that picks the data-layer implementations.
-        val stats = WordStats(StatsFile(filesDir), lifecycleScope)
-        val reader = Reader(lifecycleScope, CameraController(this, this), ServerClient(this), AndroidPhotoCropper, stats)
-        val store = WordStore(FavouritesFile(filesDir))
+        val server = ServerClient(this)
+        val stats = WordStatistics(StatsFile(filesDir), lifecycleScope)
+        val reader = ReaderViewModel(lifecycleScope, CameraController(this, this), server, AndroidPhotoCropper, stats)
+        val favourites = Favourites(FavouritesFile(filesDir))
+        val settings = SettingsViewModel(server, onChanged = reader::checkServer)
 
         val askCamera = registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
             if (granted) reader.startCamera() else reader.permissionDenied()
@@ -42,6 +48,6 @@ class MainActivity : ComponentActivity() {
             askCamera.launch(Manifest.permission.CAMERA)
         }
 
-        setContent { MangaTheme { AppRoot(reader, store) } }
+        setContent { MangaTheme { AppRoot(reader, favourites, stats, settings) } }
     }
 }

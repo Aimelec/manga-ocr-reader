@@ -1,5 +1,9 @@
 package com.mangareader.local
 
+import com.mangareader.local.logic.Favourites
+import com.mangareader.local.logic.ReaderViewModel
+import com.mangareader.local.logic.SettingsViewModel
+import com.mangareader.local.logic.WordStatistics
 import com.mangareader.local.model.*
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedContent
@@ -80,7 +84,7 @@ private const val READER_PAGE = 1
 
 /** Two pages side by side: swipe right from the reader to reach the dictionary. */
 @Composable
-fun AppRoot(reader: Reader, store: WordStore) {
+fun AppRoot(reader: ReaderViewModel, store: Favourites, stats: WordStatistics, settings: SettingsViewModel) {
     val pager = rememberPagerState(initialPage = READER_PAGE) { 2 }
     val scope = rememberCoroutineScope()
     var showSettings by remember { mutableStateOf(false) }
@@ -92,7 +96,7 @@ fun AppRoot(reader: Reader, store: WordStore) {
 
     HorizontalPager(pager, Modifier.fillMaxSize().background(Color.Black), beyondViewportPageCount = 1) { page ->
         if (page == DICTIONARY_PAGE) {
-            DictionaryScreen(store, reader.stats,
+            DictionaryScreen(store, stats,
                 onCamera = { scope.launch { pager.animateScrollToPage(READER_PAGE) } },
                 onSettings = { showSettings = true })
         } else {
@@ -100,14 +104,14 @@ fun AppRoot(reader: Reader, store: WordStore) {
         }
     }
 
-    if (showSettings) SettingsDialog(reader) { showSettings = false }
+    if (showSettings) SettingsDialog(settings) { showSettings = false }
 }
 
 /** One row in a dictionary list: the word, plus its statistics when there are any. */
 private class DictItem(val word: SavedWord, val stat: WordStat?)
 
 @Composable
-private fun DictionaryScreen(store: WordStore, stats: WordStats, onCamera: () -> Unit, onSettings: () -> Unit) {
+private fun DictionaryScreen(store: Favourites, stats: WordStatistics, onCamera: () -> Unit, onSettings: () -> Unit) {
     var frequent by rememberSaveable { mutableStateOf(false) }
     var category by rememberSaveable { mutableStateOf<String?>(null) }
     var confirmReset by remember { mutableStateOf(false) }
@@ -186,7 +190,7 @@ private fun DictionaryScreen(store: WordStore, stats: WordStats, onCamera: () ->
 private val MAIN_CATEGORIES = setOf("Nouns", "Verbs", "い-adjectives", "な-adjectives", "Adverbs", "Particles")
 
 @Composable
-private fun CategoryGrid(store: WordStore, stats: WordStats, frequent: Boolean, onOpen: (String) -> Unit) {
+private fun CategoryGrid(store: Favourites, stats: WordStatistics, frequent: Boolean, onOpen: (String) -> Unit) {
     // words per category, best first
     val byCategory: Map<String, List<String>> = CATEGORIES.associateWith { c ->
         if (frequent) stats.inCategory(c, known = false).map { it.word.word } else store.inCategory(c).map { it.word }
@@ -235,7 +239,7 @@ private fun CategoryGrid(store: WordStore, stats: WordStats, frequent: Boolean, 
 }
 
 @Composable
-private fun WordList(store: WordStore, stats: WordStats, frequent: Boolean, category: String) {
+private fun WordList(store: Favourites, stats: WordStatistics, frequent: Boolean, category: String) {
     val items = if (frequent) stats.inCategory(category, known = false).map { DictItem(it.word, it) }
     else store.inCategory(category).map { DictItem(it, stats.get(it.key)) }
     val knownItems = if (frequent) stats.inCategory(category, known = true).map { DictItem(it.word, it) } else emptyList()
@@ -273,7 +277,7 @@ private fun WordList(store: WordStore, stats: WordStats, frequent: Boolean, cate
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun WordRow(
-    item: DictItem, store: WordStore, stats: WordStats, frequent: Boolean, isOpen: Boolean,
+    item: DictItem, store: Favourites, stats: WordStatistics, frequent: Boolean, isOpen: Boolean,
     modifier: Modifier, onClick: () -> Unit,
 ) {
     val w = item.word

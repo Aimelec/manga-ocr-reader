@@ -1,5 +1,10 @@
 package com.mangareader.local
 
+import com.mangareader.local.logic.Favourites
+import com.mangareader.local.logic.ReaderViewModel
+import com.mangareader.local.logic.SettingsViewModel
+import com.mangareader.local.logic.parseExplanation
+import com.mangareader.local.logic.suggestedCorrection
 import com.mangareader.local.model.*
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
@@ -104,7 +109,7 @@ import kotlin.math.min
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ReaderScreen(reader: Reader, store: WordStore, onDictionary: () -> Unit) {
+fun ReaderScreen(reader: ReaderViewModel, store: Favourites, onDictionary: () -> Unit) {
     BoxWithConstraints(Modifier.fillMaxSize().background(Color.Black).systemBarsPadding()) {
         val h = maxHeight
         val sheetState = rememberStandardBottomSheetState(initialValue = SheetValue.Expanded, skipHiddenState = true)
@@ -145,13 +150,13 @@ private fun DragHandle() {
 // ======================= camera + box =======================
 
 @Composable
-private fun CameraArea(reader: Reader, modifier: Modifier) {
+private fun CameraArea(reader: ReaderViewModel, modifier: Modifier) {
     // keep the last frozen image during the fade-out
     var shownFrozen by remember { mutableStateOf<ImageBitmap?>(null) }
     reader.frozen?.let { shownFrozen = it }
 
     Box(modifier.background(Color.Black).clipToBounds()) {
-        AndroidView(factory = { reader.camera.preview }, modifier = Modifier.fillMaxSize())
+        AndroidView(factory = { reader.cameraPreview }, modifier = Modifier.fillMaxSize())
         AnimatedVisibility(visible = reader.frozen != null, enter = fadeIn(), exit = fadeOut()) {
             shownFrozen?.let {
                 Image(it, contentDescription = "Frozen photo", contentScale = ContentScale.Fit,
@@ -179,15 +184,15 @@ private fun fitRect(size: Size, aspect: Float): Rect {
 }
 
 @Composable
-private fun BoxOverlay(reader: Reader, modifier: Modifier) {
+private fun BoxOverlay(reader: ReaderViewModel, modifier: Modifier) {
     var size by remember { mutableStateOf(Size.Zero) }
-    val content = fitRect(size, reader.camera.imageAspect)
+    val content = fitRect(size, reader.imageAspect)
     val primary = MaterialTheme.colorScheme.primary
     val frameColor by animateColorAsState(
         when (reader.phase) {
-            Reader.Phase.Busy -> AppColors.furigana
-            Reader.Phase.Done -> AppColors.grammar
-            Reader.Phase.Idle -> primary
+            ReaderViewModel.Phase.Busy -> AppColors.furigana
+            ReaderViewModel.Phase.Done -> AppColors.grammar
+            ReaderViewModel.Phase.Idle -> primary
         }, label = "boxColor")
     val ring = remember { Animatable(0f) }
     LaunchedEffect(reader.focusTick) {
@@ -249,7 +254,7 @@ private fun BoxOverlay(reader: Reader, modifier: Modifier) {
 // ======================= buttons + status =======================
 
 @Composable
-private fun Controls(reader: Reader, onDictionary: () -> Unit) {
+private fun Controls(reader: ReaderViewModel, onDictionary: () -> Unit) {
     val small = PaddingValues(horizontal = 8.dp, vertical = 8.dp)
     Column(Modifier.padding(horizontal = 8.dp)) {
         Row(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalAlignment = Alignment.CenterVertically) {
@@ -275,7 +280,7 @@ private fun Controls(reader: Reader, onDictionary: () -> Unit) {
                 else ButtonDefaults.filledTonalButtonColors(),
             ) { Text("Auto") }
             FilledIconToggleButton(checked = reader.torch, onCheckedChange = { reader.toggleTorch() },
-                enabled = reader.camera.hasFlash) {
+                enabled = reader.hasFlash) {
                 Icon(FlashlightIcon, contentDescription = "Flashlight")
             }
             FilledTonalIconButton(onClick = onDictionary) {
@@ -293,7 +298,7 @@ private fun Controls(reader: Reader, onDictionary: () -> Unit) {
 // ======================= results =======================
 
 @Composable
-private fun Results(reader: Reader, store: WordStore, modifier: Modifier) {
+private fun Results(reader: ReaderViewModel, store: Favourites, modifier: Modifier) {
     val r = reader.result
     val error = reader.error
     val listState = rememberLazyListState()
@@ -331,7 +336,7 @@ private fun Results(reader: Reader, store: WordStore, modifier: Modifier) {
             FuriganaLine(r.tokens, Modifier.animateItem()) { i ->
                 val pos = words.indexOfFirst { it.index == i }
                 if (pos >= 0) {
-                    reader.stats.recordLookup(r, r.tokens[i])
+                    reader.lookedUp(r.tokens[i])
                     open[i] = true
                     scope.launch { listState.animateScrollToItem(firstWordItem + pos) }
                 }
@@ -351,7 +356,7 @@ private fun Results(reader: Reader, store: WordStore, modifier: Modifier) {
             WordCard(t, open[i] == true, store.isSaved(t), onSave = { store.toggle(t) },
                 modifier = Modifier.animateItem()) {
                 val opening = open[i] != true
-                if (opening) reader.stats.recordLookup(r, t)
+                if (opening) reader.lookedUp(t)
                 open[i] = opening
             }
         }
@@ -377,37 +382,11 @@ private fun Results(reader: Reader, store: WordStore, modifier: Modifier) {
     }
 }
 
-/** The AI's answer, split into its sections (also works on a half-written answer). */
-private data class Explanation(val translation: String, val literal: String, val notes: List<String>, val ocr: String)
-
-private fun parseExplanation(text: String): Explanation {
-    var translation = ""
-    var literal = ""
-    var ocr = ""
-    val notes = mutableListOf<String>()
-    var section = ""
-    for (raw in text.lines()) {
-        val l = raw.trim().replace("**", "")
-        when {
-            l.startsWith("TRANSLATION:", true) -> { section = "t"; translation = l.substringAfter(':').trim() }
-            l.startsWith("LITERAL:", true) -> { section = "l"; literal = l.substringAfter(':').trim() }
-            l.startsWith("NOTES:", true) -> { section = "n"; l.substringAfter(':').trim().takeIf { it.isNotEmpty() }?.let { notes += it } }
-            l.startsWith("OCR:", true) -> { section = "o"; ocr = l.substringAfter(':').trim() }
-            l.isEmpty() -> Unit
-            section == "n" -> notes += l.removePrefix("- ").removePrefix("* ").removePrefix("• ")
-            section == "t" -> translation += " $l"
-            section == "l" -> literal += " $l"
-        }
-    }
-    if (translation.isEmpty() && literal.isEmpty() && notes.isEmpty() && ocr.isEmpty()) translation = text.trim()
-    return Explanation(translation, literal, notes, ocr)
-}
-
 /** "✨ Explain" button, then the AI's translation, literal version and notes as they arrive. */
 @Composable
-private fun ExplainCard(reader: Reader, modifier: Modifier) {
+private fun ExplainCard(reader: ReaderViewModel, modifier: Modifier) {
     val state = reader.explainState
-    if (state == Reader.ExplainState.Idle) {
+    if (state == ReaderViewModel.ExplainState.Idle) {
         FilledTonalButton(onClick = reader::explain, modifier = modifier.fillMaxWidth()) {
             Text("✨ Explain this sentence")
         }
@@ -419,18 +398,18 @@ private fun ExplainCard(reader: Reader, modifier: Modifier) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text("✨ AI EXPLANATION", style = MaterialTheme.typography.labelMedium,
                     color = MaterialTheme.colorScheme.primary, letterSpacing = 1.sp, modifier = Modifier.weight(1f))
-                if (state == Reader.ExplainState.Done || state == Reader.ExplainState.Failed) {
+                if (state == ReaderViewModel.ExplainState.Done || state == ReaderViewModel.ExplainState.Failed) {
                     TextButton(onClick = reader::explain) { Text("Again") }
                 }
             }
             when (state) {
-                Reader.ExplainState.Waiting -> {
+                ReaderViewModel.ExplainState.Waiting -> {
                     LinearProgressIndicator(Modifier.fillMaxWidth())
                     Text("Thinking… (the first time, the PC loads the AI: about 10 s)",
                         style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 }
-                Reader.ExplainState.Failed -> {
-                    Text(reader.explanation.substringAfter("ERROR:").trim().ifEmpty { "The AI could not answer." },
+                ReaderViewModel.ExplainState.Failed -> {
+                    Text(reader.explainError,
                         color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodyMedium)
                 }
                 else -> {
@@ -446,12 +425,12 @@ private fun ExplainCard(reader: Reader, modifier: Modifier) {
                             Text(note, style = MaterialTheme.typography.bodyMedium)
                         }
                     }
-                    val ocr = e.ocr.trim('"', '<', '>', ' ', '「', '」')
-                    if (ocr.isNotEmpty() && !ocr.equals("ok", true) && ocr != reader.result?.text) {
+                    val ocr = suggestedCorrection(e, reader.result?.text)
+                    if (ocr != null) {
                         Text("Possible misread, the AI thinks it says: $ocr", color = AppColors.furigana,
                             style = MaterialTheme.typography.bodySmall)
                     }
-                    if (state == Reader.ExplainState.Writing) LinearProgressIndicator(Modifier.fillMaxWidth().height(2.dp))
+                    if (state == ReaderViewModel.ExplainState.Writing) LinearProgressIndicator(Modifier.fillMaxWidth().height(2.dp))
                 }
             }
         }
@@ -599,8 +578,8 @@ internal fun KanjiBox(k: KanjiInfo) {
 // ======================= settings =======================
 
 @Composable
-internal fun SettingsDialog(reader: Reader, onClose: () -> Unit) {
-    var address by remember { mutableStateOf(reader.server.address) }
+internal fun SettingsDialog(settings: SettingsViewModel, onClose: () -> Unit) {
+    var address by remember { mutableStateOf(settings.address) }
     AlertDialog(
         onDismissRequest = onClose,
         title = { Text("PC address") },
@@ -609,17 +588,14 @@ internal fun SettingsDialog(reader: Reader, onClose: () -> Unit) {
                 Text("Shown in the server window, like 192.168.1.100:8765", style = MaterialTheme.typography.bodySmall)
                 OutlinedTextField(value = address, onValueChange = { address = it }, singleLine = true)
                 TextButton(onClick = {
-                    reader.server.forgetCertificate()
-                    reader.checkServer()
+                    settings.trustCertificateAgain()
                     onClose()
                 }) { Text("Trust the PC's certificate again") }
             }
         },
         confirmButton = {
             TextButton(onClick = {
-                val clean = address.trim().removePrefix("https://").removePrefix("http://").trimEnd('/')
-                if (clean.isNotEmpty()) reader.server.address = clean
-                reader.checkServer()
+                settings.save(address)
                 onClose()
             }) { Text("Save") }
         },

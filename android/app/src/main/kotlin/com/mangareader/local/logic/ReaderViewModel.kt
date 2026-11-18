@@ -1,7 +1,7 @@
-package com.mangareader.local
+package com.mangareader.local.logic
 
-import com.mangareader.local.model.*
 import android.os.SystemClock
+import android.view.View
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
@@ -9,14 +9,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.graphics.ImageBitmap
-import com.mangareader.local.data.camera.ImageTools
-import com.mangareader.local.logic.CameraDevice
-import com.mangareader.local.logic.CameraFrame
-import com.mangareader.local.logic.Photo
-import com.mangareader.local.logic.PhotoCropper
-import com.mangareader.local.logic.ReadingServer
-import com.mangareader.local.logic.Snapshot
+import com.mangareader.local.model.ReadResult
+import com.mangareader.local.model.Token
 import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
@@ -26,15 +22,28 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-/** Everything the screen shows, plus the actions behind the buttons. */
-class Reader(
+/**
+ * State and actions of the reader screen: the box, Freeze, Auto, reading a bubble through the PC,
+ * and the on-demand AI explanation. The screen only shows this state and calls these functions.
+ *
+ * A plain state holder (Compose state + an injected scope), so unit tests run it with fakes.
+ */
+class ReaderViewModel(
     private val scope: CoroutineScope,
-    val camera: CameraDevice,
-    val server: ReadingServer,
+    private val camera: CameraDevice,
+    private val server: ReadingServer,
     private val cropper: PhotoCropper,
-    val stats: WordStats,
+    private val stats: WordStatistics,
+    private val autoRead: AutoReadDetector = AutoReadDetector(),
+    private val clock: () -> Long = SystemClock::uptimeMillis,
+    private val work: CoroutineDispatcher = Dispatchers.Default,
+    private val doneDisplayMs: Long = 900,
+    private val boxDebounceMs: Long = 200,
 ) {
     enum class Phase { Idle, Busy, Done }
+    enum class ExplainState { Idle, Waiting, Writing, Done, Failed }
+
+    // ---------------- state shown on screen ----------------
 
     /** Reading box as fractions (0..1) of the camera image. */
     var box by mutableStateOf(Rect(0.3f, 0.15f, 0.7f, 0.85f))
@@ -61,69 +70,31 @@ class Reader(
         private set
     var focusTick by mutableIntStateOf(0)
         private set
-
-    val busy get() = phase == Phase.Busy
-
-    // ---------------- AI explanation (on demand) ----------------
-
-    enum class ExplainState { Idle, Waiting, Writing, Done, Failed }
-
     var explanation by mutableStateOf("")
         private set
     var explainState by mutableStateOf(ExplainState.Idle)
         private set
+
+    val busy get() = phase == Phase.Busy
+    val cameraPreview: View get() = camera.preview
+    val imageAspect get() = camera.imageAspect
+    val hasFlash get() = camera.hasFlash
+
+    // ---------------- internal ----------------
+
     private var explainJob: Job? = null
     /** Sentences read before the current one, oldest first: context for the AI. */
     private val history = ArrayDeque<String>()
-
-    fun explain() {
-        val r = result ?: return
-        explainJob?.cancel()
-        explanation = ""
-        explainState = ExplainState.Waiting
-        val context = history.filter { it != r.text }.takeLast(3)
-        explainJob = scope.launch {
-            try {
-                server.explain(r.text, context).collect { chunk ->
-                    explanation += chunk
-                    if (explainState == ExplainState.Waiting) explainState = ExplainState.Writing
-                }
-                explainState = if (explanation.contains("ERROR:")) ExplainState.Failed else ExplainState.Done
-            } catch (e: CancellationException) {
-                throw e
-            } catch (e: Exception) {
-                explanation = e.message ?: e.toString()
-                explainState = ExplainState.Failed
-            }
-        }
-    }
-
-    private fun onNewResult(r: ReadResult) {
-        val previous = result?.text
-        if (previous != null && previous != r.text) {
-            history.addLast(previous)
-            while (history.size > 5) history.removeFirst()
-        }
-        explainJob?.cancel()
-        explanation = ""
-        explainState = ExplainState.Idle
-    }
-
     // Freeze: the screen picture (instant) and the full-resolution photo of the same moment (arrives shortly after)
     private var frozenSnapshot: Snapshot? = null
     private var frozenPhoto: Deferred<Photo?>? = null
-
     private var readJob: Job? = null
     private var pendingRead: Job? = null
 
-    // Auto mode (runs on the camera analysis thread)
-    @Volatile private var prevSig: FloatArray? = null
-    @Volatile private var lastReadSig: FloatArray? = null
-    private var stillSince = 0L
-    private var lastCheck = 0L
+    // ---------------- setup ----------------
 
     fun startCamera() {
-        camera.start(::analyze) { msg -> status = msg }
+        camera.start(::onFrame) { msg -> status = msg }
         checkServer()
     }
 
@@ -147,12 +118,12 @@ class Reader(
     }
 
     fun onBoxChanged() {
-        lastReadSig = null
+        autoRead.forgetLastRead()
         if (frozen != null) {
             // read automatically once the box has stayed put for a moment
             pendingRead?.cancel()
             pendingRead = scope.launch {
-                delay(DEBOUNCE_MS)
+                delay(boxDebounceMs)
                 read()
             }
         }
@@ -173,7 +144,7 @@ class Reader(
 
     fun toggleAuto() {
         auto = !auto
-        lastReadSig = null
+        autoRead.forgetLastRead()
         status = when {
             !auto -> "Auto off"
             frozen != null -> "Auto resumes after Unfreeze"
@@ -196,7 +167,7 @@ class Reader(
             frozenPhoto = null
             boxVisible = true
             phase = Phase.Idle
-            lastReadSig = null
+            autoRead.forgetLastRead()
             status = if (auto) "Hold still over a bubble…" else "Live"
             return
         }
@@ -239,16 +210,16 @@ class Reader(
                     status = "Reading…"
                     val photo = frozenPhoto?.await()
                     val jpeg = if (photo != null) {
-                        withContext(Dispatchers.Default) { cropper.cropPhoto(photo, b) }
+                        withContext(work) { cropper.cropPhoto(photo, b) }
                     } else {
                         val snap = frozenSnapshot ?: return@launch
-                        withContext(Dispatchers.Default) { cropper.cropSnapshot(snap, b) }
+                        withContext(work) { cropper.cropSnapshot(snap, b) }
                     }
                     send(jpeg)
                 } else {
                     val photo = shoot(b)
                     status = "Reading…"
-                    send(withContext(Dispatchers.Default) { cropper.cropPhoto(photo, b) })
+                    send(withContext(work) { cropper.cropPhoto(photo, b) })
                 }
             } catch (e: CancellationException) {
                 throw e
@@ -257,6 +228,40 @@ class Reader(
             }
         }
     }
+
+    /** A word in the current result was tapped or its card opened (feeds the Frequent dictionary). */
+    fun lookedUp(t: Token) {
+        result?.let { stats.recordLookup(it, t) }
+    }
+
+    // ---------------- AI explanation (on demand) ----------------
+
+    fun explain() {
+        val r = result ?: return
+        explainJob?.cancel()
+        explanation = ""
+        explainState = ExplainState.Waiting
+        val context = history.filter { it != r.text }.takeLast(CONTEXT_BUBBLES)
+        explainJob = scope.launch {
+            try {
+                server.explain(r.text, context).collect { chunk ->
+                    explanation += chunk
+                    if (explainState == ExplainState.Waiting) explainState = ExplainState.Writing
+                }
+                explainState = if (explanation.contains(STREAM_ERROR)) ExplainState.Failed else ExplainState.Done
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                explanation = e.message ?: e.toString()
+                explainState = ExplainState.Failed
+            }
+        }
+    }
+
+    /** The error part of a failed explanation, for display. */
+    val explainError get() = explanation.substringAfter(STREAM_ERROR).trim().ifEmpty { "The AI could not answer." }
+
+    // ---------------- internals ----------------
 
     /** Live mode: focus on the box and take a full-resolution photo. */
     private suspend fun shoot(b: Rect): Photo {
@@ -279,8 +284,19 @@ class Reader(
             auto -> "Done. Move to the next bubble"
             else -> "Done"
         }
-        delay(900)
+        delay(doneDisplayMs)
         if (phase == Phase.Done) phase = Phase.Idle
+    }
+
+    private fun onNewResult(r: ReadResult) {
+        val previous = result?.text
+        if (previous != null && previous != r.text) {
+            history.addLast(previous)
+            while (history.size > HISTORY_SIZE) history.removeFirst()
+        }
+        explainJob?.cancel()
+        explanation = ""
+        explainState = ExplainState.Idle
     }
 
     private fun fail(e: Exception) {
@@ -290,35 +306,23 @@ class Reader(
         status = "Error: $msg"
     }
 
-    /** Auto mode: read once the box content has been still for a moment and differs from the last read. */
-    private fun analyze(frame: CameraFrame) {
-        run {
-            if (!auto || busy || frozen != null) {
-                prevSig = null
-                return
-            }
-            val now = SystemClock.uptimeMillis()
-            if (now - lastCheck < 150) return
-            lastCheck = now
-            val sig = frame.signature(box)
-            val prev = prevSig
-            prevSig = sig
-            if (prev != null && ImageTools.diff(sig, prev) < 4f) {
-                if (stillSince == 0L) stillSince = now
-                val last = lastReadSig
-                if (now - stillSince > 700 && (last == null || ImageTools.diff(sig, last) > 10f)) {
-                    lastReadSig = sig
-                    stillSince = 0L
-                    scope.launch { read() }
-                }
-            } else {
-                stillSince = 0L
-                scope.launch { if (!busy && auto) status = "Hold still over a bubble…" }
-            }
+    /** Auto mode (called on the camera analysis thread). */
+    private fun onFrame(frame: CameraFrame) {
+        if (!auto || busy || frozen != null) {
+            autoRead.pause()
+            return
+        }
+        when (autoRead.onFrame(clock()) { frame.signature(box) }) {
+            AutoReadDetector.Decision.Read -> scope.launch { read() }
+            AutoReadDetector.Decision.Moving -> scope.launch { if (!busy && auto) status = "Hold still over a bubble…" }
+            else -> Unit
         }
     }
 
     companion object {
-        private const val DEBOUNCE_MS = 200L
+        const val CONTEXT_BUBBLES = 3
+        private const val HISTORY_SIZE = 5
+        /** How the server marks a failure inside a streamed answer. */
+        const val STREAM_ERROR = "ERROR:"
     }
 }

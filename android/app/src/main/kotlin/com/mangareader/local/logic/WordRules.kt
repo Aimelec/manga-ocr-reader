@@ -1,9 +1,11 @@
-package com.mangareader.local
+package com.mangareader.local.logic
 
-import com.mangareader.local.model.*
-import androidx.compose.runtime.mutableStateListOf
-import com.mangareader.local.logic.FavouritesStorage
+import com.mangareader.local.model.SavedWord
+import com.mangareader.local.model.Token
 
+// How a word from a read sentence is filed in "My words": category, key and saved form.
+
+/** Dictionary category of a token (names first, then by part of speech). */
 fun categoryOf(t: Token): String = when {
     t.posEn.contains("(name)") -> "Names"
     else -> when (t.pos) {
@@ -23,9 +25,11 @@ fun categoryOf(t: Token): String = when {
     }
 }
 
+private val INFLECTING = setOf("動詞", "形容詞", "助動詞")
+
 /** Word + reading to file a token under: dictionary form for verbs, adjectives and endings. */
 private fun baseForm(t: Token): Pair<String, String> {
-    val useBase = t.pos in setOf("動詞", "形容詞", "助動詞") && t.dictionaryForm.isNotEmpty()
+    val useBase = t.pos in INFLECTING && t.dictionaryForm.isNotEmpty()
     val word = if (useBase) t.dictionaryForm else t.surface
     val reading = if (word == t.surface) t.reading
     else t.entries.firstOrNull { word in it.kanji || word in it.kana }?.kana?.firstOrNull() ?: ""
@@ -38,34 +42,7 @@ fun wordKey(t: Token): String {
     return "${categoryOf(t)}|$word|$reading"
 }
 
-fun savedWordOf(t: Token): SavedWord {
+fun savedWordOf(t: Token, now: Long): SavedWord {
     val (word, reading) = baseForm(t)
-    return SavedWord(wordKey(t), word, reading, categoryOf(t), t.posEn, t.shortMeaning,
-        t.entries, t.kanji, System.currentTimeMillis())
-}
-
-/** ★ Favourites, saved by hand. */
-class WordStore(private val storage: FavouritesStorage) {
-
-    val words = mutableStateListOf<SavedWord>().apply { addAll(storage.load()) }
-
-    fun isSaved(t: Token) = isSaved(wordKey(t))
-    fun isSaved(key: String) = words.any { it.key == key }
-
-    fun toggle(t: Token) = toggle(savedWordOf(t))
-
-    fun toggle(w: SavedWord) {
-        if (!words.removeAll { it.key == w.key }) words.add(0, w.copy(savedAt = System.currentTimeMillis()))
-        save()
-    }
-
-    fun inCategory(c: String) = words.filter { it.category == c }
-
-    /** Remove every favourite. */
-    fun clear() {
-        words.clear()
-        save()
-    }
-
-    private fun save() = storage.save(words.toList())
+    return SavedWord(wordKey(t), word, reading, categoryOf(t), t.posEn, t.shortMeaning, t.entries, t.kanji, now)
 }
