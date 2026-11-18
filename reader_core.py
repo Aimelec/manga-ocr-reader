@@ -3,10 +3,6 @@
 Everything runs locally, no paid services.
 """
 
-import cv2
-import numpy as np
-from PIL import Image
-
 _ocr = None
 _tokenizer = None
 
@@ -17,8 +13,8 @@ from backend.domain.japanese import KANJI_RE, kata_to_hira  # noqa: E402
 def get_ocr():
     global _ocr
     if _ocr is None:
-        from manga_ocr import MangaOcr
-        _ocr = MangaOcr()
+        from backend.adapters.ocr import MangaOcrEngine
+        _ocr = MangaOcrEngine().warm_up()
     return _ocr
 
 
@@ -28,17 +24,6 @@ def get_tokenizer():
         from sudachipy import dictionary
         _tokenizer = dictionary.Dictionary(dict="core").create()
     return _tokenizer
-
-
-def preprocess(img):
-    """Clean up a phone photo crop: grayscale, even out lighting, enlarge small crops."""
-    gray = cv2.cvtColor(np.array(img.convert("RGB")), cv2.COLOR_RGB2GRAY)
-    h, w = gray.shape
-    if max(h, w) < 400:
-        scale = 400 / max(h, w)
-        gray = cv2.resize(gray, (int(w * scale), int(h * scale)), interpolation=cv2.INTER_CUBIC)
-    gray = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8)).apply(gray)
-    return Image.fromarray(gray)
 
 
 CONTENT_POS = {"名詞", "代名詞", "動詞", "形容詞", "形状詞", "副詞", "連体詞", "接続詞", "感動詞",
@@ -115,4 +100,4 @@ def analyze(text):
 
 
 def read_image(img):
-    return analyze(get_ocr()(preprocess(img)))
+    return analyze(get_ocr().read(img))
