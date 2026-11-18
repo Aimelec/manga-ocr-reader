@@ -2,6 +2,8 @@
 
 **Point your phone at a page of a physical Japanese manga and get furigana, readings, dictionary entries, grammar notes and an AI explanation of the bubble. It runs entirely on your own PC: offline, free, no cloud APIs.**
 
+[![CI](https://github.com/Aimelec/manga-ocr-reader/actions/workflows/ci.yml/badge.svg)](https://github.com/Aimelec/manga-ocr-reader/actions/workflows/ci.yml)
+
 <p align="center">
   <img src="docs/screenshots/reader-read.jpg" width="24%" alt="A frozen manga page with the reading box around a bubble; the text with furigana below">
   <img src="docs/screenshots/reader-explain-grammar.jpg" width="24%" alt="The AI explanation loading and a grammar card for 〜ていく">
