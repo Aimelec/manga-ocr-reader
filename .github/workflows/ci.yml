@@ -1,0 +1,87 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend:
+    name: Backend (pytest)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements*.txt
+
+      - name: Install dependencies (CPU-only PyTorch)
+        run: |
+          pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+          pip install -r requirements-dev.txt
+
+      - name: Cache the dictionary database
+        id: dict-cache
+        uses: actions/cache@v4
+        with:
+          path: dict/jamdict.db
+          key: jamdict-data-1.5
+
+      - name: Download the dictionary (checksum verified against PyPI)
+        if: steps.dict-cache.outputs.cache-hit != 'true'
+        run: python scripts/setup_dictionary.py
+
+      # 'slow' tests load the 400 MB OCR model; everything else (unit, API, contract, golden) runs here.
+      - name: Run tests
+        run: python -m pytest -m "not slow"
+
+      - name: Contract files are up to date
+        run: |
+          python scripts/export_contract.py
+          git diff --exit-code contract/
+
+  android:
+    name: Android app (unit tests + APK)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: android
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - uses: android-actions/setup-android@v3
+
+      - name: Install the Android SDK packages the app compiles against
+        run: sdkmanager "platforms;android-37.0" "build-tools;36.0.0"
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "9.8.1"
+
+      - name: Unit tests and debug APK
+        run: gradle testDebugUnitTest assembleDebug --console=plain
+
+      - name: Test report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-test-report
+          path: android/app/build/reports/tests/testDebugUnitTest/
+
+      - name: Debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: MangaReader-debug-apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
