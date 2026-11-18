@@ -20,12 +20,15 @@ class FakeReader:
 
 
 class FakeExplainer:
-    def __init__(self, fail=False):
+    def __init__(self, fail=False, fail_to_start=False):
         self.fail = fail
+        self.fail_to_start = fail_to_start
         self.calls = []
 
     def explain(self, line, context=()):
         self.calls.append((line, list(context)))
+        if self.fail_to_start:
+            raise FileNotFoundError("Model not found: gemma.gguf")
         yield "TRANSLATION: "
         if self.fail:
             raise RuntimeError("model crashed")
@@ -81,7 +84,13 @@ def test_explain_context_is_optional(make_client):
     assert c.line_explainer.calls == [("本だ", [])]
 
 
-def test_explain_error_is_appended_to_the_stream(make_client):
+def test_explain_model_that_cannot_start_is_a_503(make_client):
+    client, _ = make_client(FakeExplainer(fail_to_start=True))
+    r = client.post(f"{V1}/explain", json={"line": "本だ"})
+    assert r.status_code == 503 and "Model not found" in r.json()["detail"]
+
+
+def test_explain_error_midway_is_appended_to_the_stream(make_client):
     client, _ = make_client(FakeExplainer(fail=True))
     r = client.post(f"{V1}/explain", json={"line": "本だ"})
     assert r.text == "TRANSLATION: \n\nERROR: model crashed"
