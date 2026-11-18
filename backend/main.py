@@ -1,6 +1,6 @@
 """HTTP server for the Android app (same Wi-Fi as the phone). Start with start_server.bat.
 
-/read: OCR + readings + dictionary for a bubble crop · /explain: AI explanation (streamed) ·
+/api/v1/read: OCR + readings + dictionary for a bubble crop · /api/v1/explain: AI explanation (streamed) ·
 /app.apk: the app. HTTPS with a home-made certificate; the app trusts it on first use.
 """
 import uvicorn
@@ -9,13 +9,22 @@ from fastapi import FastAPI
 from backend.api import apk, explain, health, read
 from backend.container import Container
 
+API_VERSION = "1"
+API_PREFIX = f"/api/v{API_VERSION}"
+VERSIONED = (read, explain)
+
 
 def create_app(container=None):
     """App factory: tests pass a container with fake use cases."""
-    app = FastAPI(title="Manga Reader")
+    app = FastAPI(title="Manga Reader", version=API_VERSION)
     app.state.container = container or Container()
-    for module in (health, apk, read, explain):
+    for module in (health, apk):
         app.include_router(module.router)
+    for module in VERSIONED:
+        app.include_router(module.router, prefix=API_PREFIX)
+    # Unversioned paths for app builds older than the /api/v1 switch.
+    for module in VERSIONED:
+        app.include_router(module.router, deprecated=True, include_in_schema=False)
     return app
 
 
