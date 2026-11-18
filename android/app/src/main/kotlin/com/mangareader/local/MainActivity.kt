@@ -1,6 +1,5 @@
 package com.mangareader.local
 
-import com.mangareader.local.model.*
 import android.Manifest
 import android.content.pm.PackageManager
 import android.graphics.Color
@@ -13,6 +12,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
+import com.mangareader.local.data.camera.AndroidPhotoCropper
+import com.mangareader.local.data.camera.CameraController
+import com.mangareader.local.data.local.FavouritesFile
+import com.mangareader.local.data.local.StatsFile
+import com.mangareader.local.data.remote.ServerClient
 
 class MainActivity : ComponentActivity() {
 
@@ -24,9 +28,10 @@ class MainActivity : ComponentActivity() {
         )
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
-        val stats = WordStats(this, lifecycleScope)
-        val reader = Reader(lifecycleScope, CameraController(this, this), ServerClient(this), stats)
-        val store = WordStore(this)
+        // Composition root: the only place that picks the data-layer implementations.
+        val stats = WordStats(StatsFile(filesDir), lifecycleScope)
+        val reader = Reader(lifecycleScope, CameraController(this, this), ServerClient(this), AndroidPhotoCropper, stats)
+        val store = WordStore(FavouritesFile(filesDir))
 
         val askCamera = registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
             if (granted) reader.startCamera() else reader.permissionDenied()

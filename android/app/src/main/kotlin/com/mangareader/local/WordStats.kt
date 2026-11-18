@@ -1,7 +1,6 @@
 package com.mangareader.local
 
 import com.mangareader.local.model.*
-import android.content.Context
 import androidx.compose.runtime.mutableStateMapOf
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -9,14 +8,12 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import org.json.JSONArray
-import org.json.JSONObject
-import java.io.File
+import com.mangareader.local.logic.StatsStorage
+import com.mangareader.local.logic.StoredStats
 
 /** Statistics behind the automatic "Frequent" dictionary, kept on the phone. */
-class WordStats(context: Context, private val scope: CoroutineScope) {
+class WordStats(private val storage: StatsStorage, private val scope: CoroutineScope) {
 
-    private val file = File(context.filesDir, "word_stats.json")
     val stats = mutableStateMapOf<String, WordStat>()
 
     // sentences already counted, so rereading a bubble does not count its words again
@@ -26,20 +23,9 @@ class WordStats(context: Context, private val scope: CoroutineScope) {
     private var saveJob: Job? = null
 
     init {
-        runCatching {
-            if (file.exists()) {
-                val o = JSONObject(file.readText())
-                val words = o.optJSONArray("words") ?: JSONArray()
-                for (i in 0 until words.length()) {
-                    val w = words.getJSONObject(i)
-                    val saved = savedWordFromJson(w.getJSONObject("word"))
-                    stats[saved.key] = WordStat(saved, w.optInt("seen"), w.optInt("looked"), w.optLong("lastSeen"),
-                        w.optString("example"), w.optString("exampleSurface"), w.optBoolean("known"))
-                }
-                val s = o.optJSONArray("sentences") ?: JSONArray()
-                for (i in 0 until s.length()) sentences.add(s.getString(i))
-            }
-        }
+        val stored = storage.load()
+        stored.words.forEach { stats[it.word.key] = it }
+        sentences.addAll(stored.sentences)
     }
 
     fun get(key: String) = stats[key]
@@ -100,18 +86,7 @@ class WordStats(context: Context, private val scope: CoroutineScope) {
             delay(1000)
             val words = stats.values.toList()
             val sent = sentences.toList()
-            withContext(Dispatchers.IO) {
-                val o = JSONObject()
-                o.put("words", JSONArray().apply {
-                    words.forEach { s ->
-                        put(JSONObject().put("word", savedWordToJson(s.word)).put("seen", s.seen)
-                            .put("looked", s.looked).put("lastSeen", s.lastSeen).put("example", s.example)
-                            .put("exampleSurface", s.exampleSurface).put("known", s.known))
-                    }
-                })
-                o.put("sentences", JSONArray().apply { sent.forEach { put(it) } })
-                writeAtomically(file, o.toString())
-            }
+            withContext(Dispatchers.IO) { storage.save(StoredStats(words, sent)) }
         }
     }
 

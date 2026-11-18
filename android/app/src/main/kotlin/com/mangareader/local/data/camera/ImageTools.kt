@@ -1,6 +1,5 @@
-package com.mangareader.local
+package com.mangareader.local.data.camera
 
-import com.mangareader.local.model.*
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.BitmapRegionDecoder
@@ -9,10 +8,25 @@ import androidx.camera.core.ImageProxy
 import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.asImageBitmap
+import com.mangareader.local.logic.Photo
+import com.mangareader.local.logic.PhotoCropper
+import com.mangareader.local.logic.Snapshot
 import java.io.ByteArrayOutputStream
 import kotlin.math.abs
 import kotlin.math.max
 import kotlin.math.min
+
+/** A preview picture backed by an Android Bitmap. */
+class BitmapSnapshot(val bitmap: Bitmap) : Snapshot {
+    override val image: ImageBitmap = bitmap.asImageBitmap()
+}
+
+/** Implements PhotoCropper with Android's bitmap decoders. */
+object AndroidPhotoCropper : PhotoCropper {
+    override fun cropPhoto(photo: Photo, box: Rect) = ImageTools.crop(photo.jpeg, photo.rotation, box).jpeg
+    override fun cropSnapshot(snapshot: Snapshot, box: Rect) =
+        ImageTools.cropBitmap((snapshot as BitmapSnapshot).bitmap, box)
+}
 
 object ImageTools {
 

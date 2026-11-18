@@ -1,9 +1,9 @@
-package com.mangareader.local
+package com.mangareader.local.data.camera
 
-import com.mangareader.local.model.*
 import android.content.Context
 import android.graphics.Bitmap
 import android.util.Size
+import android.view.View
 import androidx.camera.core.Camera
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.FocusMeteringAction
@@ -23,6 +23,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
+import com.mangareader.local.logic.CameraDevice
+import com.mangareader.local.logic.CameraFrame
+import com.mangareader.local.logic.Photo
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.coroutines.withTimeoutOrNull
 import java.util.concurrent.Executors
@@ -31,17 +34,18 @@ import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 
 /** CameraX: live preview, tap/box focus, full-resolution photo, and frames for Auto mode. */
-class CameraController(private val context: Context, private val owner: LifecycleOwner) {
+class CameraController(private val context: Context, private val owner: LifecycleOwner) : CameraDevice {
 
-    val previewView = PreviewView(context).apply {
+    private val previewView = PreviewView(context).apply {
         scaleType = PreviewView.ScaleType.FIT_CENTER
         implementationMode = PreviewView.ImplementationMode.COMPATIBLE   // resizes smoothly with the sheet
     }
+    override val preview: View get() = previewView
 
     /** Width / height of the camera image as shown (portrait). */
-    var imageAspect by mutableFloatStateOf(3f / 4f)
+    override var imageAspect by mutableFloatStateOf(3f / 4f)
         private set
-    var hasFlash by mutableStateOf(false)
+    override var hasFlash by mutableStateOf(false)
         private set
 
     private var camera: Camera? = null
@@ -49,7 +53,7 @@ class CameraController(private val context: Context, private val owner: Lifecycl
     private val photoExecutor = Executors.newSingleThreadExecutor()
     private val analysisExecutor = Executors.newSingleThreadExecutor()
 
-    fun start(analyzer: (ImageProxy) -> Unit, onError: (String) -> Unit) {
+    override fun start(onFrame: (CameraFrame) -> Unit, onError: (String) -> Unit) {
         val future = ProcessCameraProvider.getInstance(context)
         future.addListener({
             try {
@@ -76,7 +80,15 @@ class CameraController(private val context: Context, private val owner: Lifecycl
                         .build())
                     .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
                     .build()
-                analysis.setAnalyzer(analysisExecutor, analyzer)
+                analysis.setAnalyzer(analysisExecutor) { img ->
+                    try {
+                        onFrame(CameraFrame { box ->
+                            ImageTools.signature(img, ImageTools.toSensor(box, img.imageInfo.rotationDegrees))
+                        })
+                    } finally {
+                        img.close()
+                    }
+                }
 
                 provider.unbindAll()
                 val cam = provider.bindToLifecycle(owner, CameraSelector.DEFAULT_BACK_CAMERA, preview, cap, analysis)
@@ -108,12 +120,12 @@ class CameraController(private val context: Context, private val owner: Lifecycl
             .build()
     }
 
-    fun focus(fx: Float, fy: Float) {
+    override fun focus(fx: Float, fy: Float) {
         camera?.cameraControl?.startFocusAndMetering(action(fx, fy))
     }
 
     /** Focus on a point and wait until done (max 2.5 s; fixed-focus cameras just fail fast). */
-    suspend fun focusAndWait(fx: Float, fy: Float) {
+    override suspend fun focusAndWait(fx: Float, fy: Float) {
         val cam = camera ?: return
         val f = cam.cameraControl.startFocusAndMetering(action(fx, fy))
         withTimeoutOrNull(2500) {
@@ -124,7 +136,7 @@ class CameraController(private val context: Context, private val owner: Lifecycl
     }
 
     /** Full-resolution JPEG and the clockwise rotation needed to make it upright. */
-    suspend fun takePhoto(): Pair<ByteArray, Int> = suspendCancellableCoroutine { cont ->
+    override suspend fun takePhoto(): Photo = suspendCancellableCoroutine { cont ->
         val cap = capture
         if (cap == null) {
             cont.resumeWithException(IllegalStateException("Camera not ready"))
@@ -136,7 +148,7 @@ class CameraController(private val context: Context, private val owner: Lifecycl
                     val rot = image.imageInfo.rotationDegrees
                     val buf = image.planes[0].buffer
                     val bytes = ByteArray(buf.remaining()).also { buf.get(it) }
-                    cont.resume(bytes to rot)
+                    cont.resume(Photo(bytes, rot))
                 } catch (e: Exception) {
                     cont.resumeWithException(e)
                 } finally {
@@ -151,18 +163,18 @@ class CameraController(private val context: Context, private val owner: Lifecycl
     }
 
     /** Instant copy of what the preview shows right now, cut to the camera image (no black bars). */
-    fun snapshot(): Bitmap? {
+    override fun snapshot(): BitmapSnapshot? {
         val full = previewView.bitmap ?: return null
         var w = full.width.toFloat()
         var h = w / imageAspect
         if (h > full.height) { h = full.height.toFloat(); w = h * imageAspect }
         val left = ((full.width - w) / 2).toInt()
         val top = ((full.height - h) / 2).toInt()
-        return Bitmap.createBitmap(full, left, top, w.toInt().coerceAtMost(full.width - left),
-            h.toInt().coerceAtMost(full.height - top))
+        return BitmapSnapshot(Bitmap.createBitmap(full, left, top, w.toInt().coerceAtMost(full.width - left),
+            h.toInt().coerceAtMost(full.height - top)))
     }
 
-    fun setTorch(on: Boolean) {
+    override fun setTorch(on: Boolean) {
         camera?.cameraControl?.enableTorch(on)
     }
 }

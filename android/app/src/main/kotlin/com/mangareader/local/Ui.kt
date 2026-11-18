@@ -151,7 +151,7 @@ private fun CameraArea(reader: Reader, modifier: Modifier) {
     reader.frozen?.let { shownFrozen = it }
 
     Box(modifier.background(Color.Black).clipToBounds()) {
-        AndroidView(factory = { reader.camera.previewView }, modifier = Modifier.fillMaxSize())
+        AndroidView(factory = { reader.camera.preview }, modifier = Modifier.fillMaxSize())
         AnimatedVisibility(visible = reader.frozen != null, enter = fadeIn(), exit = fadeOut()) {
             shownFrozen?.let {
                 Image(it, contentDescription = "Frozen photo", contentScale = ContentScale.Fit,

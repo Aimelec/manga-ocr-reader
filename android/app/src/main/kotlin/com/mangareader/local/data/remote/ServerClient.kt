@@ -1,7 +1,8 @@
-package com.mangareader.local
+package com.mangareader.local.data.remote
 
-import com.mangareader.local.model.*
 import android.content.Context
+import com.mangareader.local.logic.ReadingServer
+import com.mangareader.local.model.ReadResult
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -25,16 +26,15 @@ import javax.net.ssl.X509TrustManager
  * The server uses a home-made certificate, so the app trusts the first certificate it sees
  * for each address and refuses a different one later ("trust on first use").
  */
-class ServerClient(context: Context) {
+class ServerClient(context: Context) : ReadingServer {
 
     private val prefs = context.getSharedPreferences("settings", Context.MODE_PRIVATE)
 
-    var address: String
+    override var address: String
         get() = prefs.getString("server", DEFAULT_SERVER) ?: DEFAULT_SERVER
         set(value) = prefs.edit().putString("server", value).apply()
 
-    /** Forget the remembered certificate for the current address (after the server made a new one). */
-    fun forgetCertificate() = prefs.edit().remove(pinKey()).apply()
+    override fun forgetCertificate() = prefs.edit().remove(pinKey()).apply()
 
     private fun pinKey() = "pin:$address"
 
@@ -66,7 +66,7 @@ class ServerClient(context: Context) {
             hostnameVerifier = HostnameVerifier { _, _ -> true }   // the certificate itself is pinned
         }
 
-    suspend fun ping(): Boolean = withContext(Dispatchers.IO) {
+    override suspend fun ping(): Boolean = withContext(Dispatchers.IO) {
         runCatching {
             open("/").run {
                 connectTimeout = 3000
@@ -76,7 +76,7 @@ class ServerClient(context: Context) {
         }.getOrDefault(false)
     }
 
-    suspend fun read(jpeg: ByteArray): ReadResult = withContext(Dispatchers.IO) {
+    override suspend fun read(jpeg: ByteArray): ReadResult = withContext(Dispatchers.IO) {
         val boundary = "----mangareader${System.nanoTime()}"
         val conn = open("/read").apply {
             requestMethod = "POST"
@@ -94,11 +94,10 @@ class ServerClient(context: Context) {
         val code = conn.responseCode
         if (code != 200) throw IOException("The PC answered with error $code")
         val text = conn.inputStream.bufferedReader(Charsets.UTF_8).use { it.readText() }
-        parseResult(JSONObject(text))
+        parseReadResult(JSONObject(text))
     }
 
-    /** AI explanation of one bubble; emits the text piece by piece while the PC's model writes it. */
-    fun explain(line: String, context: List<String>): Flow<String> = flow {
+    override fun explain(line: String, context: List<String>): Flow<String> = flow {
         val conn = open("/explain").apply {
             requestMethod = "POST"
             doOutput = true

@@ -1,9 +1,7 @@
 package com.mangareader.local
 
 import com.mangareader.local.model.*
-import android.graphics.Bitmap
 import android.os.SystemClock
-import androidx.camera.core.ImageProxy
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
@@ -11,7 +9,13 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.graphics.ImageBitmap
-import androidx.compose.ui.graphics.asImageBitmap
+import com.mangareader.local.data.camera.ImageTools
+import com.mangareader.local.logic.CameraDevice
+import com.mangareader.local.logic.CameraFrame
+import com.mangareader.local.logic.Photo
+import com.mangareader.local.logic.PhotoCropper
+import com.mangareader.local.logic.ReadingServer
+import com.mangareader.local.logic.Snapshot
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
@@ -25,8 +29,9 @@ import kotlinx.coroutines.withContext
 /** Everything the screen shows, plus the actions behind the buttons. */
 class Reader(
     private val scope: CoroutineScope,
-    val camera: CameraController,
-    val server: ServerClient,
+    val camera: CameraDevice,
+    val server: ReadingServer,
+    private val cropper: PhotoCropper,
     val stats: WordStats,
 ) {
     enum class Phase { Idle, Busy, Done }
@@ -105,8 +110,8 @@ class Reader(
     }
 
     // Freeze: the screen picture (instant) and the full-resolution photo of the same moment (arrives shortly after)
-    private var frozenBitmap: Bitmap? = null
-    private var frozenPhoto: Deferred<Pair<ByteArray, Int>?>? = null
+    private var frozenSnapshot: Snapshot? = null
+    private var frozenPhoto: Deferred<Photo?>? = null
 
     private var readJob: Job? = null
     private var pendingRead: Job? = null
@@ -187,7 +192,7 @@ class Reader(
             readJob?.cancel()
             frozenPhoto?.cancel()
             frozen = null
-            frozenBitmap = null
+            frozenSnapshot = null
             frozenPhoto = null
             boxVisible = true
             phase = Phase.Idle
@@ -202,8 +207,8 @@ class Reader(
         pendingRead?.cancel()
         readJob?.cancel()
         phase = Phase.Idle
-        frozenBitmap = shot
-        frozen = shot.asImageBitmap()
+        frozenSnapshot = shot
+        frozen = shot.image
         boxVisible = false
         status = "Frozen: drag a box around a bubble"
         // full-resolution photo of the same moment, used for reading when it arrives
@@ -234,16 +239,16 @@ class Reader(
                     status = "Reading…"
                     val photo = frozenPhoto?.await()
                     val jpeg = if (photo != null) {
-                        withContext(Dispatchers.Default) { ImageTools.crop(photo.first, photo.second, b).jpeg }
+                        withContext(Dispatchers.Default) { cropper.cropPhoto(photo, b) }
                     } else {
-                        val bmp = frozenBitmap ?: return@launch
-                        withContext(Dispatchers.Default) { ImageTools.cropBitmap(bmp, b) }
+                        val snap = frozenSnapshot ?: return@launch
+                        withContext(Dispatchers.Default) { cropper.cropSnapshot(snap, b) }
                     }
                     send(jpeg)
                 } else {
-                    val (jpeg, rot) = shoot(b)
+                    val photo = shoot(b)
                     status = "Reading…"
-                    send(withContext(Dispatchers.Default) { ImageTools.crop(jpeg, rot, b).jpeg })
+                    send(withContext(Dispatchers.Default) { cropper.cropPhoto(photo, b) })
                 }
             } catch (e: CancellationException) {
                 throw e
@@ -254,7 +259,7 @@ class Reader(
     }
 
     /** Live mode: focus on the box and take a full-resolution photo. */
-    private suspend fun shoot(b: Rect): Pair<ByteArray, Int> {
+    private suspend fun shoot(b: Rect): Photo {
         status = "Focusing…"
         camera.focusAndWait(b.center.x, b.center.y)
         status = "Taking photo…"
@@ -286,8 +291,8 @@ class Reader(
     }
 
     /** Auto mode: read once the box content has been still for a moment and differs from the last read. */
-    private fun analyze(img: ImageProxy) {
-        try {
+    private fun analyze(frame: CameraFrame) {
+        run {
             if (!auto || busy || frozen != null) {
                 prevSig = null
                 return
@@ -295,7 +300,7 @@ class Reader(
             val now = SystemClock.uptimeMillis()
             if (now - lastCheck < 150) return
             lastCheck = now
-            val sig = ImageTools.signature(img, ImageTools.toSensor(box, img.imageInfo.rotationDegrees))
+            val sig = frame.signature(box)
             val prev = prevSig
             prevSig = sig
             if (prev != null && ImageTools.diff(sig, prev) < 4f) {
@@ -310,8 +315,6 @@ class Reader(
                 stillSince = 0L
                 scope.launch { if (!busy && auto) status = "Hold still over a bubble…" }
             }
-        } finally {
-            img.close()
         }
     }
 

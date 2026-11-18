@@ -1,11 +1,8 @@
 package com.mangareader.local
 
 import com.mangareader.local.model.*
-import android.content.Context
 import androidx.compose.runtime.mutableStateListOf
-import org.json.JSONArray
-import org.json.JSONObject
-import java.io.File
+import com.mangareader.local.logic.FavouritesStorage
 
 fun categoryOf(t: Token): String = when {
     t.posEn.contains("(name)") -> "Names"
@@ -48,19 +45,9 @@ fun savedWordOf(t: Token): SavedWord {
 }
 
 /** ★ Favourites, saved by hand. */
-class WordStore(context: Context) {
+class WordStore(private val storage: FavouritesStorage) {
 
-    private val file = File(context.filesDir, "saved_words.json")
-    val words = mutableStateListOf<SavedWord>()
-
-    init {
-        runCatching {
-            if (file.exists()) {
-                val arr = JSONArray(file.readText())
-                for (i in 0 until arr.length()) words.add(savedWordFromJson(arr.getJSONObject(i)))
-            }
-        }
-    }
+    val words = mutableStateListOf<SavedWord>().apply { addAll(storage.load()) }
 
     fun isSaved(t: Token) = isSaved(wordKey(t))
     fun isSaved(key: String) = words.any { it.key == key }
@@ -80,68 +67,5 @@ class WordStore(context: Context) {
         save()
     }
 
-    private fun save() {
-        val arr = JSONArray()
-        words.forEach { arr.put(savedWordToJson(it)) }
-        writeAtomically(file, arr.toString())
-    }
-}
-
-// ---------------- shared JSON helpers ----------------
-
-fun writeAtomically(file: File, text: String) {
-    val tmp = File(file.parentFile, file.name + ".tmp")
-    tmp.writeText(text)
-    if (!tmp.renameTo(file)) {
-        file.delete()
-        tmp.renameTo(file)
-    }
-}
-
-private fun strings(l: List<String>) = JSONArray().apply { l.forEach { put(it) } }
-private fun JSONArray?.toStrings() = if (this == null) emptyList() else List(length()) { getString(it) }
-
-fun savedWordToJson(w: SavedWord): JSONObject = JSONObject().apply {
-    put("key", w.key); put("word", w.word); put("reading", w.reading); put("category", w.category)
-    put("label", w.label); put("meaning", w.meaning); put("savedAt", w.savedAt)
-    put("entries", JSONArray().apply {
-        w.entries.forEach { e ->
-            put(JSONObject().apply {
-                put("kanji", strings(e.kanji)); put("kana", strings(e.kana))
-                put("senses", JSONArray().apply {
-                    e.senses.forEach { s -> put(JSONObject().put("gloss", s.gloss).put("pos", s.pos)) }
-                })
-            })
-        }
-    })
-    put("kanjiInfo", JSONArray().apply {
-        w.kanji.forEach { k ->
-            put(JSONObject().put("char", k.char).put("meanings", strings(k.meanings))
-                .put("on", strings(k.on)).put("kun", strings(k.kun)))
-        }
-    })
-}
-
-fun savedWordFromJson(o: JSONObject): SavedWord {
-    val entries = o.optJSONArray("entries")
-    val kanji = o.optJSONArray("kanjiInfo")
-    return SavedWord(
-        key = o.getString("key"), word = o.getString("word"), reading = o.optString("reading"),
-        category = o.optString("category", "Other"), label = o.optString("label"),
-        meaning = o.optString("meaning"), savedAt = o.optLong("savedAt"),
-        entries = if (entries == null) emptyList() else List(entries.length()) { i ->
-            val e = entries.getJSONObject(i)
-            val senses = e.optJSONArray("senses")
-            Entry(e.optJSONArray("kanji").toStrings(), e.optJSONArray("kana").toStrings(),
-                if (senses == null) emptyList() else List(senses.length()) { j ->
-                    senses.getJSONObject(j).let { Sense(it.optString("gloss"), it.optString("pos")) }
-                })
-        },
-        kanji = if (kanji == null) emptyList() else List(kanji.length()) { i ->
-            kanji.getJSONObject(i).let {
-                KanjiInfo(it.getString("char"), it.optJSONArray("meanings").toStrings(),
-                    it.optJSONArray("on").toStrings(), it.optJSONArray("kun").toStrings())
-            }
-        },
-    )
+    private fun save() = storage.save(words.toList())
 }
