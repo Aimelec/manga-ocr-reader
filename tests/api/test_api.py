@@ -108,3 +108,32 @@ def test_openapi_documents_only_the_versioned_paths(make_client):
     paths = set(client.get("/openapi.json").json()["paths"])
     assert {f"{V1}/read", f"{V1}/explain"} <= paths
     assert "/read" not in paths and "/explain" not in paths
+
+
+def test_read_rejects_files_that_are_not_images(make_client):
+    client, c = make_client()
+    r = client.post(f"{V1}/read", files={"image": ("notes.txt", b"hello", "text/plain")})
+    assert r.status_code == 400 and c.bubble_reader.sizes == []
+
+
+def test_read_rejects_oversized_uploads(make_client, monkeypatch):
+    from backend.api import read
+    monkeypatch.setattr(read, "MAX_UPLOAD_BYTES", 100)
+    client, c = make_client()
+    r = client.post(f"{V1}/read", files={"image": ("big.png", png((300, 300)), "image/png")})
+    assert r.status_code == 413 and c.bubble_reader.sizes == []
+
+
+def test_read_rejects_huge_pixel_counts(make_client, monkeypatch):
+    from backend.api import read
+    monkeypatch.setattr(read, "MAX_PIXELS", 500)
+    client, _ = make_client()
+    assert client.post(f"{V1}/read", files={"image": ("b.png", png((30, 20)), "image/png")}).status_code == 413
+
+
+@pytest.mark.parametrize("body", [{"line": ""}, {"line": "あ" * 501}, {"line": "本", "context": ["x"] * 21},
+                                  {"line": "本", "context": ["あ" * 501]}, {}])
+def test_explain_validates_the_request(make_client, body):
+    client, c = make_client()
+    assert client.post(f"{V1}/explain", json=body).status_code == 422
+    assert c.line_explainer.calls == []

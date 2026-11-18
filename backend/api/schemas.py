@@ -1,8 +1,12 @@
 """The API contract: request and response shapes. FastAPI validates against them and publishes them
 as OpenAPI (contract/openapi.json), which the Android app's data layer mirrors."""
+from typing import Annotated
+
 from pydantic import BaseModel, Field
 
 MAX_CONTEXT_BUBBLES = 3
+MAX_LINE_CHARS = 500
+MAX_CONTEXT_ITEMS = 20
 
 
 class Sense(BaseModel):
@@ -62,9 +66,10 @@ class ReadResponse(BaseModel):
 
 
 class ExplainRequest(BaseModel):
-    line: str = Field(description="The bubble to explain")
-    context: list[str] = Field(default=[], description=f"Previous bubbles, oldest first; the last "
-                                                       f"{MAX_CONTEXT_BUBBLES} are used")
+    line: str = Field(min_length=1, max_length=MAX_LINE_CHARS, description="The bubble to explain")
+    context: list[Annotated[str, Field(max_length=MAX_LINE_CHARS)]] = Field(
+        default=[], max_length=MAX_CONTEXT_ITEMS,
+        description=f"Previous bubbles, oldest first; the last {MAX_CONTEXT_BUBBLES} are used")
 
 
 class ErrorResponse(BaseModel):
