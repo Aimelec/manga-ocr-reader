@@ -21,6 +21,8 @@ import com.mangareader.local.logic.Favourites
 import com.mangareader.local.logic.ReaderViewModel
 import com.mangareader.local.logic.SettingsViewModel
 import com.mangareader.local.logic.WordStatistics
+import com.mangareader.local.ui.AppRoot
+import com.mangareader.local.ui.MangaTheme
 
 class MainActivity : ComponentActivity() {
 

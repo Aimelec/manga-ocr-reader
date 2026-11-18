@@ -1,6 +1,5 @@
-package com.mangareader.local
+package com.mangareader.local.ui
 
-import com.mangareader.local.model.*
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.runtime.Composable

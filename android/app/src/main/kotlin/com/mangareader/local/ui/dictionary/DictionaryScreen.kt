@@ -1,10 +1,5 @@
-package com.mangareader.local
+package com.mangareader.local.ui.dictionary
 
-import com.mangareader.local.logic.Favourites
-import com.mangareader.local.logic.ReaderViewModel
-import com.mangareader.local.logic.SettingsViewModel
-import com.mangareader.local.logic.WordStatistics
-import com.mangareader.local.model.*
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
@@ -37,8 +32,6 @@ import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.pager.HorizontalPager
-import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -46,10 +39,10 @@ import androidx.compose.material.icons.automirrored.filled.ArrowForward
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Refresh
-import androidx.compose.material3.AlertDialog
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.Star
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.FilterChip
@@ -64,12 +57,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
@@ -77,41 +68,20 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import kotlinx.coroutines.launch
+import com.mangareader.local.logic.Favourites
+import com.mangareader.local.logic.WordStatistics
+import com.mangareader.local.model.*
+import com.mangareader.local.ui.AppColors
+import com.mangareader.local.ui.EntryView
+import com.mangareader.local.ui.KanjiBox
 
-private const val DICTIONARY_PAGE = 0
-private const val READER_PAGE = 1
-
-/** Two pages side by side: swipe right from the reader to reach the dictionary. */
-@Composable
-fun AppRoot(reader: ReaderViewModel, store: Favourites, stats: WordStatistics, settings: SettingsViewModel) {
-    val pager = rememberPagerState(initialPage = READER_PAGE) { 2 }
-    val scope = rememberCoroutineScope()
-    var showSettings by remember { mutableStateOf(false) }
-
-    // registered before the pages so the dictionary's own back handler (category -> list) wins
-    BackHandler(enabled = pager.currentPage == DICTIONARY_PAGE) {
-        scope.launch { pager.animateScrollToPage(READER_PAGE) }
-    }
-
-    HorizontalPager(pager, Modifier.fillMaxSize().background(Color.Black), beyondViewportPageCount = 1) { page ->
-        if (page == DICTIONARY_PAGE) {
-            DictionaryScreen(store, stats,
-                onCamera = { scope.launch { pager.animateScrollToPage(READER_PAGE) } },
-                onSettings = { showSettings = true })
-        } else {
-            ReaderScreen(reader, store, onDictionary = { scope.launch { pager.animateScrollToPage(DICTIONARY_PAGE) } })
-        }
-    }
-
-    if (showSettings) SettingsDialog(settings) { showSettings = false }
-}
+// The "My words" page: favourites and the automatic Frequent dictionary, by category.
 
 /** One row in a dictionary list: the word, plus its statistics when there are any. */
 private class DictItem(val word: SavedWord, val stat: WordStat?)
 
 @Composable
-private fun DictionaryScreen(store: Favourites, stats: WordStatistics, onCamera: () -> Unit, onSettings: () -> Unit) {
+internal fun DictionaryScreen(store: Favourites, stats: WordStatistics, onCamera: () -> Unit, onSettings: () -> Unit) {
     var frequent by rememberSaveable { mutableStateOf(false) }
     var category by rememberSaveable { mutableStateOf<String?>(null) }
     var confirmReset by remember { mutableStateOf(false) }
