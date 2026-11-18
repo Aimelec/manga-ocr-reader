@@ -1,0 +1,586 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Manga Reader",
+    "version": "1"
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Index",
+        "operationId": "index__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/app.apk": {
+      "get": {
+        "summary": "Apk",
+        "operationId": "apk_app_apk_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/read": {
+      "post": {
+        "summary": "Read",
+        "operationId": "read_api_v1_read_post",
+        "parameters": [
+          {
+            "name": "X-Pairing-Code",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "",
+              "title": "X-Pairing-Code"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_read_api_v1_read_post"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReadResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Wrong or missing pairing code",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request Entity Too Large"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/explain": {
+      "post": {
+        "summary": "Explain",
+        "operationId": "explain_api_v1_explain_post",
+        "parameters": [
+          {
+            "name": "X-Pairing-Code",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "",
+              "title": "X-Pairing-Code"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExplainRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The answer as it is written. If the model fails midway, the stream ends with 'ERROR: <reason>'.",
+            "content": {
+              "text/plain": {}
+            }
+          },
+          "401": {
+            "description": "Wrong or missing pairing code",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "The AI model could not start or answer",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Body_read_api_v1_read_post": {
+        "properties": {
+          "image": {
+            "type": "string",
+            "contentMediaType": "application/octet-stream",
+            "title": "Image"
+          }
+        },
+        "type": "object",
+        "required": [
+          "image"
+        ],
+        "title": "Body_read_api_v1_read_post"
+      },
+      "Entry": {
+        "properties": {
+          "kanji": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Kanji"
+          },
+          "kana": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Kana"
+          },
+          "senses": {
+            "items": {
+              "$ref": "#/components/schemas/Sense"
+            },
+            "type": "array",
+            "title": "Senses"
+          },
+          "score": {
+            "type": "integer",
+            "title": "Score",
+            "description": "How well the entry fits the word in this sentence (higher = better)"
+          }
+        },
+        "type": "object",
+        "required": [
+          "kanji",
+          "kana",
+          "senses",
+          "score"
+        ],
+        "title": "Entry"
+      },
+      "ErrorResponse": {
+        "properties": {
+          "detail": {
+            "type": "string",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "required": [
+          "detail"
+        ],
+        "title": "ErrorResponse"
+      },
+      "ExplainRequest": {
+        "properties": {
+          "line": {
+            "type": "string",
+            "maxLength": 500,
+            "minLength": 1,
+            "title": "Line",
+            "description": "The bubble to explain"
+          },
+          "context": {
+            "items": {
+              "type": "string",
+              "maxLength": 500
+            },
+            "type": "array",
+            "maxItems": 20,
+            "title": "Context",
+            "description": "Previous bubbles, oldest first; the last 3 are used",
+            "default": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "line"
+        ],
+        "title": "ExplainRequest"
+      },
+      "GrammarHit": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "match": {
+            "type": "string",
+            "title": "Match"
+          },
+          "explanation": {
+            "type": "string",
+            "title": "Explanation"
+          },
+          "at": {
+            "type": "integer",
+            "title": "At",
+            "description": "Character offset of the match in the text"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "match",
+          "explanation",
+          "at"
+        ],
+        "title": "GrammarHit"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "Kanji": {
+        "properties": {
+          "char": {
+            "type": "string",
+            "title": "Char"
+          },
+          "meanings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Meanings"
+          },
+          "on": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "On"
+          },
+          "kun": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Kun"
+          },
+          "strokes": {
+            "type": "integer",
+            "title": "Strokes"
+          }
+        },
+        "type": "object",
+        "required": [
+          "char",
+          "meanings",
+          "on",
+          "kun",
+          "strokes"
+        ],
+        "title": "Kanji"
+      },
+      "Part": {
+        "properties": {
+          "surface": {
+            "type": "string",
+            "title": "Surface"
+          },
+          "reading": {
+            "type": "string",
+            "title": "Reading"
+          },
+          "entries": {
+            "items": {
+              "$ref": "#/components/schemas/Entry"
+            },
+            "type": "array",
+            "title": "Entries"
+          }
+        },
+        "type": "object",
+        "required": [
+          "surface",
+          "reading",
+          "entries"
+        ],
+        "title": "Part",
+        "description": "Part of a long compound that is not in the dictionary as a whole."
+      },
+      "ReadResponse": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "title": "Text",
+            "description": "Japanese text recognized in the image"
+          },
+          "hiragana": {
+            "type": "string",
+            "title": "Hiragana"
+          },
+          "tokens": {
+            "items": {
+              "$ref": "#/components/schemas/Token"
+            },
+            "type": "array",
+            "title": "Tokens"
+          },
+          "grammar": {
+            "items": {
+              "$ref": "#/components/schemas/GrammarHit"
+            },
+            "type": "array",
+            "title": "Grammar"
+          }
+        },
+        "type": "object",
+        "required": [
+          "text",
+          "hiragana",
+          "tokens",
+          "grammar"
+        ],
+        "title": "ReadResponse"
+      },
+      "Sense": {
+        "properties": {
+          "gloss": {
+            "type": "string",
+            "title": "Gloss",
+            "description": "English meanings, '; '-separated"
+          },
+          "pos": {
+            "type": "string",
+            "title": "Pos",
+            "description": "JMdict part-of-speech labels, ', '-separated ('name' for JMnedict)"
+          }
+        },
+        "type": "object",
+        "required": [
+          "gloss",
+          "pos"
+        ],
+        "title": "Sense"
+      },
+      "Token": {
+        "properties": {
+          "surface": {
+            "type": "string",
+            "title": "Surface"
+          },
+          "reading": {
+            "type": "string",
+            "title": "Reading",
+            "description": "Hiragana reading (the surface itself for kana and unknown words)"
+          },
+          "has_kanji": {
+            "type": "boolean",
+            "title": "Has Kanji"
+          },
+          "dictionary_form": {
+            "type": "string",
+            "title": "Dictionary Form"
+          },
+          "pos": {
+            "type": "string",
+            "title": "Pos",
+            "description": "Sudachi part of speech (Japanese)"
+          },
+          "pos_en": {
+            "type": "string",
+            "title": "Pos En"
+          },
+          "form_en": {
+            "type": "string",
+            "title": "Form En",
+            "description": "Conjugation form, for verbs, adjectives and auxiliaries"
+          },
+          "ruby": {
+            "items": {
+              "prefixItems": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "type": "array",
+              "maxItems": 2,
+              "minItems": 2
+            },
+            "type": "array",
+            "title": "Ruby",
+            "description": "(text, furigana or '') pairs: furigana only over kanji"
+          },
+          "function": {
+            "type": "string",
+            "title": "Function",
+            "description": "Explanation for particles and auxiliaries"
+          },
+          "entries": {
+            "items": {
+              "$ref": "#/components/schemas/Entry"
+            },
+            "type": "array",
+            "title": "Entries"
+          },
+          "parts": {
+            "items": {
+              "$ref": "#/components/schemas/Part"
+            },
+            "type": "array",
+            "title": "Parts"
+          },
+          "kanji": {
+            "items": {
+              "$ref": "#/components/schemas/Kanji"
+            },
+            "type": "array",
+            "title": "Kanji"
+          }
+        },
+        "type": "object",
+        "required": [
+          "surface",
+          "reading",
+          "has_kanji",
+          "dictionary_form",
+          "pos",
+          "pos_en",
+          "form_en",
+          "ruby",
+          "function",
+          "entries",
+          "parts",
+          "kanji"
+        ],
+        "title": "Token"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}
